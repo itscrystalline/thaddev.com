@@ -1,0 +1,269 @@
+import styled from "styled-components"
+
+export const Boxes = styled.div`
+  width: 100%;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin: 12px 0 20px;
+
+  @media ${props => props.theme.breakpoints.md}{
+    gap: 16px;
+    margin: 20px 0 32px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  @media ${props => props.theme.breakpoints.sm}{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    max-width: 500px;
+    margin: 24px auto;
+  }
+`
+export const ImageBoxes = styled.div`
+  width: 100%;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin: 12px 0 20px;
+
+  @media ${props => props.theme.breakpoints.md}{
+    gap: 16px;
+    margin: 20px 0 32px;
+    grid-template-columns: repeat(auto-fit, minmax(1px, 1fr));
+  }
+
+  @media ${props => props.theme.breakpoints.sm}{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    max-width: 500px;
+    margin: 24px auto;
+  }
+`
+
+export const Box = styled.div`
+  background: #303030;
+  border-radius: 12px;
+  height: 144px;
+  padding: 24px;
+  @media ${props => props.theme.breakpoints.lg} {
+    height: 210px;
+
+  }
+
+  @media ${props => props.theme.breakpoints.md} {
+    height: 135px;
+    padding: 16px;
+  }
+
+  @media ${props => props.theme.breakpoints.sm} {
+    height: 110px;
+    padding: 12px;
+    
+    &:nth-child(2n){
+      grid-row:2;
+    }
+  }
+`
+export const BoxHackerRank = styled.div`
+  background: ${props => props.theme.colors.hackerrank};
+  border-radius: 12px;
+  height: 144px;
+  padding: 24px;
+  @media ${props => props.theme.breakpoints.lg} {
+    height: 210px;
+
+  }
+
+  @media ${props => props.theme.breakpoints.md} {
+    height: 135px;
+    padding: 16px;
+  }
+
+  @media ${props => props.theme.breakpoints.sm} {
+    height: 110px;
+    padding: 12px;
+    
+    &:nth-child(2n){
+      grid-row:2;
+    }
+  }
+`
+export const BoxHackerRankImage = styled.div`
+  background: ${props => props.theme.colors.hackerrank};
+  border-radius: 12px;
+  display: compact;
+  padding: 24px;
+  align-items: center;
+
+  @media ${props => props.theme.breakpoints.sm} {
+    &:nth-child(2n){
+      grid-row:2;
+    }
+  }
+`
+
+export const BoxLeetcode = styled.div`
+  background: ${props => props.theme.colors.leetcode};
+  border-radius: 12px;
+  height: 144px;
+  padding: 24px;
+  @media ${props => props.theme.breakpoints.lg} {
+    height: 210px;
+
+  }
+
+  @media ${props => props.theme.breakpoints.md} {
+    height: 135px;
+    padding: 16px;
+  }
+
+  @media ${props => props.theme.breakpoints.sm} {
+    height: 110px;
+    padding: 12px;
+    
+    &:nth-child(2n){
+      grid-row:2;
+    }
+  }
+`
+export const BoxNum = styled.h5`
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: 0.01em;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+
+  @media ${props => props.theme.breakpoints.md} {
+    font-size: 28px;
+    line-height: 32px;
+  }
+  @media ${props => props.theme.breakpoints.sm} {
+    font-size: 24px;
+    line-height: 26px;
+}
+`
+
+export const BoxText = styled.p`
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.75);
+
+  @media ${props => props.theme.breakpoints.md}{
+    font-size: 20px;
+    line-height: 20px;
+  };
+
+  @media ${props => props.theme.breakpoints.sm} {
+    font-size: 18px;
+    line-height: 18px;
+  }
+`
+
+export const ImageBoxText = styled.p`
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 1);
+  margin-top: 10px;
+
+  @media ${props => props.theme.breakpoints.md}{
+    font-size: 24px;
+    line-height: 22px;
+  };
+
+  @media ${props => props.theme.breakpoints.sm} {
+    font-size: 22px;
+    line-height: 18px;
+  }
+`
+
+export const Join = styled.div`
+  display: flex;
+  max-width: 1040px;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 80px;
+
+  @media ${props => props.theme.breakpoints.md}{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 64px;
+  }
+
+  @media ${props => props.theme.breakpoints.sm}{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 32px;
+  }
+`
+
+export const JoinText = styled.h5`
+  display: flex;
+  font-size: 24px;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.5);
+
+@media ${props => props.theme.breakpoints.md}{
+  line-height: 32px;
+  font-size: 20px;
+};
+
+@media ${props => props.theme.breakpoints.sm}{
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 16px;
+}
+`
+
+export const IconContainer = styled.div`
+  display: flex;
+
+  @media ${props => props.theme.breakpoints.sm}{
+    width: 160px;
+    justify-content: space-between;
+  }
+`
+
+export const SmallTitle = styled.h4`
+  font-weight: 400;
+  font-size: ${(props) => props.main ? '55px' : '36px'};
+  line-height: ${(props) => props.main ? '62px' : '46px'};
+  width: max-content;
+  max-width: 100%;
+  background: linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 16px;
+  padding: ${(props) => props.main ? '58px 0 16px' : '0'};
+
+  @media ${props => props.theme.breakpoints.md} {
+    font-size: ${(props) => props.main ? '41px' : '33px'};
+    line-height: ${(props) => props.main ? '21px' : '13px'};
+    margin-bottom: 12px;
+    padding: ${(props) => props.main ? '40px 0 12px' : '0'};
+  }
+
+  @media ${props => props.theme.breakpoints.sm} {
+    font-size: 32px;
+    line-height: 40px;
+    font-size: ${(props) => props.main ? '18px' : '22px'};
+    line-height: ${(props) => props.main ? '22px' : '30px'};
+    margin-bottom: 8px;
+    padding: ${(props) => props.main ? '16px 0 8px' : '0'};
+    max-width: 100%;
+  }
+`
