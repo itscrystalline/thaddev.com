@@ -1,5 +1,4 @@
 import React from "react";
-import Link from 'next/link';
 import {Section, SectionDivider, SectionTitle} from "../../styles/GlobalComponents";
 import {ImageBoxes, ImageBoxText, SmallTitle} from "../Acomplishments/AcomplishmentsStyles";
 import {BoxImage} from "./GalleryStyles";
@@ -11,7 +10,7 @@ const Gallery = () => (
       <SectionDivider/>
       <p><br/></p>
       <p><br/></p>
-      <Collapsible trigger={<Link href="#gallery"><SectionTitle>Events & Development Gallery</SectionTitle></Link>}
+      <Collapsible trigger={<a href="#"><SectionTitle>Events & Development Gallery</SectionTitle></a>}
                    transitionTime="200"
                    easing="ease-in-out">
         <SmallTitle>Thailand TopCoder Competition by GetLinks (2020)</SmallTitle>

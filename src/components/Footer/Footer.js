@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  AiFillApi,
-  AiFillFacebook,
-  AiFillGithub,
-  AiFillHeart,
-  AiFillInstagram,
-  AiFillLinkedin,
-  AiFillMail
-} from 'react-icons/ai';
+import {AiFillGithub, AiFillHeart} from 'react-icons/ai';
 
 import {SocialIcons} from '../Header/HeaderStyles';
 import {
@@ -31,8 +23,12 @@ const Footer = () => {
       <FooterWrapper>
         <LinkList>
           <LinkColumn>
-            <LinkTitle>TELEPHONE</LinkTitle>
-            <LinkItem href="tel:+660813564982">+66 081-356-4982</LinkItem>
+            <LinkTitle>Facebook</LinkTitle>
+            <LinkItem href={Links[5].link}>Thad Choyrum</LinkItem>
+          </LinkColumn>
+          <LinkColumn>
+            <LinkTitle>LINE</LinkTitle>
+            <LinkItem>@Thad040608</LinkItem>
           </LinkColumn>
           <LinkColumn>
             <LinkTitle>Email</LinkTitle>
@@ -43,8 +39,10 @@ const Footer = () => {
           <CompanyContainer>
             <Slogan>
               © {new Date().getFullYear() === 2022 ? "2022" : "2022 - " + new Date().getFullYear()} | ThadDev. Some
-              Rights Reserved. <br/> Made with <AiFillHeart size="2rem" color="red"/> using <DiReact size="2rem" color="teal"/>. <br/>
-              Hosted on <FaRaspberryPi size="2rem" color="red"/> with <FaCloudflare size="2rem" color="orange"/> and&nbsp;
+              Rights Reserved. <br/> Made with <AiFillHeart size="2rem" color="red"/> using <DiReact size="2rem"
+                                                                                                     color="teal"/>. <br/>
+              Hosted on <FaRaspberryPi size="2rem" color="red"/> with <FaCloudflare size="2rem"
+                                                                                    color="orange"/> and&nbsp;
               <SiNgrok size="2rem" color="blue"/>.
             </Slogan>
           </CompanyContainer>
@@ -63,12 +61,6 @@ const Footer = () => {
             </SocialIcons>
             <SocialIcons href={Links[4].link}>
               <FaGooglePlay size="3rem"/>
-            </SocialIcons>
-            <SocialIcons href={Links[5].link}>
-              <AiFillFacebook size="3rem"/>
-            </SocialIcons>
-            <SocialIcons href={Links[6].link}>
-              <AiFillMail size="3rem"/>
             </SocialIcons>
           </SocialContainer>
         </SocialIconsContainer>
