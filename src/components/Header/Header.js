@@ -2,12 +2,10 @@ import Link from 'next/link';
 import React from 'react';
 import {
   AiFillApi,
-  AiFillAppstore,
   AiFillFacebook,
-  AiFillGithub
+  AiFillGithub,
+  AiFillMail
 } from 'react-icons/ai';
-import {DiCssdeck} from 'react-icons/di';
-import {FaGooglePlay} from "react-icons/fa";
 import {Container, Div1, Div2, Div3, NavLink, SocialIcons, HeaderText} from './HeaderStyles';
 import Logo from "../Logo/Logo";
 import {Links} from "../../constants/constants.js";
@@ -47,8 +45,8 @@ const Header = () => (
         <SocialIcons href={Links[0].link}>
           <AiFillGithub size="4rem"/>
         </SocialIcons>
-        <SocialIcons href={Links[4].link}>
-          <FaGooglePlay size="3rem"/>
+        <SocialIcons href={Links[6].link}>
+          <AiFillMail size="4rem"/>
         </SocialIcons>
         <SocialIcons href={Links[5].link}>
           <AiFillFacebook size="4rem"/>

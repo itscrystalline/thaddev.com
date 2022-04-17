@@ -28,7 +28,7 @@ export const SectionTitle = styled.h2`
   font-weight: 800;
   font-size: ${(props) => props.main ? '65px' : '56px'};
   line-height: ${(props) => props.main ? '82px' : '66px'};
-  width: max-content;
+  width: auto;
   max-width: 100%;
   background: linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
   -webkit-background-clip: text;

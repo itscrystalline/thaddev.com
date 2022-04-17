@@ -12,13 +12,9 @@ import {
   ImageBoxes, ImageBoxText, SmallTitle
 } from './AcomplishmentsStyles';
 import {Links} from "../../constants/constants.js";
-import {AiFillStar} from "react-icons/all";
+import {AiFillStar} from "react-icons/ai";
 
 const Accomplishments = () => {
-  async function getUserRepos(username) {
-    const repos = await fetch(`https://api.github.com/users/${username}/repos`);
-    return repos;
-  }
 
   const github = Links[0].link;
   const hackerrank = Links[1].link;
@@ -35,14 +31,26 @@ const Accomplishments = () => {
         <Boxes>
           <a href={github}>
             <Box key={0}>
-              <BoxNum>18</BoxNum>
+              <BoxNum>19</BoxNum>
               <BoxText>Projects</BoxText>
             </Box>
           </a>
           <a href={github}>
-            <Box key={0}>
-              <BoxNum>18 <AiFillStar size="2rem"/></BoxNum>
+            <Box key={1}>
+              <BoxNum>3 <AiFillStar size="2rem"/></BoxNum>
               <BoxText>Stars</BoxText>
+            </Box>
+          </a>
+          <a href={github}>
+            <Box key={2}>
+              <BoxNum>281</BoxNum>
+              <BoxText>Commits</BoxText>
+            </Box>
+          </a>
+          <a href={github}>
+            <Box key={3}>
+              <BoxNum>5</BoxNum>
+              <BoxText>Pull Requests</BoxText>
             </Box>
           </a>
         </Boxes>

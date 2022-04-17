@@ -22,9 +22,9 @@ import {
   SocialIconsContainer
 } from './FooterStyles';
 import {Links} from "../../constants/constants";
-import {FaGooglePlay, FaHackerrank, FaItchIo} from "react-icons/fa";
+import {FaCloudflare, FaGooglePlay, FaHackerrank, FaItchIo, FaRaspberryPi} from "react-icons/fa";
 import {DiReact} from "react-icons/di";
-import {SiLeetcode} from "react-icons/all";
+import {SiLeetcode, SiNgrok} from "react-icons/si";
 
 const Footer = () => {
   return (
@@ -43,12 +43,9 @@ const Footer = () => {
           <CompanyContainer>
             <Slogan>
               © {new Date().getFullYear() === 2022 ? "2022" : "2022 - " + new Date().getFullYear()} | ThadDev. Some
-              Rights Reserved.
-            </Slogan>
-          </CompanyContainer>
-          <CompanyContainer>
-            <Slogan>
-              Made with <AiFillHeart size="2rem"/> using <DiReact size="2rem"/>.
+              Rights Reserved. <br/> Made with <AiFillHeart size="2rem" color="red"/> using <DiReact size="2rem" color="teal"/>. <br/>
+              Hosted on <FaRaspberryPi size="2rem" color="red"/> with <FaCloudflare size="2rem" color="orange"/> and&nbsp;
+              <SiNgrok size="2rem" color="blue"/>.
             </Slogan>
           </CompanyContainer>
           <SocialContainer>

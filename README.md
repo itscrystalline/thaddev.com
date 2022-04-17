@@ -1,3 +1,3 @@
-## Personal Portfolio
-
-![Portfolio Website](https://i.ibb.co/WgPMpts/image.png)
+# thaddev.com
+---
+My website and portfolio, Built with [Next.js](https://nextjs.org/) and [React.js](https://reactjs.prg/)

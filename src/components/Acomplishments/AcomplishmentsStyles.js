@@ -33,7 +33,7 @@ export const ImageBoxes = styled.div`
   @media ${props => props.theme.breakpoints.md}{
     gap: 16px;
     margin: 20px 0 32px;
-    grid-template-columns: repeat(auto-fit, minmax(1px, 1fr));
+    grid-template-columns: repeat(1, 1fr);
   }
 
   @media ${props => props.theme.breakpoints.sm}{
@@ -171,20 +171,20 @@ export const BoxText = styled.p`
 
 export const ImageBoxText = styled.p`
   font-style: normal;
-  font-weight: 600;
-  font-size: 26px;
+  font-weight: 500;
+  font-size: 24px;
   line-height: 24px;
   letter-spacing: 0.02em;
   color: rgba(255, 255, 255, 1);
   margin-top: 10px;
 
   @media ${props => props.theme.breakpoints.md}{
-    font-size: 24px;
+    font-size: 22px;
     line-height: 22px;
   };
 
   @media ${props => props.theme.breakpoints.sm} {
-    font-size: 22px;
+    font-size: 20px;
     line-height: 18px;
   }
 `

@@ -7,6 +7,8 @@ import AboutMe from '../components/AboutMe/AboutMe';
 import {Layout} from '../layout/Layout';
 import {Section} from '../styles/GlobalComponents';
 import {Head} from "next/document";
+import BlogSection from "../components/Blog/BlogSection";
+import Gallery from "../components/Gallery/Gallery";
 
 const Home = () => {
   return (
@@ -19,6 +21,8 @@ const Home = () => {
         <Projects/>
         <AboutMe/>
         <Accomplishments/>
+        <Gallery/>
+        <BlogSection/>
       </Layout>
   );
 }
