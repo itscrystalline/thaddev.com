@@ -14,10 +14,14 @@ const Hero = (props) => (
         <SectionText>
           A self-taught, full-stack developer. Has been learning to code since 9 years old.
         </SectionText>
-        <Button onClick={() => window.location = "#aboutme"}>About Me</Button>
+        <Button onClick={() => {
+          const loc = window.location.toString().split('#')[0];
+          window.location = loc + '#aboutme';
+          return false;
+        }}>About Me</Button>
       </LeftSection>
     </Section>
-);
+)
 
 function getYearsOld(current) {
   var elapsed = current - 1212549780000;

@@ -119,6 +119,7 @@ export const NavProductsIcon = styled(IoIosArrowDropdown)`
   opacity: ${({isOpen}) => (isOpen ? '1' : '.75')};
   transform: ${({isOpen}) => (isOpen ? 'scaleY(-1)' : 'scaleY(1)')};
 
+  About
   &:hover {
     opacity: 1;
   }

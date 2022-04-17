@@ -1,5 +1,6 @@
 import React from "react";
-import {Section, SectionDivider, SectionSubText, SectionText, SectionTitle} from "../../styles/GlobalComponents";
+import Link from 'next/link';
+import {Section, SectionDivider, SectionTitle} from "../../styles/GlobalComponents";
 import {ImageBoxes, ImageBoxText, SmallTitle} from "../Acomplishments/AcomplishmentsStyles";
 import {BoxImage} from "./GalleryStyles";
 import Collapsible from "react-collapsible";
@@ -10,16 +11,19 @@ const Gallery = () => (
       <SectionDivider/>
       <p><br/></p>
       <p><br/></p>
-      <Collapsible trigger={<a href="#"><SectionTitle>Events & Development Gallery</SectionTitle></a>} transitionTime="200"
+      <Collapsible trigger={<Link href="#gallery"><SectionTitle>Events & Development Gallery</SectionTitle></Link>}
+                   transitionTime="200"
                    easing="ease-in-out">
         <SmallTitle>Thailand TopCoder Competition by GetLinks (2020)</SmallTitle>
         <ImageBoxes>
           <BoxImage>
-            <iframe width="448" height="252" src="https://www.youtube.com/embed/Xnjib-OsM5k" title="YouTube video player"
+            <iframe width="448" height="252" src="https://www.youtube.com/embed/Xnjib-OsM5k"
+                    title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen/>
-            <ImageBoxText>Video from the "Lightning talk" because I was the youngest person who has top 100 in the leaderboard.</ImageBoxText>
+            <ImageBoxText>Video from the "Lightning talk" because I was the youngest person who has top 100 in the
+              leaderboard.</ImageBoxText>
           </BoxImage>
         </ImageBoxes>
         <ImageBoxes>

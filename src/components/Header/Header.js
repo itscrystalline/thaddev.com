@@ -1,12 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
-import {
-  AiFillApi,
-  AiFillFacebook,
-  AiFillGithub,
-  AiFillMail
-} from 'react-icons/ai';
-import {Container, Div1, Div2, Div3, NavLink, SocialIcons, HeaderText} from './HeaderStyles';
+import {AiFillApi, AiFillFacebook, AiFillGithub, AiFillMail} from 'react-icons/ai';
+import {Container, Div1, Div2, Div3, HeaderText, NavLink, SocialIcons} from './HeaderStyles';
 import Logo from "../Logo/Logo";
 import {Links} from "../../constants/constants.js";
 
@@ -21,24 +16,16 @@ const Header = () => (
       </Div1>
       <Div2>
         <li>
-          <Link href="#tech">
-            <NavLink>Technologies</NavLink>
-          </Link>
+          <NavLink href="#tech">Technologies</NavLink>
         </li>
         <li>
-          <Link href="#projects">
-            <NavLink>Projects</NavLink>
-          </Link>
+          <NavLink href="#projects">Projects</NavLink>
         </li>
         <li>
-          <Link href="#aboutme">
-            <NavLink>About Me</NavLink>
-          </Link>
+          <NavLink href="#aboutme">About Me</NavLink>
         </li>
         <li>
-          <Link href="#accomplishments">
-            <NavLink>Accomplishments</NavLink>
-          </Link>
+          <NavLink href="#accomplishments">Accomplishments</NavLink>
         </li>
       </Div2>
       <Div3>
@@ -51,7 +38,7 @@ const Header = () => (
         <SocialIcons href={Links[5].link}>
           <AiFillFacebook size="4rem"/>
         </SocialIcons>
-        <SocialIcons href="/api-directory">
+        <SocialIcons href="api-directory">
           <AiFillApi size="4rem"/>
         </SocialIcons>
       </Div3>
