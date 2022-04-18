@@ -1,7 +1,4 @@
 import React, {useEffect, useRef, useState} from 'react';
-import Image from 'next/image'
-
-import aboutMe from '../../../public/images/aboutme.svg';
 
 import {
   CarouselButton,
@@ -51,9 +48,7 @@ const AboutMe = () => {
         <p><br/></p>
         <SectionTitle>About Me</SectionTitle>
         <SectionText>
-          <div style={{float: "right", width: "40%", height: "auto"}}>
-            <Image src={aboutMe} alt="aboutmeimage" priority/>
-          </div>
+          <img src="images/aboutme.svg" alt="aboutmeimage" width="40%" height="auto" style={{float: "right"}}/>
           My Name is <Name>Thad Choyrum</Name>, I am also known
           as <Nickname>Thad</Nickname>, <Nickname>ThadDev</Nickname>,
           &nbsp;<Nickname>MyNameTsThad</Nickname> or <Nickname>IWant2TryHard</Nickname>. I am
@@ -86,11 +81,11 @@ const AboutMe = () => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                           <path
-                              fillRule="evenodd"
-                              clipRule="evenodd"
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
                               d="M2.5 5.5C3.88071 5.5 5 4.38071 5 3V3.5L208 3.50002V2.50002L5 2.5V3C5 1.61929 3.88071 0.5 2.5 0.5C1.11929 0.5 0 1.61929 0 3C0 4.38071 1.11929 5.5 2.5 5.5Z"
                               fill="url(#paint0_linear)"
-                              fillOpacity="0.33"
+                              fill-opacity="0.33"
                           />
                           <defs>
                             <linearGradient
@@ -100,11 +95,11 @@ const AboutMe = () => {
                                 x2="208"
                                 y2="0.500295"
                                 gradientUnits="userSpaceOnUse">
-                              <stop stopColor="white"/>
+                              <stop stop-color="white"/>
                               <stop
                                   offset="0.79478"
-                                  stopColor="white"
-                                  stopOpacity="0"
+                                  stop-color="white"
+                                  stop-opacity="0"
                               />
                             </linearGradient>
                           </defs>

@@ -15,12 +15,6 @@ import {
 } from './AcomplishmentsStyles';
 import {Links} from "../../constants/constants.js";
 import {AiFillStar} from "react-icons/ai";
-import Image from "next/image";
-
-import js_basic from "../../../public/images/js_basic.jpg";
-import js_int from "../../../public/images/js_int.jpg";
-import py_basic from "../../../public/images/py_basic.jpg";
-import cs_basic from "../../../public/images/cs_basic.jpg";
 
 const Accomplishments = () => {
 
@@ -87,33 +81,25 @@ const Accomplishments = () => {
         <ImageBoxes>
           <a href="https://www.hackerrank.com/certificates/671d5ccbdfc6">
             <BoxHackerRankImage key={0}>
-              <div style={{width: "100%", height: "80%"}}>
-                <Image src={js_basic} alt="javascript (basic)"/>
-              </div>
+              <img src="images/js_basic.jpg" alt="javascript (basic)" width="100%" height="80%"/>
               <ImageBoxText>JavaScript (Basic)</ImageBoxText>
             </BoxHackerRankImage>
           </a>
           <a href="https://www.hackerrank.com/certificates/6abda86bcec5">
             <BoxHackerRankImage key={1}>
-              <div style={{width: "100%", height: "80%"}}>
-                <Image src={py_basic} alt="python (basic)"/>
-              </div>
+              <img src="images/py_basic.jpg" alt="python (basic)" width="100%" height="80%"/>
               <ImageBoxText>Python (Basic)</ImageBoxText>
             </BoxHackerRankImage>
           </a>
           <a href="https://www.hackerrank.com/certificates/2353f0513d55">
             <BoxHackerRankImage key={2}>
-              <div style={{width: "100%", height: "80%"}}>
-                <Image src={cs_basic} alt="csharp (basic)"/>
-              </div>
+              <img src="images/cs_basic.jpg" alt="csharp (basic)" width="100%" height="80%"/>
               <ImageBoxText>C# (Basic)</ImageBoxText>
             </BoxHackerRankImage>
           </a>
           <a href="https://www.hackerrank.com/certificates/2353f0513d55">
             <BoxHackerRankImage key={3}>
-              <div style={{width: "100%", height: "80%"}}>
-                <Image src={js_int} alt="javascript (intermediate)"/>
-              </div>
+              <img src="images/js_int.jpg" alt="javascript (intermediate)" width="100%" height="80%"/>
               <ImageBoxText>JavaScript (Intermediate)</ImageBoxText>
             </BoxHackerRankImage>
           </a>
