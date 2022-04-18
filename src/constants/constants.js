@@ -117,14 +117,13 @@ export const TimeLineData = [
   {year: 2016, text: 'Started my programming journey',},
   {year: 2019, text: 'Started making Unity Games',},
   {year: 2020, text: 'Released my first Game "BattleParkour"'},
-  {year: 2020, text: 'Joined and participated in CodinGame'},
-  {year: 2020, text: 'Joined Google KickStart 2020 round C'},
   {year: 2020, text: 'Joined My first competition "Thailand Topcoder" by GetLinks.'},
   {year: 2021, text: 'Created and Released my Second Game "Tree Game"'},
   {year: 2021, text: 'Started doing HackerRank to improve my skills'},
   {year: 2021, text: 'Participated in a itch.io Game Jam called "ProcJam" and released the game "Geometry Mix"'},
   {year: 2021, text: 'Participated in a contest called "TOCPC"'},
-  {year: 2021, text: 'Started doing LeetCode'}
+  {year: 2021, text: 'Started doing LeetCode'},
+  {year: 2022, text: 'Participated in VERSO HACK 2022'}
 ];
 
 export const Links = [

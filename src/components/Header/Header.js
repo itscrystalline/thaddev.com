@@ -5,7 +5,7 @@ import {Container, Div1, Div2, Div3, HeaderText, NavLink, SocialIcons} from './H
 import Logo from "../Logo/Logo";
 import {Links} from "../../constants/constants.js";
 
-const Header = () => (
+const Header = (props) => (
     <Container>
       <Div1>
         <Link href="/">
@@ -14,23 +14,25 @@ const Header = () => (
           </a>
         </Link>
       </Div1>
-      <Div2>
-        <li>
-          <NavLink href="#tech">Technologies</NavLink>
-        </li>
-        <li>
-          <NavLink href="#projects">Projects</NavLink>
-        </li>
-        <li>
-          <NavLink href="#aboutme">About Me</NavLink>
-        </li>
-        <li>
-          <NavLink href="#accomplishments">Accomplishments</NavLink>
-        </li>
-        <li>
-          <NavLink href="#gallery">Gallery</NavLink>
-        </li>
-      </Div2>
+      {props.noTagLinks ? null :
+          <Div2>
+            <li>
+              <NavLink href="#tech">Technologies</NavLink>
+            </li>
+            <li>
+              <NavLink href="#projects">Projects</NavLink>
+            </li>
+            <li>
+              <NavLink href="#aboutme">About Me</NavLink>
+            </li>
+            <li>
+              <NavLink href="#accomplishments">Accomplishments</NavLink>
+            </li>
+            <li>
+              <NavLink href="#gallery">Gallery</NavLink>
+            </li>
+          </Div2>
+      }
       <Div3>
         <SocialIcons href={Links[0].link}>
           <AiFillGithub size="4rem"/>
