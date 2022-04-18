@@ -4,15 +4,18 @@ import {ImageBoxes, ImageBoxText, SmallTitle} from "../Acomplishments/Acomplishm
 import {BoxImage} from "./GalleryStyles";
 import Collapsible from "react-collapsible";
 import {Hr} from "../Projects/ProjectsStyles";
+import {FaChevronDown} from "react-icons/fa";
 
 const Gallery = () => (
     <Section id="gallery">
       <SectionDivider/>
       <p><br/></p>
       <p><br/></p>
-      <Collapsible trigger={<a href="#"><SectionTitle>Events & Development Gallery</SectionTitle></a>}
-                   transitionTime="200"
-                   easing="ease-in-out">
+
+      <Collapsible trigger={<SectionTitle>Events & Development <FaChevronDown size="3rem"/></SectionTitle>}
+                   transitionTime="400"
+                   easing="ease-in-out"
+                   lazyRender="true">
         <SmallTitle>Thailand TopCoder Competition by GetLinks (2020)</SmallTitle>
         <ImageBoxes>
           <BoxImage>
@@ -48,12 +51,14 @@ const Gallery = () => (
         <SmallTitle>VERSO HACK 2022</SmallTitle>
         <ImageBoxes>
           <BoxImage>
+            <img src="images/versocert.jpg" alt="verso5" width="100%" height="auto"/>
+            <ImageBoxText>VERSO HACK 2022 Certificate</ImageBoxText>
+          </BoxImage>
+        </ImageBoxes>
+        <ImageBoxes>
+          <BoxImage>
             <img src="images/verso1.jpg" alt="verso1" width="100%" height="auto"/>
             <ImageBoxText>Me working with teammates.</ImageBoxText>
-          </BoxImage>
-          <BoxImage>
-            <img src="images/verso2.jpg" alt="verso2" width="100%" height="auto"/>
-            <ImageBoxText>Me also working with teammates.</ImageBoxText>
           </BoxImage>
           <BoxImage>
             <img src="images/verso3.jpg" alt="verso3" width="100%" height="auto"/>
@@ -62,14 +67,6 @@ const Gallery = () => (
           <BoxImage>
             <img src="images/verso4.jpg" alt="verso4" width="100%" height="auto"/>
             <ImageBoxText>Me preparing for the final pitch.</ImageBoxText>
-          </BoxImage>
-          <BoxImage>
-            <img src="images/verso5.jpg" alt="verso5" width="100%" height="auto"/>
-            <ImageBoxText>The certificate I got.</ImageBoxText>
-          </BoxImage>
-          <BoxImage>
-            <img src="images/versocert.png" alt="verso5" width="100%" height="auto"/>
-            <ImageBoxText>VERSO HACK 2022 Certificate</ImageBoxText>
           </BoxImage>
         </ImageBoxes>
         <p><br/></p>
@@ -82,14 +79,6 @@ const Gallery = () => (
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen/>
             <ImageBoxText>BattleParkour Trailer</ImageBoxText>
-          </BoxImage>
-          <BoxImage>
-            <img src="images/battleparkour1.png" alt="battleparkour1" width="100%" height="auto"/>
-            <ImageBoxText>BattleParkour</ImageBoxText>
-          </BoxImage>
-          <BoxImage>
-            <img src="images/battleparkour2.png" alt="battleparkour2" width="100%" height="auto"/>
-            <ImageBoxText>BattleParkour</ImageBoxText>
           </BoxImage>
         </ImageBoxes>
         <Hr/>

@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
 import {
   CarouselButton,
@@ -9,7 +9,9 @@ import {
   CarouselItemImg,
   CarouselItemText,
   CarouselItemTitle,
-  CarouselMobileScrollNode, Name, Nickname
+  CarouselMobileScrollNode,
+  Name,
+  Nickname
 } from './AboutMeStyles';
 import {Section, SectionDivider, SectionText, SectionTitle} from '../../styles/GlobalComponents';
 import {TimeLineData} from '../../constants/constants';
@@ -30,15 +32,7 @@ const AboutMe = () => {
       scroll(carouselRef.current, scrollLeft);
     }
   }
-
-  const handleScroll = () => {
-    if (carouselRef.current) {
-      const index = Math.round((carouselRef.current.scrollLeft / (carouselRef.current.scrollWidth * 0.7)) * TimeLineData.length);
-      setActiveItem(index);
-    }
-  }
-
-  // snap back to beginning of scroll when window is resized
+// snap back to beginning of scroll when window is resized
   // avoids a bug where content is covered up if coming from smaller screen
   useEffect(() => {
     const handleResize = () => {

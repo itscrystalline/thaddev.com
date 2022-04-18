@@ -9,7 +9,9 @@ import {
   BoxLeetcode,
   BoxNum,
   BoxText,
-  ImageBoxes, ImageBoxText, SmallTitle
+  ImageBoxes,
+  ImageBoxText,
+  SmallTitle
 } from './AcomplishmentsStyles';
 import {Links} from "../../constants/constants.js";
 import {AiFillStar} from "react-icons/ai";
@@ -79,25 +81,25 @@ const Accomplishments = () => {
         <ImageBoxes>
           <a href="https://www.hackerrank.com/certificates/671d5ccbdfc6">
             <BoxHackerRankImage key={0}>
-              <img src="images/js_basic.png" alt="javascript (basic)" width="100%" height="80%"/>
+              <img src="images/js_basic.jpg" alt="javascript (basic)" width="100%" height="80%"/>
               <ImageBoxText>JavaScript (Basic)</ImageBoxText>
             </BoxHackerRankImage>
           </a>
           <a href="https://www.hackerrank.com/certificates/6abda86bcec5">
             <BoxHackerRankImage key={1}>
-              <img src="images/py_basic.png" alt="python (basic)" width="100%" height="80%"/>
+              <img src="images/py_basic.jpg" alt="python (basic)" width="100%" height="80%"/>
               <ImageBoxText>Python (Basic)</ImageBoxText>
             </BoxHackerRankImage>
           </a>
           <a href="https://www.hackerrank.com/certificates/2353f0513d55">
             <BoxHackerRankImage key={2}>
-              <img src="images/cs_basic.png" alt="csharp (basic)" width="100%" height="80%"/>
+              <img src="images/cs_basic.jpg" alt="csharp (basic)" width="100%" height="80%"/>
               <ImageBoxText>C# (Basic)</ImageBoxText>
             </BoxHackerRankImage>
           </a>
           <a href="https://www.hackerrank.com/certificates/2353f0513d55">
             <BoxHackerRankImage key={3}>
-              <img src="images/js_int.png" alt="javascript (intermediate)" width="100%" height="80%"/>
+              <img src="images/js_int.jpg" alt="javascript (intermediate)" width="100%" height="80%"/>
               <ImageBoxText>JavaScript (Intermediate)</ImageBoxText>
             </BoxHackerRankImage>
           </a>

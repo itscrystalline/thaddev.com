@@ -27,6 +27,9 @@ const Header = () => (
         <li>
           <NavLink href="#accomplishments">Accomplishments</NavLink>
         </li>
+        <li>
+          <NavLink href="#gallery">Gallery</NavLink>
+        </li>
       </Div2>
       <Div3>
         <SocialIcons href={Links[0].link}>

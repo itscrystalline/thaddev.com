@@ -2,9 +2,9 @@ export const projects = [
   {
     title: 'thaddev.com',
     description: "This very website. It's a single page application built with React.js/Next.js and hosted on Raspberry Pi with the help of ngrok and Cloudflare.",
-    tags: ['ngrok', 'Cloudflare', 'Next.js', 'React.js', 'Raspberry Pi'],
+    tags: ['Next.js', 'React.js', 'JavaScript'],
     source: 'https://github.com/MyNameTsThad/thaddev.com',
-    live: '',
+    live: 'https://thaddev.com',
     id: 8
   },
   {
@@ -119,7 +119,7 @@ export const TimeLineData = [
   {year: 2020, text: 'Released my first Game "BattleParkour"'},
   {year: 2020, text: 'Joined and participated in CodinGame'},
   {year: 2020, text: 'Joined Google KickStart 2020 round C'},
-  {year: 2020, text: 'Joined My first hackathon "GetLinks"'},
+  {year: 2020, text: 'Joined My first competition "Thailand Topcoder" by GetLinks.'},
   {year: 2021, text: 'Created and Released my Second Game "Tree Game"'},
   {year: 2021, text: 'Started doing HackerRank to improve my skills'},
   {year: 2021, text: 'Participated in a itch.io Game Jam called "ProcJam" and released the game "Geometry Mix"'},

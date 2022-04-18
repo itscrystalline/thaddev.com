@@ -29,7 +29,7 @@ export const SectionTitle = styled.h2`
   font-size: ${(props) => props.main ? '65px' : '56px'};
   line-height: ${(props) => props.main ? '82px' : '66px'};
   width: auto;
-  max-width: 100%;
+  max-width: 80%;
   background: linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -50,7 +50,7 @@ export const SectionTitle = styled.h2`
     line-height: ${(props) => props.main ? '32px' : '40px'};
     margin-bottom: 8px;
     padding: ${(props) => props.main ? '16px 0 8px' : '0'};
-    max-width: 100%;
+    max-width: 80%;
   }
 `
 
