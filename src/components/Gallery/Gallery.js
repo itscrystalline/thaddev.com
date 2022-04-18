@@ -44,6 +44,7 @@ const Gallery = () => (
                 }}
             >
               <iframe
+                  loading="lazy"
                   style={{
                     position: "absolute",
                     top: 0,
@@ -135,6 +136,7 @@ const Gallery = () => (
                 }}
             >
               <iframe
+                  loading="lazy"
                   style={{
                     position: "absolute",
                     top: 0,
