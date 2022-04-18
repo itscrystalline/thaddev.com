@@ -41,7 +41,7 @@ export const ImageBoxes = styled.div`
     grid-template-columns: repeat(1, 1fr);
     gap: 10px;
     max-width: 500px;
-    margin: 24px auto;
+    margin: 12px auto;
   }
 `
 
