@@ -43,7 +43,7 @@ const Header = (props) => (
         <SocialIcons href={Links[5].link}>
           <AiFillFacebook size="4rem"/>
         </SocialIcons>
-        <SocialIcons href="/api-directory/">
+        <SocialIcons href="api-directory/">
           <AiFillApi size="4rem"/>
         </SocialIcons>
       </Div3>
