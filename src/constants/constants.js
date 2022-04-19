@@ -103,7 +103,7 @@ export const projects = [
     title: 'BattleParkour',
     description: "My first Unity game. Reach the end of the level while facing enemies. Currently live on the Google Play Store.",
     tags: ['Unity', 'C#'],
-    source: '',
+    source: 'https://github.com/MyNameTsThad/BattleParkour_Project',
     live: 'https://play.google.com/store/apps/details?id=com.ThadCoder.BattleParkour',
     id: 9
   },
