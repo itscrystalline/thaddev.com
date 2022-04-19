@@ -32,6 +32,14 @@ export default class MyDocument extends Document {
     return (
         <Html lang='en-GB'>
           <Head>
+            <meta name="viewport" content="initial-scale=1, width=device-width"/>
+            <link
+                rel="preload"
+                href="/fonts/JetBrainsMono-Regular.woff2"
+                as="font"
+                type="font/woff2"
+                crossOrigin="anonymous"
+            />
             <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
                   rel="stylesheet"/>
             <link

@@ -1,3 +1,7 @@
+function createData(name, apiLink, method) {
+  return {name, apiLink, method};
+}
+
 export const projects = [
   {
     title: 'thaddev.com',
@@ -134,4 +138,43 @@ export const Links = [
   {name: 'Google Play', link: 'https://play.google.com/store/apps/developer?id=ThadDev'},
   {name: 'Facebook', link: 'https://www.facebook.com/thad.gaming.37'},
   {name: 'Email', link: 'mailto:real.thad.choyrum@gmail.com'}
+];
+
+export const timerAPIs = [
+  createData('List all Timers', "/timer/getall", "GET"),
+  createData('Get a specified Timer {id: ID of the timer}', "/timer/get?id={id}", "GET"),
+  createData('Add a timer {json: lengthTime: Time in milliseconds the timer will last}', "/timer/new", "POST"),
+  createData('Modify a Timer {id: ID of the timer to change, json: lengthTime: Time in milliseconds the new timer will last}', "/timer/set?id={id}", "PATCH"),
+  createData('Delete a Timer {id: ID of the timer to delete}', "/timer/delete?id={id}", "DELETE"),
+  createData('Delete ALL Timers', "/timer/deleteall", "DELETE"),
+];
+
+export const timerInstanceAPIs = [
+  createData('List all Timer Instances', "/timer/instances/getall", "GET"),
+  createData('Get a specified Timer Instance {id: ID of the timer instance}', "/timer/instances/get?id={id}", "GET"),
+  createData('Get the current CONTROLLING Timer Instance', "/timer/instances/getcontrolling", "GET"),
+  createData('Create a new Timer Instance {timerId: The ID of the parent Timer, isComputerControl: If the Timer Instance is controlling}', "/timer/instances/new?timerId={id}&isComputerControl={true,false}", "POST"),
+  createData('Start a Timer Instance {id: ID of the timer instance to start}', "/timer/instances/start?id={id}", "PATCH"),
+  createData('Pauses a Timer Instance {id: ID of the timer instance to pause}', "/timer/instances/pause?id={id}", "PATCH"),
+  createData('Changes the controlling state of a Timer Instance {id: ID of the timer instance to pause, computerControl: the new controlling state}', "/timer/instances/computercontrol?id={id}&computerControl={true,false}", "PATCH"),
+  createData('Delete a Timer Instance {id: ID of the timer instance to delete}', "/timer/instances/delete?id={id}", "DELETE"),
+  createData('Delete ALL Timers {authPassword: The authentication password}', "/timer/instances/delete/all?authPassword={authPassword}", "DELETE"),
+];
+
+export const computerControl = [
+  createData('Pings the server for the current status', "/computercontrol/ping", "GET"),
+  createData('Get current Command stack', "/computercontrol/getstack", "GET"),
+  createData('Request the server to add a Command to the stack {json: execCommand: The command that is going to be added}', "/computercontrol/add", "POST"),
+  createData('Request the server to validate the Computer Control Password {password: the computer control password}', "/computercontrol/auth?password={password}", "POST"),
+  createData('Clears the Command stack', "/computercontrol/clearstack", "DELETE")
+];
+
+export const otherApis = [
+  createData('Get Cloudflare worker Main URL', "/cf-ngrok/get1", "GET"),
+  createData('Get Cloudflare worker LINE URL', "/cf-ngrok/get2", "GET"),
+  createData('Get Cloudflare worker Site URL', "/cf-ngrok/get3", "GET"),
+  createData('Set Cloudflare worker Main URL', "[REDACTED]", "POST"),
+  createData('Set Cloudflare worker LINE URL', "[REDACTED]", "POST"),
+  createData('Set Cloudflare worker Site URL', "[REDACTED]", "POST"),
+  createData('LINE Bot Callback', "https://linebot.{domain}/callback", "POST"),
 ];

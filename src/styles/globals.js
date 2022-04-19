@@ -57,6 +57,10 @@ const GlobalStyles = createGlobalStyle`
     list-style: none;
   }
 
+  code {
+    font-family: "JetBrains Mono", monospace;
+  }
+
 `;
 
 export default GlobalStyles;
