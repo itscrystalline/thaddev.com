@@ -17,6 +17,7 @@ import {
 import {styled} from '@mui/material/styles';
 import {HttpVerb} from "../components/HttpVerb/HttpVerb";
 import {computerControl, otherApis, timerAPIs, timerInstanceAPIs} from "../constants/constants";
+import {NextSeo} from "next-seo";
 
 const StyledTableCell = styled(TableCell)(({theme}) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -63,6 +64,8 @@ const darkTheme = createTheme({
 
 const APIDirectory = () => {
   return (
+    <>
+      <NextSeo title="ThadDev's Site - API Directory"/>
       <AltLayout noTagLinks>
         <Section>
           <SectionTitle>API Directory</SectionTitle>
@@ -80,9 +83,9 @@ const APIDirectory = () => {
                         <b>Main Endpoint URL</b>
                       </StyledTableCell>
                       <StyledTableCell align="right"><Link
-                          href="https://thaddev.com/api-v1">https://thaddev.com/api-v1</Link></StyledTableCell>
+                        href="https://thaddev.com/api-v1">https://thaddev.com/api-v1</Link></StyledTableCell>
                       <StyledTableCell align="right"><Link
-                          href="https://thaddev.xyz/api-v1">https://thaddev.xyz/api-v1</Link></StyledTableCell>
+                        href="https://thaddev.xyz/api-v1">https://thaddev.xyz/api-v1</Link></StyledTableCell>
                     </StyledTableRow>
                   </TableBody>
                 </Table>
@@ -95,12 +98,12 @@ const APIDirectory = () => {
                 <Table sx={{minWidth: 700}} aria-label="customized table">
                   <TableBody>
                     {timerAPIs.map((row) => (
-                        <StyledTableRow key={row.name}>
-                          <StyledTableCell component="th" scope="row">
-                            {getVerbColor(row.method)}&nbsp;&nbsp;<b>{row.name}</b>
-                          </StyledTableCell>
-                          <StyledTableCell align="right"><Link>{row.apiLink}</Link></StyledTableCell>
-                        </StyledTableRow>
+                      <StyledTableRow key={row.name}>
+                        <StyledTableCell component="th" scope="row">
+                          {getVerbColor(row.method)}&nbsp;&nbsp;<b>{row.name}</b>
+                        </StyledTableCell>
+                        <StyledTableCell align="right"><Link>{row.apiLink}</Link></StyledTableCell>
+                      </StyledTableRow>
                     ))}
                   </TableBody>
                 </Table>
@@ -113,12 +116,12 @@ const APIDirectory = () => {
                 <Table sx={{minWidth: 700}} aria-label="customized table">
                   <TableBody>
                     {timerInstanceAPIs.map((row) => (
-                        <StyledTableRow key={row.name}>
-                          <StyledTableCell component="th" scope="row">
-                            {getVerbColor(row.method)}&nbsp;&nbsp;<b>{row.name}</b>
-                          </StyledTableCell>
-                          <StyledTableCell align="right"><Link>{row.apiLink}</Link></StyledTableCell>
-                        </StyledTableRow>
+                      <StyledTableRow key={row.name}>
+                        <StyledTableCell component="th" scope="row">
+                          {getVerbColor(row.method)}&nbsp;&nbsp;<b>{row.name}</b>
+                        </StyledTableCell>
+                        <StyledTableCell align="right"><Link>{row.apiLink}</Link></StyledTableCell>
+                      </StyledTableRow>
                     ))}
                   </TableBody>
                 </Table>
@@ -131,12 +134,12 @@ const APIDirectory = () => {
                 <Table sx={{minWidth: 700}} aria-label="customized table">
                   <TableBody>
                     {computerControl.map((row) => (
-                        <StyledTableRow key={row.name}>
-                          <StyledTableCell component="th" scope="row">
-                            {getVerbColor(row.method)}&nbsp;&nbsp;<b>{row.name}</b>
-                          </StyledTableCell>
-                          <StyledTableCell align="right"><Link>{row.apiLink}</Link></StyledTableCell>
-                        </StyledTableRow>
+                      <StyledTableRow key={row.name}>
+                        <StyledTableCell component="th" scope="row">
+                          {getVerbColor(row.method)}&nbsp;&nbsp;<b>{row.name}</b>
+                        </StyledTableCell>
+                        <StyledTableCell align="right"><Link>{row.apiLink}</Link></StyledTableCell>
+                      </StyledTableRow>
                     ))}
                   </TableBody>
                 </Table>
@@ -149,12 +152,12 @@ const APIDirectory = () => {
                 <Table sx={{minWidth: 700}} aria-label="customized table">
                   <TableBody>
                     {otherApis.map((row) => (
-                        <StyledTableRow key={row.name}>
-                          <StyledTableCell component="th" scope="row">
-                            {getVerbColor(row.method)}&nbsp;&nbsp;<b>{row.name}</b>
-                          </StyledTableCell>
-                          <StyledTableCell align="right"><Link>{row.apiLink}</Link></StyledTableCell>
-                        </StyledTableRow>
+                      <StyledTableRow key={row.name}>
+                        <StyledTableCell component="th" scope="row">
+                          {getVerbColor(row.method)}&nbsp;&nbsp;<b>{row.name}</b>
+                        </StyledTableCell>
+                        <StyledTableCell align="right"><Link>{row.apiLink}</Link></StyledTableCell>
+                      </StyledTableRow>
                     ))}
                   </TableBody>
                 </Table>
@@ -163,6 +166,7 @@ const APIDirectory = () => {
           </SectionText>
         </Section>
       </AltLayout>
+    </>
   );
 }
 

@@ -10,7 +10,7 @@ const BlogSection = () => (
       <p><br/></p>
       <SectionTitle>Blog</SectionTitle>
       <SectionText>The blog is currently under construction! Please come back later.</SectionText>
-      <Button onClick={() => window.location = "/blog"} disabled="true">Blog <BiChevronRight/></Button>
+          <Button onClick={() => window.location = "/blog"}>Blog <BiChevronRight/></Button>
     </Section>
 );
 

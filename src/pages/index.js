@@ -8,9 +8,12 @@ import {Layout} from '../layout/Layout';
 import {Section} from '../styles/GlobalComponents';
 import BlogSection from "../components/Blog/BlogSection";
 import Gallery from "../components/Gallery/Gallery";
+import {NextSeo} from "next-seo";
 
 const Home = () => {
   return (
+    <>
+      <NextSeo title="ThadDev's Site"/>
       <Layout>
         <Section grid>
           <Hero/>
@@ -23,6 +26,7 @@ const Home = () => {
         <Gallery/>
         <BlogSection/>
       </Layout>
+    </>
   );
 }
 

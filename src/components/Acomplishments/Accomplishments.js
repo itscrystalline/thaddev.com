@@ -39,13 +39,13 @@ const Accomplishments = () => {
           </a>
           <a href={github}>
             <Box key={1}>
-              <BoxNum>3 <AiFillStar size="2rem"/></BoxNum>
+              <BoxNum>5 <AiFillStar size="2rem"/></BoxNum>
               <BoxText>Stars</BoxText>
             </Box>
           </a>
           <a href={github}>
             <Box key={2}>
-              <BoxNum>281</BoxNum>
+              <BoxNum>279</BoxNum>
               <BoxText>Commits</BoxText>
             </Box>
           </a>
@@ -66,7 +66,7 @@ const Accomplishments = () => {
           </a>
           <a href={hackerrank}>
             <BoxHackerRank key={1}>
-              <BoxNum>4</BoxNum>
+              <BoxNum>5</BoxNum>
               <BoxText>Verified Skills</BoxText>
             </BoxHackerRank>
           </a>
@@ -103,12 +103,18 @@ const Accomplishments = () => {
               <ImageBoxText>JavaScript (Intermediate)</ImageBoxText>
             </BoxHackerRankImage>
           </a>
+          <a href="https://www.hackerrank.com/certificates/f161d7813611">
+            <BoxHackerRankImage key={4}>
+              <img src="images/java_basic.jpg" alt="java (basic)" width="100%" height="80%"/>
+              <ImageBoxText>Java (Basic)</ImageBoxText>
+            </BoxHackerRankImage>
+          </a>
         </ImageBoxes>
         <Title><a href={leetCode}>LeetCode</a></Title>
         <Boxes>
           <a href={leetCode}>
             <BoxLeetcode key={0}>
-              <BoxNum>543,549<sup>th</sup></BoxNum>
+              <BoxNum>469,365<sup>th</sup></BoxNum>
               <BoxText>Rank</BoxText>
             </BoxLeetcode>
           </a>
@@ -132,7 +138,7 @@ const Accomplishments = () => {
           </a>
           <a href={leetCode}>
             <BoxLeetcode key={4}>
-              <BoxNum>74</BoxNum>
+              <BoxNum>96</BoxNum>
               <BoxText>Problems Solved</BoxText>
             </BoxLeetcode>
           </a>
