@@ -12,7 +12,7 @@ const BlogSection = () => (
       <SectionText>The blog is currently under construction! Please come back later.</SectionText>
       <Button onClick={() => {
         const loc = window.location.toString().split('#')[0];
-        window.location = loc + '/blog/';
+        window.location = loc + 'blog/';
         return false;
       }}>Blog <BiChevronRight/></Button>
     </Section>
