@@ -45,7 +45,7 @@ const Accomplishments = () => {
           </a>
           <a href={github}>
             <Box key={2}>
-              <BoxNum>279</BoxNum>
+              <BoxNum>282</BoxNum>
               <BoxText>Commits</BoxText>
             </Box>
           </a>
