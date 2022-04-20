@@ -10,7 +10,11 @@ const BlogSection = () => (
       <p><br/></p>
       <SectionTitle>Blog</SectionTitle>
       <SectionText>The blog is currently under construction! Please come back later.</SectionText>
-          <Button onClick={() => window.location = "/blog"}>Blog <BiChevronRight/></Button>
+      <Button onClick={() => {
+        const loc = window.location.toString().split('#')[0];
+        window.location = loc + '/blog/';
+        return false;
+      }}>Blog <BiChevronRight/></Button>
     </Section>
 );
 
