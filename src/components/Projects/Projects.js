@@ -1,12 +1,12 @@
 import React from 'react';
 
 import {
-  BlogCard,
   CardInfo,
   ExternalLinks,
   GridContainer,
   HeaderThree,
   Hr,
+  ProjectCard,
   Tag,
   TagList,
   TitleContent,
@@ -52,28 +52,28 @@ const Projects = () => {
 const Grid = () => (
     <GridContainer>
       {projects.map(({title, description, tags, source, live, id}) => (
-          <BlogCard key={id}>
-            <p><br/></p>
-            <TitleContent>
-              <HeaderThree title>
-                {title}
-                <Hr/>
-              </HeaderThree>
-            </TitleContent>
-            <CardInfo>{description} <p><br/></p></CardInfo>
-            <div>
-              <TitleContent>Stack</TitleContent>
-              <TagList>
-                {tags.map((tag, i) => (
-                    <Tag key={i}>{tag}</Tag>
-                ))}
-              </TagList>
-            </div>
-            <UtilityList>
-              {source === "" ? null : <ExternalLinks href={source}>Code</ExternalLinks>}
-              {live === "" ? null : <ExternalLinks href={live}>Visit</ExternalLinks>}
-            </UtilityList>
-          </BlogCard>
+        <ProjectCard key={id}>
+          <p><br/></p>
+          <TitleContent>
+            <HeaderThree title>
+              {title}
+              <Hr/>
+            </HeaderThree>
+          </TitleContent>
+          <CardInfo>{description} <p><br/></p></CardInfo>
+          <div>
+            <TitleContent>Stack</TitleContent>
+            <TagList>
+              {tags.map((tag, i) => (
+                <Tag key={i}>{tag}</Tag>
+              ))}
+            </TagList>
+          </div>
+          <UtilityList>
+            {source === "" ? null : <ExternalLinks href={source}>Code</ExternalLinks>}
+            {live === "" ? null : <ExternalLinks href={live}>Visit</ExternalLinks>}
+          </UtilityList>
+        </ProjectCard>
       ))}
     </GridContainer>
 );

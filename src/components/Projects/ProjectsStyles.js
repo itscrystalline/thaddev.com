@@ -22,7 +22,7 @@ export const GridContainer = styled.section`
   }
 
 `
-export const BlogCard = styled.div`
+export const ProjectCard = styled.div`
   transition: 0.2s ease;
   border-radius: 20px;
   box-shadow: 3px 3px 20px #0f0f0f;

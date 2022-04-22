@@ -16,47 +16,60 @@ import {
 import {Links} from "../../constants/constants.js";
 import {AiFillStar} from "react-icons/ai";
 
-const Accomplishments = () => {
-
+const Accomplishments = ({data}) => {
   const github = Links[0].link;
   const hackerrank = Links[1].link;
   const leetCode = Links[2].link;
   const itch = Links[3].link;
   const googlePlay = Links[4].link;
+  const {userFollowers, userRepos, userStars, totalCommits, totalPRs, totalContribs} = analyze(data);
+
   return (
-      <Section id="accomplishments">
-        <SectionDivider/>
-        <p><br/></p>
-        <p><br/></p>
-        <SectionTitle>Statistics & Accomplishments</SectionTitle>
-        <Title><a href={github}>Github</a></Title>
-        <Boxes>
-          <a href={github}>
-            <Box key={0}>
-              <BoxNum>19</BoxNum>
-              <BoxText>Projects</BoxText>
-            </Box>
+    <Section id="accomplishments">
+      <SectionDivider/>
+      <p><br/></p>
+      <p><br/></p>
+      <SectionTitle>Statistics & Accomplishments</SectionTitle>
+      <Title><a href={github}>Github</a></Title>
+      <Boxes>
+        <a href={github}>
+          <Box key={0}>
+            <BoxNum>{userFollowers}</BoxNum>
+            <BoxText>Follower{userFollowers > 1 ? "s" : ""}</BoxText>
+          </Box>
           </a>
           <a href={github}>
             <Box key={1}>
-              <BoxNum>5 <AiFillStar size="2rem"/></BoxNum>
-              <BoxText>Stars</BoxText>
+              <BoxNum>{userRepos}</BoxNum>
+              <BoxText>Projects</BoxText>
             </Box>
           </a>
-          <a href={github}>
-            <Box key={2}>
-              <BoxNum>282</BoxNum>
-              <BoxText>Commits</BoxText>
-            </Box>
-          </a>
-          <a href={github}>
-            <Box key={3}>
-              <BoxNum>5</BoxNum>
-              <BoxText>Pull Requests</BoxText>
-            </Box>
-          </a>
-        </Boxes>
-        <Title><a href={hackerrank}>HackerRank</a></Title>
+        <a href={github}>
+          <Box key={2}>
+            <BoxNum>{userStars} <AiFillStar size="2rem"/></BoxNum>
+            <BoxText>Stars</BoxText>
+          </Box>
+        </a>
+        <a href={github}>
+          <Box key={3}>
+            <BoxNum>{totalCommits}</BoxNum>
+            <BoxText>Commits</BoxText>
+          </Box>
+        </a>
+        <a href={github}>
+          <Box key={4}>
+            <BoxNum>{totalPRs}</BoxNum>
+            <BoxText>Pull Requests</BoxText>
+          </Box>
+        </a>
+        <a href={github}>
+          <Box key={5}>
+            <BoxNum>{totalContribs}</BoxNum>
+            <BoxText>Repositories contributed to</BoxText>
+          </Box>
+        </a>
+      </Boxes>
+      <Title><a href={hackerrank}>HackerRank</a></Title>
         <Boxes>
           <a href={hackerrank}>
             <BoxHackerRank key={0}>
@@ -143,8 +156,28 @@ const Accomplishments = () => {
             </BoxLeetcode>
           </a>
         </Boxes>
-      </Section>
+    </Section>
   );
 };
+
+function analyze(data) {
+  const userFollowers = data.user.followers.totalCount;
+  const userRepos = data.user.repositories.totalCount;
+  let userStars = 0;
+  for (let i = 0; i < data.user.repositories.nodes.length; i++) {
+    userStars += data.user.repositories.nodes[i].stargazerCount;
+  }
+  const totalCommits = data.user.contributionsCollection.totalCommitContributions;
+  const totalPRs = data.user.contributionsCollection.totalPullRequestContributions;
+  const totalContribs = data.user.contributionsCollection.totalRepositoriesWithContributedCommits;
+  return {
+    userFollowers,
+    userRepos,
+    userStars,
+    totalCommits,
+    totalPRs,
+    totalContribs,
+  };
+}
 
 export default Accomplishments;
