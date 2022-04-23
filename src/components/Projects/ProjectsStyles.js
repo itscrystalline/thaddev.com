@@ -43,6 +43,8 @@ export const TitleContent = styled.div`
   z-index: 20;
   width: 100%;
   font-weight: bold;
+  align-items: center;
+  margin: auto;
 `;
 
 
@@ -61,6 +63,15 @@ export const Hr = styled.hr`
   background: #ffaa00;
 `;
 
+export const Vr = styled.hr`
+  width: 3px;
+  height: 100px;
+  margin: 20px auto;
+  border: 0;
+  background: #ffaa00;
+  display: flex;
+`;
+
 export const Intro = styled.div`
   width: 170px;
   margin: 0 auto;
@@ -76,7 +87,6 @@ export const CardInfo = styled.p`
   width: 100%;
   padding: 0 50px;
   color: #e4e6e7;
-  font-style: 2rem;
   line-height: 24px;
   text-align: center;
   @media ${(props) => props.theme.breakpoints.sm} {

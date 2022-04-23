@@ -2,6 +2,7 @@ import {NextSeo} from "next-seo";
 import {AltLayout} from "../layout/AltLayout";
 import {Section, SectionDivider, SectionText, SectionTitle} from "../styles/GlobalComponents";
 import axios from "axios";
+import FrontPagePosts from "../components/Blog/BlogPage/FrontPagePosts";
 
 const Blog = (props) => {
   return (
