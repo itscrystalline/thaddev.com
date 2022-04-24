@@ -25,6 +25,7 @@ export const MainCard = styled.div`
   box-shadow: 3px 3px 20px #0f0f0f;
   text-align: center;
   width: 1000px;
+  height: auto;
   padding: 20px;
   align-items: self-start;
   display: flex;

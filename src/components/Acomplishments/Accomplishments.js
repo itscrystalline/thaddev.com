@@ -145,7 +145,7 @@ const Accomplishments = ({data}) => {
           </a>
           <a href={leetCode}>
             <BoxLeetcode key={3}>
-              <BoxNum>2</BoxNum>
+              <BoxNum>3</BoxNum>
               <BoxText>Contests Attended</BoxText>
             </BoxLeetcode>
           </a>
