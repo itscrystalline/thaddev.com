@@ -6,11 +6,10 @@ import {Container} from './LayoutStyles'
 
 export const AltLayout = ({children}) => {
   return (
-      <Container>
-        <Header noTagLinks/>
-        {children}
-        <Footer/>
-      </Container>
+    <Container>
+      <Header noTagLinks/>
+      {children}
+      <Footer/>
+    </Container>
   )
-
 }

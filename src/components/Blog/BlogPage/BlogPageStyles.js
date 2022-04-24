@@ -7,6 +7,7 @@ export const BlogCard = styled.div`
   text-align: center;
   width: 475px;
   padding-bottom: 20px;
+  cursor: pointer;
 
   &:hover {
     box-shadow: 4px 4px 20px #0f0f0f;
@@ -30,6 +31,7 @@ export const MainCard = styled.div`
   align-items: self-start;
   display: flex;
   justify-content: space-around;
+  cursor: pointer;
 
   &:hover {
     box-shadow: 4px 4px 20px #0f0f0f;

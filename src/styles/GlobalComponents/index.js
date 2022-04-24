@@ -85,7 +85,7 @@ export const Title = styled.h3`
 `
 
 export const SectionText = styled.p`
-  max-width: 1000px;
+  max-width: 1140px;
   font-size: 24px;
   line-height: 40px;
   font-weight: 300;

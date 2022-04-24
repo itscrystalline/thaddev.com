@@ -45,6 +45,7 @@ export const TitleContent = styled.div`
   font-weight: bold;
   align-items: center;
   margin: auto;
+  padding: 2rem;
 `;
 
 
@@ -66,8 +67,8 @@ export const Hr = styled.hr`
 export const Vr = styled.hr`
   width: 3px;
   height: 100px;
-  margin: 20px auto;
-  border: 0;
+  margin: auto;
+  border: 10px #1f1f1f;
   background: #ffaa00;
   display: flex;
 `;
