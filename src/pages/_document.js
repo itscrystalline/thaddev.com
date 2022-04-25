@@ -33,12 +33,17 @@ export default class MyDocument extends Document {
         <Html lang='en-GB'>
           <Head>
             <meta name="viewport" content="initial-scale=1, width=device-width"/>
+            <meta content="ThadDev's site" property="og:title"/>
+            <meta content="Welcome to My site!" property="og:description"/>
+            <meta content="https://thaddev.com" property="og:url"/>
+            <meta content="https://thaddev.com/images/logo.svg" property="og:image"/>
+            <meta content="#FFAA00" data-react-helmet="true" name="theme-color"/>
             <link
-                rel="preload"
-                href="/fonts/JetBrainsMono-Regular.woff2"
-                as="font"
-                type="font/woff2"
-                crossOrigin="anonymous"
+              rel="preload"
+              href="/fonts/JetBrainsMono-Regular.woff2"
+              as="font"
+              type="font/woff2"
+              crossOrigin="anonymous"
             />
             <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
                   rel="stylesheet"/>

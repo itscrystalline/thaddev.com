@@ -38,21 +38,23 @@ const FrontPagePosts = ({posts}) => {
           {posts.map(({id, attributes}) => {
             if (id !== firstPost) {
               return (
-                <BlogCard>
-                  <TitleContent>
-                    {attributes.image.data != null ?
-                      <><Image src={"http://localhost:1337" + attributes.image.data.attributes.url}
-                               alt={attributes.image.data.attributes.alternativeText}
-                               width={attributes.image.data.attributes.width * 0.75}
-                               height={attributes.image.data.attributes.height * 0.75}/><p><br/></p></>
-                      : null}
-                    <HeaderThree title>
-                      {attributes.title}
-                      <Hr/>
-                    </HeaderThree>
-                  </TitleContent>
-                  <CardInfo>{attributes.description}</CardInfo>
-                </BlogCard>
+                <Link href={`/blog/posts/${id}`}>
+                  <BlogCard>
+                    <TitleContent>
+                      {attributes.image.data != null ?
+                        <><Image src={"http://localhost:1337" + attributes.image.data.attributes.url}
+                                 alt={attributes.image.data.attributes.alternativeText}
+                                 width={attributes.image.data.attributes.width * 0.75}
+                                 height={attributes.image.data.attributes.height * 0.75}/><p><br/></p></>
+                        : null}
+                      <HeaderThree title>
+                        {attributes.title}
+                        <Hr/>
+                      </HeaderThree>
+                    </TitleContent>
+                    <CardInfo>{attributes.description}</CardInfo>
+                  </BlogCard>
+                </Link>
               );
             }
           })}
