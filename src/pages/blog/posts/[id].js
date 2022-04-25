@@ -4,7 +4,7 @@ import {AltLayout} from "../../../layout/AltLayout";
 import {Section, SectionSubText, SectionText, SectionTitle} from "../../../styles/GlobalComponents";
 import axios from "axios";
 import Image from "next/image";
-import {AiFillCalendar} from "react-icons/all";
+import {AiFillCalendar} from "react-icons/ai";
 
 const PostPage = (props) => {
   const published = new Date(props.post.data.attributes.publishedAt).toLocaleString();
