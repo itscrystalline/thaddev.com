@@ -11,7 +11,7 @@ const Index = (props) => {
       <AltLayout>
         <Section>
           <SectionTitle>Blog</SectionTitle>
-          <SectionText>Welcome to My Blog! Here is where I share some of my programming journeys. (WIP) </SectionText>
+          <SectionText>Welcome to My Blog! Here is where I share some of my programming journeys.</SectionText>
           <SectionDivider/>
           <p><br/></p>
           <p><br/></p>
