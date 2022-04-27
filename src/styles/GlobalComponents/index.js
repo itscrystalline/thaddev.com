@@ -27,7 +27,7 @@ export const Section = styled.section`
 export const SectionTitle = styled.h2`
   font-weight: 800;
   font-size: ${(props) => props.main ? '65px' : '56px'};
-  line-height: ${(props) => props.main ? '82px' : '66px'};
+  line-height: ${(props) => props.main ? '82px' : '76px'};
   width: auto;
   max-width: 90%;
   background: linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
@@ -38,7 +38,7 @@ export const SectionTitle = styled.h2`
 
   @media ${props => props.theme.breakpoints.md} {
     font-size: ${(props) => props.main ? '56px' : '48px'};
-    line-height: ${(props) => props.main ? '36px' : '28px'};
+    line-height: ${(props) => props.main ? '46px' : '38px'};
     margin-bottom: 12px;
     padding: ${(props) => props.main ? '40px 0 12px' : '0'};
   }
@@ -47,7 +47,7 @@ export const SectionTitle = styled.h2`
     font-size: 32px;
     line-height: 40px;
     font-size: ${(props) => props.main ? '28px' : '32px'};
-    line-height: ${(props) => props.main ? '32px' : '40px'};
+    line-height: ${(props) => props.main ? '42px' : '50px'};
     margin-bottom: 8px;
     padding: ${(props) => props.main ? '16px 0 8px' : '0'};
     max-width: 90%;
@@ -91,6 +91,7 @@ export const SectionText = styled.p`
   font-weight: 300;
   padding-bottom: 3.6rem;
   color: rgba(255, 255, 255, 0.5);
+
 
   @media ${(props) => props.theme.breakpoints.md} {
     max-width: 670px;

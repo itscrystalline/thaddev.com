@@ -1,7 +1,7 @@
 import React from 'react';
 import {AiFillGithub, AiFillHeart} from 'react-icons/ai';
 
-import {SocialIcons} from '../Header/HeaderStyles';
+import {NavLink, SocialIcons} from '../Header/HeaderStyles';
 import {
   CompanyContainer,
   FooterWrapper,
@@ -16,7 +16,7 @@ import {
 import {Links} from "../../constants/constants";
 import {FaCloudflare, FaGooglePlay, FaHackerrank, FaItchIo, FaRaspberryPi} from "react-icons/fa";
 import {DiReact} from "react-icons/di";
-import {SiLeetcode, SiNgrok} from "react-icons/si";
+import {SiLeetcode, SiNextdotjs, SiNgrok} from "react-icons/si";
 
 const Footer = () => {
   return (
@@ -38,12 +38,15 @@ const Footer = () => {
         <SocialIconsContainer>
           <CompanyContainer>
             <Slogan>
-              © {new Date().getFullYear() === 2022 ? "2022" : "2022 - " + new Date().getFullYear()} | ThadDev. Some
-              Rights Reserved. <br/> Made with <AiFillHeart size="2rem" color="red"/> using <DiReact size="2rem"
-                                                                                                     color="teal"/>. <br/>
+              © {new Date().getFullYear() === 2022 ? "2022" : "2022 - " + new Date().getFullYear()} | ThadDev. <NavLink
+              href="https://github.com/MyNameTsThad/thaddev.com/blob/master/README.md">Some Rights Reserved.</NavLink>
+              <br/>
+              Made with <AiFillHeart size="2rem" color="red"/> using <DiReact size="2rem" color="teal"/> <SiNextdotjs
+              size="2rem" color="teal"/>.
+              <br/>
               Hosted on <FaRaspberryPi size="2rem" color="red"/> with <FaCloudflare size="2rem"
-                                                                                    color="orange"/> and&nbsp;
-              <SiNgrok size="2rem" color="blue"/>.
+                                                                                    color="orange"/> and&nbsp;<SiNgrok
+              size="2rem" color="blue"/>.
             </Slogan>
           </CompanyContainer>
           <SocialContainer>

@@ -44,14 +44,14 @@ const darkTheme = createTheme({
     mode: 'dark',
   },
   typography: {
-    fontFamily: 'Montserrat',
+    fontFamily: 'Plus Jakarta Sans',
     fontSize: "15rem",
   },
   components: {
     MuiCssBaseline: {
       styleOverrides: `
         @font-face {
-          font-family: 'Montserrat';
+          font-family: 'Plus Jakarta Sans';
           font-style: normal;
           font-display: swap;
           font-weight: 600;

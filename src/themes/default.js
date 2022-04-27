@@ -1,8 +1,8 @@
 export default {
   // Temp fonts
   fonts: {
-    title: "Montserrat, sans-serif",
-    main: "Montserrat, sans-serif"
+    title: "Plus Jakarta Sans, sans-serif",
+    main: "Plus Jakarta Sans, sans-serif"
   },
   // Colors for layout
   colors: {

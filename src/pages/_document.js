@@ -8,19 +8,19 @@ export default class MyDocument extends Document {
 
     try {
       ctx.renderPage = () =>
-          originalRenderPage({
-            enhanceApp: (App) => (props) =>
-                sheet.collectStyles(<App {...props} />),
-          })
+        originalRenderPage({
+          enhanceApp: (App) => (props) =>
+            sheet.collectStyles(<App {...props} />),
+        })
 
       const initialProps = await Document.getInitialProps(ctx)
       return {
         ...initialProps,
         styles: (
-            <>
-              {initialProps.styles}
-              {sheet.getStyleElement()}
-            </>
+          <>
+            {initialProps.styles}
+            {sheet.getStyleElement()}
+          </>
         ),
       }
     } finally {
@@ -30,32 +30,32 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-        <Html lang='en-GB'>
-          <Head>
-            <meta name="viewport" content="initial-scale=1, width=device-width"/>
-            <meta content="ThadDev's site" property="og:title"/>
-            <meta content="Welcome to My site!" property="og:description"/>
-            <meta content="https://thaddev.com" property="og:url"/>
-            <meta content="https://thaddev.com/images/logo.svg" property="og:image"/>
-            <meta content="#FFAA00" data-react-helmet="true" name="theme-color"/>
-            <link
-              rel="preload"
-              href="/fonts/JetBrainsMono-Regular.woff2"
-              as="font"
-              type="font/woff2"
-              crossOrigin="anonymous"
-            />
-            <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-                  rel="stylesheet"/>
-            <link
-                href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-                rel="stylesheet"/>
-          </Head>
-          <body>
-          <Main/>
-          <NextScript/>
-          </body>
-        </Html>
+      <Html lang='en-GB'>
+        <Head>
+          <meta name="viewport" content="initial-scale=1, width=device-width"/>
+          <meta content="ThadDev's site" property="og:title"/>
+          <meta content="Welcome to My site!" property="og:description"/>
+          <meta content="https://thaddev.com" property="og:url"/>
+          <meta content="https://thaddev.com/images/logo.svg" property="og:image"/>
+          <meta content="#FFAA00" data-react-helmet="true" name="theme-color"/>
+          <link
+            rel="preload"
+            href="/fonts/JetBrainsMono-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+          <link rel="preconnect" href="https://fonts.googleapis.com"/>
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+            rel="stylesheet"/>
+        </Head>
+        <body>
+        <Main/>
+        <NextScript/>
+        </body>
+      </Html>
     );
   }
 }
