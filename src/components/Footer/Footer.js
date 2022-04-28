@@ -38,7 +38,7 @@ const Footer = () => {
         <SocialIconsContainer>
           <CompanyContainer>
             <Slogan>
-              © {new Date().getFullYear() === 2022 ? "2022" : "2022 - " + new Date().getFullYear()} | ThadDev. <NavLink
+              © {new Date().getFullYear() === 2022 ? "2022" : "2022 - " + new Date().getFullYear()} | ThadDev. <NavLink fontSize={1.75}
               href="https://github.com/MyNameTsThad/thaddev.com/blob/master/README.md">Some Rights Reserved.</NavLink>
               <br/>
               Made with <AiFillHeart size="2rem" color="red"/> using <DiReact size="2rem" color="teal"/> <SiNextdotjs

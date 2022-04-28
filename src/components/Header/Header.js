@@ -17,19 +17,19 @@ const Header = (props) => (
       {props.noTagLinks ? null :
           <Div2>
             <li>
-              <NavLink href="#tech">Technologies</NavLink>
+              <NavLink href="#tech" fontSize={2}>Technologies</NavLink>
             </li>
             <li>
-              <NavLink href="#projects">Projects</NavLink>
+              <NavLink href="#projects" fontSize={2}>Projects</NavLink>
             </li>
             <li>
-              <NavLink href="#aboutme">About Me</NavLink>
+              <NavLink href="#aboutme" fontSize={2}>About Me</NavLink>
             </li>
             <li>
-              <NavLink href="#accomplishments">Accomplishments</NavLink>
+              <NavLink href="#accomplishments" fontSize={2}>Accomplishments</NavLink>
             </li>
             <li>
-              <NavLink href="#gallery">Gallery</NavLink>
+              <NavLink href="#gallery" fontSize={2}>Gallery</NavLink>
             </li>
           </Div2>
       }
