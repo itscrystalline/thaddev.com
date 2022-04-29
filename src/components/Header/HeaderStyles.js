@@ -58,13 +58,13 @@ export const Div3 = styled.div`
 
 // Navigation Links
 export const NavLink = styled.a`
-  font-size: ${(props) => props.fontSize}rem;
+  font-size: ${(props) => props.fontSize}px;
   line-height: 32px;
   color: rgba(255, 255, 255, 0.75);
   transition: 0.4s ease;
 
   &:hover {
-    font-size: ${(props) => props.fontSize + 0.05}rem;
+    font-size: ${(props) => props.fontSize + 0.5}px;
     color: #ffaa00;
     opacity: 1;
     cursor: pointer;
@@ -74,7 +74,7 @@ export const NavLink = styled.a`
     font-size: 2rem;
 
     &:hover {
-      font-size: ${(props) => props.fontSize + 0.05}rem;
+      font-size: ${(props) => props.fontSize + 0.5}px;
       color: #ffaa00;
       opacity: 1;
       cursor: pointer;

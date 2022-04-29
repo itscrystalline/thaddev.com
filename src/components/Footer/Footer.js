@@ -17,8 +17,12 @@ import {Links} from "../../constants/constants";
 import {FaCloudflare, FaGooglePlay, FaHackerrank, FaItchIo, FaRaspberryPi} from "react-icons/fa";
 import {DiReact} from "react-icons/di";
 import {SiLeetcode, SiNextdotjs, SiNgrok} from "react-icons/si";
+import useWindowSize from "../../styles/GlobalComponents/WindowSize";
 
 const Footer = () => {
+  const {width, height} = useWindowSize();
+  console.log(`width-footer: ${width}`);
+  const navLink = <NavLink fontSize={width < 768 ? (width < 640 ? 14 : 16) : 18} href="https://github.com/MyNameTsThad/thaddev.com/blob/master/README.md">Some Rights Reserved.</NavLink>;
   return (
       <FooterWrapper>
         <LinkList>
@@ -38,14 +42,11 @@ const Footer = () => {
         <SocialIconsContainer>
           <CompanyContainer>
             <Slogan>
-              © {new Date().getFullYear() === 2022 ? "2022" : "2022 - " + new Date().getFullYear()} | ThadDev. <NavLink fontSize={1.75}
-              href="https://github.com/MyNameTsThad/thaddev.com/blob/master/README.md">Some Rights Reserved.</NavLink>
+              © {new Date().getFullYear() === 2022 ? "2022" : "2022 - " + new Date().getFullYear()} | ThadDev. {navLink}
               <br/>
-              Made with <AiFillHeart size="2rem" color="red"/> using <DiReact size="2rem" color="teal"/> <SiNextdotjs
-              size="2rem" color="teal"/>.
+              Made with <AiFillHeart size="2rem" color="red"/> using <DiReact size="2rem" color="teal"/> <SiNextdotjs size="2rem"/>.
               <br/>
-              Hosted on <FaRaspberryPi size="2rem" color="red"/> with <FaCloudflare size="2rem"
-                                                                                    color="orange"/> and&nbsp;<SiNgrok
+              Hosted on <FaRaspberryPi size="2rem" color="red"/> with <FaCloudflare size="2rem" color="orange"/> and&nbsp;<SiNgrok
               size="2rem" color="blue"/>.
             </Slogan>
           </CompanyContainer>

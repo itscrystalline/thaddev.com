@@ -16,10 +16,10 @@ import {Section, SectionDivider, SectionTitle} from '../../styles/GlobalComponen
 import {projects} from '../../constants/constants';
 import {FaChevronDown} from "react-icons/fa";
 import Collapsible from "react-collapsible";
-import useWindowDimensions from "../../styles/GlobalComponents/WindowDimensions";
+import useWindowSize from "../../styles/GlobalComponents/WindowSize";
 
 const Projects = () => {
-  const {height, width} = useWindowDimensions();
+  const {height, width} = useWindowSize()
   if (width > 973) {
     return (
         <Section id="projects">
