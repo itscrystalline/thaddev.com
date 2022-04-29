@@ -11,7 +11,8 @@ export const Boxes = styled.div`
   @media ${props => props.theme.breakpoints.md}{
     gap: 16px;
     margin: 20px 0 32px;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    /*grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));*/
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @media ${props => props.theme.breakpoints.sm}{
@@ -32,16 +33,8 @@ export const ImageBoxes = styled.div`
 
   @media ${props => props.theme.breakpoints.md}{
     gap: 16px;
-    margin: 20px 0 32px;
+    margin: 12px 0 20px;
     grid-template-columns: repeat(1, 1fr);
-  }
-
-  @media ${props => props.theme.breakpoints.sm}{
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 10px;
-    max-width: 500px;
-    margin: 12px auto;
   }
 `
 

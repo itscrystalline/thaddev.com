@@ -110,6 +110,8 @@ const Accomplishments = ({data}) => {
             <ImageBoxText>C# (Basic)</ImageBoxText>
           </BoxHackerRankImage>
         </Link>
+      </ImageBoxes>
+      <ImageBoxes>
         <Link href="https://www.hackerrank.com/certificates/2353f0513d55">
           <BoxHackerRankImage key={3}>
             <img src="images/js_int.jpg" alt="javascript (intermediate)" width="100%" height="80%"/>
