@@ -48,6 +48,12 @@ jobs:
         
       - name: Build Site
         run: npm run build
+        
+      - name: Kill current running Site
+        run: killall node
+        
+      - name: Start CMS (Strapi)
+        run: RUNNER_TRACKING_ID="" && bash -c "npm run start --prefix /home/iwant2tryhard/Projects/thaddev.com/blog-cms-strapi &"
       
       - name: Start Site
         run: RUNNER_TRACKING_ID="" && bash -c "npm run start &"
