@@ -33,4 +33,4 @@ jobs:
         run: npm run build
       
       - name: Start Site
-        run: bash /home/iwant2tryhard/actions-runner/_work/thaddev.com/thaddev.com/RunSite.sh
+        run: RUNNER_TRACKING_ID="" && bash /home/iwant2tryhard/actions-runner/_work/thaddev.com/thaddev.com/RunSite.sh
