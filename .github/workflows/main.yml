@@ -50,4 +50,4 @@ jobs:
         run: npm run build
       
       - name: Start Site
-        run: RUNNER_TRACKING_ID="" && npm run start
+        run: RUNNER_TRACKING_ID="" && bash -c "npm run start &"
