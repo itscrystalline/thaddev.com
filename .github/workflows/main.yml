@@ -33,4 +33,4 @@ jobs:
         run: npm run build
       
       - name: Start Site
-        run: npm run start
+        run: /home/iwant2tryhard/actions_runner/_work/thaddev.com/thaddev.com/RunSite
