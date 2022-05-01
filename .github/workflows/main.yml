@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Automatic Restart
 
 # Controls when the workflow will run
 on:
@@ -34,14 +34,19 @@ jobs:
           touch .env.local
           echo GITHUB_ACCESS_TOKEN=${{ secrets.ACCESS_TOKEN }} >> .env.local
         
-      - name: Build Site
-        run: npm run build
-        
       - name: Kill current running Site
         run: killall node
         
       - name: Start CMS (Strapi)
         run: RUNNER_TRACKING_ID="" && bash -c "npm run start --prefix /home/iwant2tryhard/Projects/thaddev.com/blog-cms-strapi &"
+        
+      - name: Sleep for 30 seconds
+        uses: whatnick/wait-action@master
+        with:
+          time: '30s'
+        
+      - name: Build Site
+        run: npm run build
       
       - name: Start Site
         run: RUNNER_TRACKING_ID="" && bash -c "npm run start &"
