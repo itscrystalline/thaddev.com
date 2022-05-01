@@ -41,9 +41,8 @@ jobs:
         run: RUNNER_TRACKING_ID="" && bash -c "npm run start --prefix /home/iwant2tryhard/Projects/thaddev.com/blog-cms-strapi &"
         
       - name: Sleep for 30 seconds
-        uses: whatnick/wait-action@master
-        with:
-          time: '30s'
+        run: sleep 30s
+        shell: bash
         
       - name: Build Site
         run: npm run build
