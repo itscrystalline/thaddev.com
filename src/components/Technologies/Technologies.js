@@ -60,7 +60,7 @@ const Technologies = () => (
           <ListContainer>
             <ListTitle>Games & Game Development</ListTitle>
             <ListParagraph>
-              Experience with creating games using the Unity Game Engine, with the use of C#. With two currently live
+              Experience with designing and creating games using the Unity Game Engine, with the use of C#. With two currently live
               on the Google Play Store, and one for a game jam on itch.io. Also has some experience with Minecraft Modding
               using the Forge API, and has worked both alone and as a community on Minecraft Mods.
             </ListParagraph>

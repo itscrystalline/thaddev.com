@@ -157,6 +157,12 @@ const Accomplishments = ({data}) => {
             <BoxText>Problems Solved</BoxText>
           </BoxLeetcode>
         </Link>
+        <Link href={leetCode}>
+          <BoxLeetcode key={5}>
+            <BoxNum>2</BoxNum>
+            <BoxText>Study plans completed</BoxText>
+          </BoxLeetcode>
+        </Link>
       </Boxes>
     </Section>
   );

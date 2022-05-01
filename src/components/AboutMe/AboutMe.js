@@ -59,7 +59,7 @@ const AboutMe = () => {
           I also have a wide range of passion projects, ranging from games to websites to show for my coding skills.
           I have/had been involved in a few hackathons/competitions from different places, both online and
           offline. <br/> <br/>
-          Today, I am a self-taught, full-stack programmer capable of many, many things. I have experience with Java,
+          Today, I am a self-taught, full-stack programmer, Game developer and designer, capable of many, many things. I have experience with Java,
           Python, C#, Javascript, and a bit of C++ and C.
         </SectionText>
         <CarouselContainer ref={carouselRef}>

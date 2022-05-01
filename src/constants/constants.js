@@ -4,6 +4,14 @@ function createData(name, apiLink, method) {
 
 export const projects = [
   {
+    title: 'Hytils',
+    description: "A Minecraft mod that adds utility features to make Minecraft combat easier. Built using the Fabric modding API with Java.",
+    tags: ['Fabric', 'Minecraft', 'Java'],
+    source: 'https://github.com/MyNameTsThad/CombatUtilities',
+    live: '',
+    id: 9
+  },
+  {
     title: 'thaddev.com',
     description: "This very website. It's a single page application built with React.js/Next.js and hosted on Raspberry Pi with the help of ngrok and Cloudflare.",
     tags: ['Next.js', 'React.js', 'JavaScript'],
