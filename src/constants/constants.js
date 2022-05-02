@@ -4,7 +4,7 @@ function createData(name, apiLink, method) {
 
 export const projects = [
   {
-    title: 'Hytils',
+    title: 'CombatUtilities',
     description: "A Minecraft mod that adds utility features to make Minecraft combat easier. Built using the Fabric modding API with Java.",
     tags: ['Fabric', 'Minecraft', 'Java'],
     source: 'https://github.com/MyNameTsThad/CombatUtilities',
