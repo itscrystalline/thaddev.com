@@ -38,7 +38,7 @@ jobs:
         run: killall -q node || true
         
       - name: Start CMS (Strapi)
-        run: (RUNNER_TRACKING_ID="" && npm run start --prefix /home/iwant2tryhard/Projects/thaddev.com/blog-cms-strapi &) &
+        run: RUNNER_TRACKING_ID='' && bash -c "RUNNER_TRACKING_ID='' && npm run start --prefix /home/iwant2tryhard/Projects/thaddev.com/blog-cms-strapi" &
         
       - name: Sleep for 30 seconds
         run: sleep 30s
@@ -48,4 +48,4 @@ jobs:
         run: npm run build
       
       - name: Start Site
-        run: (RUNNER_TRACKING_ID="" && npm run start &) &
+        run: RUNNER_TRACKING_ID='' && bash -c "RUNNER_TRACKING_ID="" && npm run start" &
