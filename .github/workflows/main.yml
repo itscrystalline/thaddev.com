@@ -27,29 +27,12 @@ jobs:
       
       # Runs a single command using the runners shell
       - name: Install Dependencies
-        run: |
-          npm install
-          npm install --prefix blog-cms-strapi
+        run: npm install
             
       - name: 'Create env file'
         run: |
           touch .env.local
           echo GITHUB_ACCESS_TOKEN=${{ secrets.ACCESS_TOKEN }} >> .env.local
-
-      - name: 'Modify Permissions'
-        run: |
-          chmod +x RunSite.sh
-          chmod +x StartCMS.sh
-        
-      - name: Kill current running Site
-        run: killall -q node || true
-        
-      - name: Start CMS (Strapi)
-        run: RUNNER_TRACKING_ID="" && ./StartCMS.sh
-        
-      - name: Sleep for 30 seconds
-        run: sleep 30s
-        shell: bash
         
       - name: Build Site
         run: npm run build
