@@ -36,6 +36,9 @@ jobs:
         
       - name: Build Site
         run: npm run build
+
+      - name: Kill Current Site Instance
+        run: kill $(lsof -t -i:3000) || true
       
       - name: Start Site
         run: RUNNER_TRACKING_ID='' && ./RunSite.sh
