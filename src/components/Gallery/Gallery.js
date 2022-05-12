@@ -1,7 +1,7 @@
 import React from "react";
 import {Section, SectionDivider, SectionTitle} from "../../styles/GlobalComponents";
 import {ImageBoxes, ImageBoxText, SmallTitle} from "../Acomplishments/AcomplishmentsStyles";
-import {BoxImage} from "./GalleryStyles";
+import {BoxImage, CollapsableBackground} from "./GalleryStyles";
 import Collapsible from "react-collapsible";
 import {Hr} from "../Projects/ProjectsStyles";
 import {FaChevronDown} from "react-icons/fa";
@@ -19,38 +19,40 @@ import verso3 from "../../../public/images/verso3.jpg";
 import verso4 from "../../../public/images/verso4.jpg";
 
 const Gallery = () => (
-    <Section id="gallery">
-      <SectionDivider/>
-      <p><br/></p>
-      <p><br/></p>
+  <Section id="gallery">
+    <SectionDivider/>
+    <p><br/></p>
+    <p><br/></p>
 
-      <Collapsible trigger={<div style={{cursor: "pointer"}}><SectionTitle>Events & Development <FaChevronDown
+    <CollapsableBackground>
+      <Collapsible
+        trigger={<div style={{cursor: "pointer"}}><SectionTitle>Events & Development&nbsp;&nbsp;&nbsp;<FaChevronDown
           size="3rem"/></SectionTitle></div>}
-                   transitionTime="400"
-                   easing="ease-in-out">
+        transitionTime="400"
+        easing="ease-in-out">
         <SmallTitle>Thailand TopCoder Competition by GetLinks (2020)</SmallTitle>
         <ImageBoxes>
           <BoxImage>
             <div
-                className="video"
-                style={{
-                  position: "relative",
-                  paddingBottom: "56.25%" /* 16:9 */,
-                  paddingTop: 25,
-                  height: 0
-                }}
+              className="video"
+              style={{
+                position: "relative",
+                paddingBottom: "56.25%" /* 16:9 */,
+                paddingTop: 25,
+                height: 0
+              }}
             >
               <iframe
-                  loading="lazy"
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%"
-                  }}
-                  src={`https://www.youtube.com/embed/Xnjib-OsM5k`}
-                  frameBorder="0"
+                loading="lazy"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%"
+                }}
+                src={`https://www.youtube.com/embed/Xnjib-OsM5k`}
+                frameBorder="0"
               />
             </div>
             <ImageBoxText>Video from the "Lightning talk" where, I was the youngest person who has top 100 in the
@@ -124,25 +126,25 @@ const Gallery = () => (
         <ImageBoxes>
           <BoxImage>
             <div
-                className="video"
-                style={{
-                  position: "relative",
-                  paddingBottom: "56.25%" /* 16:9 */,
-                  paddingTop: 25,
-                  height: 0
-                }}
+              className="video"
+              style={{
+                position: "relative",
+                paddingBottom: "56.25%" /* 16:9 */,
+                paddingTop: 25,
+                height: 0
+              }}
             >
               <iframe
-                  loading="lazy"
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%"
-                  }}
-                  src={`https://www.youtube.com/embed/p9gJwQmi5VA`}
-                  frameBorder="0"
+                loading="lazy"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%"
+                }}
+                src={`https://www.youtube.com/embed/p9gJwQmi5VA`}
+                frameBorder="0"
               />
             </div>
             <ImageBoxText>BattleParkour Trailer</ImageBoxText>
@@ -152,32 +154,33 @@ const Gallery = () => (
         <ImageBoxes>
           <BoxImage>
             <div
-                className="video"
-                style={{
-                  position: "relative",
-                  paddingBottom: "56.25%" /* 16:9 */,
-                  paddingTop: 25,
-                  height: 0
-                }}
+              className="video"
+              style={{
+                position: "relative",
+                paddingBottom: "56.25%" /* 16:9 */,
+                paddingTop: 25,
+                height: 0
+              }}
             >
               <iframe
-                  loading="lazy"
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%"
-                  }}
-                  src={`https://www.youtube.com/embed/PGnKGzeVHpc`}
-                  frameBorder="0"
+                loading="lazy"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%"
+                }}
+                src={`https://www.youtube.com/embed/PGnKGzeVHpc`}
+                frameBorder="0"
               />
             </div>
             <ImageBoxText>Tree Game Demo</ImageBoxText>
           </BoxImage>
         </ImageBoxes>
       </Collapsible>
-    </Section>
+    </CollapsableBackground>
+  </Section>
 );
 
 export default Gallery;

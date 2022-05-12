@@ -28,7 +28,7 @@ const PostPage = (props) => {
               post <BiRightArrow/></SectionSubText></NavLink>
           </div>
           <p><br/></p>
-          <Image src={"http://localhost:1337" + props.post.data.attributes.image.data.attributes.url}
+          <Image src={"https://thaddev.com/blog/cms-strapi" + props.post.data.attributes.image.data.attributes.url}
                  alt={props.post.data.attributes.image.data.attributes.alternativeText}
                  width={props.post.data.attributes.image.data.attributes.width}
                  height={props.post.data.attributes.image.data.attributes.height}/>

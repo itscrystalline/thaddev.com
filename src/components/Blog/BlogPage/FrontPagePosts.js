@@ -21,7 +21,7 @@ const FrontPagePosts = ({posts}) => {
           <MainCard>
             <p><br/></p>
             <TitleContent>
-              <Image src={"http://localhost:1337" + posts[0].attributes.image.data.attributes.url}
+              <Image src={"https://thaddev.com/blog/cms-strapi" + posts[0].attributes.image.data.attributes.url}
                      alt={posts[0].attributes.image.data.attributes.alternativeText}
                      width={posts[0].attributes.image.data.attributes.width * 0.75}
                      height={posts[0].attributes.image.data.attributes.height * 0.75}/>
@@ -42,7 +42,7 @@ const FrontPagePosts = ({posts}) => {
                   <BlogCard>
                     <TitleContent>
                       {attributes.image.data != null ?
-                        <><Image src={"http://localhost:1337" + attributes.image.data.attributes.url}
+                        <><Image src={"https://thaddev.com/blog/cms-strapi" + attributes.image.data.attributes.url}
                                  alt={attributes.image.data.attributes.alternativeText}
                                  width={attributes.image.data.attributes.width * 0.75}
                                  height={attributes.image.data.attributes.height * 0.75}/><p><br/></p></>
