@@ -36,6 +36,9 @@ jobs:
         
       - name: Build Site
         run: npm run build
+
+      - name: Kill Current Site Instance
+        run: npx kill-port 3000 --yes
       
       - name: Start Site
         run: RUNNER_TRACKING_ID='' && ./RunSite.sh
