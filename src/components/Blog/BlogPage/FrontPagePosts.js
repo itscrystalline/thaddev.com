@@ -6,7 +6,8 @@ import Image from 'next/image'
 import Link from "next/link";
 
 const FrontPagePosts = ({posts}) => {
-  let firstPost = posts.length === 0 ? -1 : posts[0].id;
+  let firstPostId = posts.length === 0 ? -1 : posts[posts.length - 1].id;
+  let firstPost = posts.length === 0 ? -1 : posts[posts.length - 1];
   if (posts.length === 0) {
     return (
       <>
@@ -17,26 +18,26 @@ const FrontPagePosts = ({posts}) => {
   } else {
     return (
       <>
-        <Link href={`/blog/posts/${posts[0].id}`}>
+        <Link href={`/blog/posts/${firstPostId}`}>
           <MainCard>
             <p><br/></p>
             <TitleContent>
-              <Image src={"https://thaddev.com/blog/cms-strapi" + posts[0].attributes.image.data.attributes.url}
-                     alt={posts[0].attributes.image.data.attributes.alternativeText}
-                     width={posts[0].attributes.image.data.attributes.width * 0.75}
-                     height={posts[0].attributes.image.data.attributes.height * 0.75}/>
+              <Image src={"https://thaddev.com/blog/cms-strapi" + firstPost.attributes.image.data.attributes.url}
+                     alt={firstPost.attributes.image.data.attributes.alternativeText}
+                     width={firstPost.attributes.image.data.attributes.width * 0.75}
+                     height={firstPost.attributes.image.data.attributes.height * 0.75}/>
               <p><br/></p>
               <HeaderThree title>
-                {posts[0].attributes.title}
+                {firstPost.attributes.title}
               </HeaderThree>
             </TitleContent>
             <Vr/>
-            <CardInfo>{posts[0].attributes.description}</CardInfo>
+            <CardInfo>{firstPost.attributes.description}</CardInfo>
           </MainCard>
         </Link>
         <GridContainer>
-          {posts.map(({id, attributes}) => {
-            if (id !== firstPost) {
+          {posts.slice(0).reverse().map(({id, attributes}) => {
+            if (id !== firstPostId) {
               return (
                 <Link href={`/blog/posts/${id}`}>
                   <BlogCard>

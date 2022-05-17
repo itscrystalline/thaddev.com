@@ -30,8 +30,8 @@ const PostPage = (props) => {
           <p><br/></p>
           <Image src={"https://thaddev.com/blog/cms-strapi" + props.post.data.attributes.image.data.attributes.url}
                  alt={props.post.data.attributes.image.data.attributes.alternativeText}
-                 width={props.post.data.attributes.image.data.attributes.width}
-                 height={props.post.data.attributes.image.data.attributes.height}/>
+                 width={props.post.data.attributes.image.data.attributes.width * 0.9}
+                 height={props.post.data.attributes.image.data.attributes.height * 0.9}/>
           <p><br/></p>
           <SectionSubText>
             <AiFillCalendar size="2rem"/> Posted at {published} {published !== updated ? <>(Updated
@@ -52,7 +52,7 @@ const PostPage = (props) => {
 };
 
 export async function getStaticProps({params}) {
-  const post = await axios.get(`http://localhost:1337/api/posts/${params.id}?populate=image`);
+  const post = await axios.get(`https://thaddev.com/blog/cms-strapi/api/posts/${params.id}?populate=image`);
   //console.log(post.data);
   return {
     props: {
@@ -63,7 +63,7 @@ export async function getStaticProps({params}) {
 }
 
 export async function getStaticPaths() {
-  const posts = await axios.get("http://localhost:1337/api/posts");
+  const posts = await axios.get("https://thaddev.com/blog/cms-strapi/api/posts");
   const paths = posts.data.data.map((post) => {
     return {
       params: {

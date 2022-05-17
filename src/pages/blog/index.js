@@ -24,7 +24,7 @@ const Index = (props) => {
 };
 
 export async function getServerSideProps() {
-  const postsRes = await axios.get('http://localhost:1337/api/posts?populate=image');
+  const postsRes = await axios.get('https://thaddev.com/blog/cms-strapi/api/posts?populate=image');
   return {
     props: {
       posts: postsRes.data
