@@ -129,38 +129,38 @@ const Accomplishments = ({data}) => {
       <Boxes>
         <Link href={leetCode}>
           <BoxLeetcode key={0}>
-            <BoxNum>354,931<sup>th</sup></BoxNum>
+            <BoxNum>230,043<sup>th</sup></BoxNum>
             <BoxText>Rank</BoxText>
           </BoxLeetcode>
         </Link>
         <Link href={leetCode}>
           <BoxLeetcode key={1}>
-            <BoxNum>1,488<sup>th</sup></BoxNum>
+            <BoxNum>1,515<sup>th</sup></BoxNum>
             <BoxText>Contest Rating</BoxText>
           </BoxLeetcode>
         </Link>
         <Link href={leetCode}>
           <BoxLeetcode key={2}>
-            <BoxNum>122,216</BoxNum>
+            <BoxNum>101,651</BoxNum>
             <BoxText>Contest Global Ranking</BoxText>
           </BoxLeetcode>
         </Link>
         <Link href={leetCode}>
           <BoxLeetcode key={3}>
-            <BoxNum>3</BoxNum>
+            <BoxNum>6</BoxNum>
             <BoxText>Contests Attended</BoxText>
           </BoxLeetcode>
         </Link>
         <Link href={leetCode}>
           <BoxLeetcode key={4}>
-            <BoxNum>153</BoxNum>
+            <BoxNum>197</BoxNum>
             <BoxText>Problems Solved</BoxText>
           </BoxLeetcode>
         </Link>
         <Link href={leetCode}>
           <BoxLeetcode key={5}>
-            <BoxNum>2</BoxNum>
-            <BoxText>Study plans completed</BoxText>
+            <BoxNum>38.39%</BoxNum>
+            <BoxText>In Top Contest RAnking</BoxText>
           </BoxLeetcode>
         </Link>
       </Boxes>
