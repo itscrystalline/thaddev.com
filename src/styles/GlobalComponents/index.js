@@ -89,6 +89,8 @@ export const Title = styled.h3`
 `
 
 export const SectionText = styled.p`
+  font-size-adjust: 0.534;
+  font-family: ${props => props.theme.fonts.main}, ${props => props.theme.fonts.thai};
   max-width: 1140px;
   font-size: 24px;
   line-height: 40px;
