@@ -39,6 +39,7 @@ export const ProjectCard = styled.div`
   }
 `;
 export const TitleContent = styled.div`
+  font-size: medium;
   text-align: center;
   z-index: 20;
   width: 100%;
@@ -86,6 +87,7 @@ export const Intro = styled.div`
 
 export const CardInfo = styled.p`
   width: 100%;
+  font-size: 16px;
   padding: 0 50px;
   color: #e4e6e7;
   line-height: 24px;
@@ -93,7 +95,6 @@ export const CardInfo = styled.p`
   margin: auto;
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: .3rem
-
   }
 `;
 

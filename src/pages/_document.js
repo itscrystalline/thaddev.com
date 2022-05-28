@@ -39,11 +39,17 @@ export default class MyDocument extends Document {
           <meta content="https://thaddev.com/images/logo.svg" property="og:image"/>
           <meta content="#FFAA00" data-react-helmet="true" name="theme-color"/>
           <link
-            rel="preload"
+            rel="preconnect"
             href="/fonts/JetBrainsMono-Regular.woff2"
             as="font"
             type="font/woff2"
-            crossOrigin="anonymous"
+            crossOrigin=""
+          />
+          <link
+            rel="preconnect"
+            href="/fonts/supermarket.ttf"
+            as="font"
+            crossOrigin=""
           />
           <link rel="preconnect" href="https://fonts.googleapis.com"/>
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>

@@ -3,15 +3,20 @@ import axios from "axios";
 import {Section, SectionDivider, SectionText, SectionTitle} from "../../styles/GlobalComponents";
 import FrontPagePosts from "../../components/Blog/BlogPage/FrontPagePosts";
 import {AltLayout} from "../../layout/AltLayout";
+import ChangeLanguageButton from "../../styles/GlobalComponents/Button";
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
+import {useTranslation} from "next-i18next";
 
 const Index = (props) => {
+  const {t} = useTranslation('blog', 'common');
   return (
     <>
       <NextSeo title="ThadDev's Site - Blog"/>
+      <ChangeLanguageButton/>
       <AltLayout>
         <Section>
-          <SectionTitle>Blog</SectionTitle>
-          <SectionText>Welcome to My Blog! Here is where I share some of my programming journeys.</SectionText>
+          <SectionTitle>{t('common:blog')}</SectionTitle>
+          <SectionText>{t('welcome')}</SectionText>
           <SectionDivider/>
           <p><br/></p>
           <p><br/></p>
@@ -23,11 +28,12 @@ const Index = (props) => {
   );
 };
 
-export async function getServerSideProps() {
+export async function getServerSideProps({locale}) {
   const postsRes = await axios.get('https://thaddev.com/blog/cms-strapi/api/posts?populate=image');
   return {
     props: {
-      posts: postsRes.data
+      posts: postsRes.data,
+      ...(await serverSideTranslations(locale, ['common', 'blog'])),
     },
   };
 }

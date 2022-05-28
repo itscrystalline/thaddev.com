@@ -1,13 +1,16 @@
 import Theme from '../styles/theme';
+import {appWithTranslation} from 'next-i18next';
 
-export default function App({Component, pageProps}) {
+const App = ({Component, pageProps}) => {
   return (
-      <>
-        <link rel="shortcut icon" href="favicon.ico"/>
-        <Theme>
-          <Component {...pageProps} />
-        </Theme>
-      </>
+    <>
+      <link rel="shortcut icon" href="favicon.ico"/>
+      <Theme>
+        <Component {...pageProps} />
+      </Theme>
+    </>
   );
 }
+
+export default appWithTranslation(App);
  

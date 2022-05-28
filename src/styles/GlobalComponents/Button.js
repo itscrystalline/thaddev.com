@@ -1,6 +1,10 @@
+import React from 'react';
+import {useRouter} from 'next/router'
 import styled from 'styled-components';
 
 export const Button = styled.button`
+  font-family: ${props => props.theme.fonts.main}, ${props => props.theme.fonts.thai};
+  font-size-adjust: 0.534;
   transition: color 0.5s cubic-bezier(.17, .67, .1, 1),
   padding 0.25s cubic-bezier(.17, .67, .1, 1),
   background-color 0.5s cubic-bezier(.17, .67, .1, 1),
@@ -73,6 +77,8 @@ export const Button = styled.button`
 `;
 
 export const LongButton = styled.button`
+  font-family: ${props => props.theme.fonts.main}, ${props => props.theme.fonts.thai};
+  font-size-adjust: 0.534;
   transition: color 0.5s cubic-bezier(.17, .67, .1, 1),
   padding 0.25s cubic-bezier(.17, .67, .1, 1),
   background-color 0.5s cubic-bezier(.17, .67, .1, 1),
@@ -143,3 +149,56 @@ export const LongButton = styled.button`
     }
   }
 `;
+
+export const HoverButton = styled.button`
+  transition: color 0.5s cubic-bezier(.17, .67, .1, 1),
+  padding 0.25s cubic-bezier(.17, .67, .1, 1),
+  background-color 0.5s cubic-bezier(.17, .67, .1, 1),
+  filter 0.5s cubic-bezier(.17, .67, .1, 1),
+  border 0.5s cubic-bezier(.17, .67, .1, 1),
+  transform 0.25s cubic-bezier(.17, .67, .1, 1),
+  box-shadow 0.25s cubic-bezier(.17, .67, .1, 1),
+  font-weight 0.5s cubic-bezier(.17, .67, .1, 1);
+  font-size: 20pt;
+  line-height: 0;
+  border-radius: 20px;
+  background: #00a4ff;
+  padding: 10px;
+  color: #FFFFFF;
+  box-shadow: 0px 7px 0px 0px #0067dc;
+
+  background-size: contain;
+  border: 3px #0067dc solid;
+  text-align: center;
+  filter: saturate(0.9);
+
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+
+  &:hover {
+    filter: saturate(1);
+    transform: translateY(-3px);
+    box-shadow: 0px 10px 0px 0px #006be3;
+  }
+
+  &:active {
+    transform: translateY(1px);
+    border: 3px #1aa2f3 solid;
+    box-shadow: 0px 5px 0px 0px #0072f5;
+  }
+`;
+
+const ChangeLanguageButton = () => {
+  const router = useRouter()
+  const {pathname, asPath, query} = router
+  return (
+    <HoverButton onClick={() => {
+      router.push({pathname, query}, asPath, {locale: `${router.locale === "en-US" ? "th-TH" : "en-US"}`})
+    }}>{router.locale === "en-US" ? "🇹🇭" : "🇺🇸"}</HoverButton>
+  );
+};
+
+export default ChangeLanguageButton;

@@ -11,10 +11,26 @@ import Gallery from "../components/Gallery/Gallery";
 import {NextSeo} from "next-seo";
 import {ApolloClient, createHttpLink, gql, InMemoryCache} from "@apollo/client";
 import {setContext} from '@apollo/client/link/context';
+import {createTheme} from "@mui/material";
+import ChangeLanguageButton from "../styles/GlobalComponents/Button";
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#19a0f3',
+    },
+    secondary: {
+      main: '#1f1f1f'
+    },
+  },
+});
 
 const Home = (props) => {
+  //console.log(router.locale);
   return (<>
     <NextSeo title="ThadDev's Site"/>
+    <ChangeLanguageButton/>
     <Layout>
       <Section grid>
         <Hero/>
@@ -30,7 +46,7 @@ const Home = (props) => {
   </>);
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({locale}) {
   const httpLink = createHttpLink({
     uri: 'https://api.github.com/graphql',
   });
@@ -74,7 +90,8 @@ export async function getServerSideProps() {
 
   return {
     props: {
-      data: data
+      data: data,
+      ...(await serverSideTranslations(locale, ['common', 'aboutme', 'accomplishments', 'blog', 'footer', 'gallery', 'header', 'hero', 'projects', 'technologies'])),
     }
   };
 }

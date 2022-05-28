@@ -18,6 +18,10 @@ import {styled} from '@mui/material/styles';
 import {HttpVerb} from "../components/HttpVerb/HttpVerb";
 import {computerControl, otherApis, timerAPIs, timerInstanceAPIs} from "../constants/constants";
 import {NextSeo} from "next-seo";
+import ChangeLanguageButton from "../styles/GlobalComponents/Button";
+import {useRouter} from "next/router";
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
+import {useTranslation} from "next-i18next";
 
 const StyledTableCell = styled(TableCell)(({theme}) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -25,7 +29,7 @@ const StyledTableCell = styled(TableCell)(({theme}) => ({
     color: theme.palette.common.white,
   },
   [`&.${tableCellClasses.body}`]: {
-    fontSize: 14,
+    fontSize: 17,
   },
 }));
 
@@ -44,8 +48,8 @@ const darkTheme = createTheme({
     mode: 'dark',
   },
   typography: {
-    fontFamily: 'Plus Jakarta Sans',
-    fontSize: "15rem",
+    fontFamily: ['Plus Jakarta Sans', 'supermarket'],
+    fontSize: "17rem",
   },
   components: {
     MuiCssBaseline: {
@@ -63,16 +67,18 @@ const darkTheme = createTheme({
 });
 
 const APIDirectory = () => {
+  const router = useRouter();
+  const {t} = useTranslation(['api-directory', 'common']);
   return (
     <>
       <NextSeo title="ThadDev's Site - API Directory"/>
+      <ChangeLanguageButton/>
       <AltLayout noTagLinks>
         <Section>
-          <SectionTitle>API Directory</SectionTitle>
+          <SectionTitle>{t('apidirectory')}</SectionTitle>
           <SectionText>
-            This page contains a list of all the API endpoints available to
-            the application. This API is powered by the <NavLink href="https://github.com/MyNameTsThad/project-apis">Project
-            APIs</NavLink> project.
+            {t('desc-1')} <NavLink href="https://github.com/MyNameTsThad/project-apis">Project
+            APIs</NavLink> {t('desc-2')}
             <br/> <br/>
             <ThemeProvider theme={darkTheme}>
               <TableContainer component={Paper}>
@@ -80,7 +86,7 @@ const APIDirectory = () => {
                   <TableBody>
                     <StyledTableRow key="Main Endpoint URL">
                       <StyledTableCell component="th" scope="row">
-                        <b>Main Endpoint URL</b>
+                        <b>{t('mainendpoint')}</b>
                       </StyledTableCell>
                       <StyledTableCell align="right"><Link
                         href="https://thaddev.com/api-v1">https://thaddev.com/api-v1</Link></StyledTableCell>
@@ -92,7 +98,7 @@ const APIDirectory = () => {
               </TableContainer>
             </ThemeProvider>
             <br/>
-            <Title>Timer API</Title>
+            <Title>{t('timer')}</Title>
             <ThemeProvider theme={darkTheme}>
               <TableContainer component={Paper}>
                 <Table sx={{minWidth: 700}} aria-label="customized table">
@@ -100,7 +106,7 @@ const APIDirectory = () => {
                     {timerAPIs.map((row) => (
                       <StyledTableRow key={row.name}>
                         <StyledTableCell component="th" scope="row">
-                          {getVerbColor(row.method)}&nbsp;&nbsp;<b>{row.name}</b>
+                          {getVerbColor(row.method)}&nbsp;&nbsp;<b>{t(row.name)}</b>
                         </StyledTableCell>
                         <StyledTableCell align="right"><Link>{row.apiLink}</Link></StyledTableCell>
                       </StyledTableRow>
@@ -110,7 +116,7 @@ const APIDirectory = () => {
               </TableContainer>
             </ThemeProvider>
             <br/>
-            <Title>Timer Instance API</Title>
+            <Title>{t('timerinstance')}</Title>
             <ThemeProvider theme={darkTheme}>
               <TableContainer component={Paper}>
                 <Table sx={{minWidth: 700}} aria-label="customized table">
@@ -118,7 +124,7 @@ const APIDirectory = () => {
                     {timerInstanceAPIs.map((row) => (
                       <StyledTableRow key={row.name}>
                         <StyledTableCell component="th" scope="row">
-                          {getVerbColor(row.method)}&nbsp;&nbsp;<b>{row.name}</b>
+                          {getVerbColor(row.method)}&nbsp;&nbsp;<b>{t(row.name)}</b>
                         </StyledTableCell>
                         <StyledTableCell align="right"><Link>{row.apiLink}</Link></StyledTableCell>
                       </StyledTableRow>
@@ -128,7 +134,7 @@ const APIDirectory = () => {
               </TableContainer>
             </ThemeProvider>
             <br/>
-            <Title>Computer Control API</Title>
+            <Title>{t('computercontrol')}</Title>
             <ThemeProvider theme={darkTheme}>
               <TableContainer component={Paper}>
                 <Table sx={{minWidth: 700}} aria-label="customized table">
@@ -136,7 +142,7 @@ const APIDirectory = () => {
                     {computerControl.map((row) => (
                       <StyledTableRow key={row.name}>
                         <StyledTableCell component="th" scope="row">
-                          {getVerbColor(row.method)}&nbsp;&nbsp;<b>{row.name}</b>
+                          {getVerbColor(row.method)}&nbsp;&nbsp;<b>{t(row.name)}</b>
                         </StyledTableCell>
                         <StyledTableCell align="right"><Link>{row.apiLink}</Link></StyledTableCell>
                       </StyledTableRow>
@@ -146,7 +152,7 @@ const APIDirectory = () => {
               </TableContainer>
             </ThemeProvider>
             <br/>
-            <Title>Other API Endpoints</Title>
+            <Title>{t('other')}</Title>
             <ThemeProvider theme={darkTheme}>
               <TableContainer component={Paper}>
                 <Table sx={{minWidth: 700}} aria-label="customized table">
@@ -154,7 +160,7 @@ const APIDirectory = () => {
                     {otherApis.map((row) => (
                       <StyledTableRow key={row.name}>
                         <StyledTableCell component="th" scope="row">
-                          {getVerbColor(row.method)}&nbsp;&nbsp;<b>{row.name}</b>
+                          {getVerbColor(row.method)}&nbsp;&nbsp;<b>{t(row.name)}</b>
                         </StyledTableCell>
                         <StyledTableCell align="right"><Link>{row.apiLink}</Link></StyledTableCell>
                       </StyledTableRow>
@@ -185,6 +191,14 @@ function getVerbColor(verb) {
     default:
       return <HttpVerb color="#2a2a2a"><code>{verb}</code></HttpVerb>;
   }
+}
+
+export async function getServerSideProps({locale}) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common', 'api-directory'])),
+    }
+  };
 }
 
 export default APIDirectory;

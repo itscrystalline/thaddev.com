@@ -2,7 +2,8 @@ export default {
   // Temp fonts
   fonts: {
     title: "Plus Jakarta Sans, sans-serif",
-    main: "Plus Jakarta Sans, sans-serif"
+    main: "Plus Jakarta Sans, sans-serif",
+    thai: "supermarket, sans-serif"
   },
   // Colors for layout
   colors: {

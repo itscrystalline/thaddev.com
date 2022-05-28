@@ -232,6 +232,8 @@ export const IconContainer = styled.div`
 `
 
 export const SmallTitle = styled.h4`
+  font-family: ${props => props.theme.fonts.main}, ${props => props.theme.fonts.thai};
+  font-size-adjust: 0.534;
   font-weight: 400;
   font-size: ${(props) => props.main ? '55px' : '36px'};
   line-height: ${(props) => props.main ? '62px' : '46px'};

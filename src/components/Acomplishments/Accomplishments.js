@@ -15,6 +15,8 @@ import {
 } from './AcomplishmentsStyles';
 import {Links} from "../../constants/constants.js";
 import {AiFillStar} from "react-icons/ai";
+import {useTranslation} from "next-i18next";
+import {useRouter} from "next/router";
 
 const Accomplishments = ({data}) => {
   const github = Links[0].link;
@@ -24,48 +26,51 @@ const Accomplishments = ({data}) => {
   const googlePlay = Links[4].link;
   const {userFollowers, userRepos, userStars, totalCommits, totalPRs, totalContribs} = analyze(data);
 
+  const {t} = useTranslation(['accomplishments', 'common']);
+  const router = useRouter()
+
   return (
     <Section id="accomplishments">
       <SectionDivider/>
       <p><br/></p>
       <p><br/></p>
-      <SectionTitle>Statistics & Accomplishments</SectionTitle>
+      <SectionTitle>{t('common:title-accomplishments')}</SectionTitle>
       <Title><Link href={github}>Github</Link></Title>
       <Boxes>
         <Link href={github}>
           <Box key={0}>
             <BoxNum>{userFollowers}</BoxNum>
-            <BoxText>Follower{userFollowers > 1 ? "s" : ""}</BoxText>
+            <BoxText>{t('gh-follower') + (router.locale === "en-US" ? (userFollowers > 1 ? "s" : "") : "")}</BoxText>
           </Box>
         </Link>
         <Link href={github}>
           <Box key={1}>
             <BoxNum>{userRepos}</BoxNum>
-            <BoxText>Projects</BoxText>
+            <BoxText>{t('gh-projects')}</BoxText>
           </Box>
         </Link>
         <Link href={github}>
           <Box key={2}>
             <BoxNum>{userStars} <AiFillStar size="2rem"/></BoxNum>
-            <BoxText>Stars</BoxText>
+            <BoxText>{t('gh-stars')}</BoxText>
           </Box>
         </Link>
         <Link href={github}>
           <Box key={3}>
             <BoxNum>{totalCommits}</BoxNum>
-            <BoxText>Commits</BoxText>
+            <BoxText>{t('gh-commits')}</BoxText>
           </Box>
         </Link>
         <Link href={github}>
           <Box key={4}>
             <BoxNum>{totalPRs}</BoxNum>
-            <BoxText>Pull Requests</BoxText>
+            <BoxText>{t('gh-pullrequests')}</BoxText>
           </Box>
         </Link>
         <Link href={github}>
           <Box key={5}>
             <BoxNum>{totalContribs}</BoxNum>
-            <BoxText>Repositories contributed to</BoxText>
+            <BoxText>{t('gh-repos')}</BoxText>
           </Box>
         </Link>
       </Boxes>
@@ -74,39 +79,39 @@ const Accomplishments = ({data}) => {
         <Link href={hackerrank}>
           <BoxHackerRank key={0}>
             <BoxNum>3</BoxNum>
-            <BoxText>Badges</BoxText>
+            <BoxText>{t('hr-badges')}</BoxText>
           </BoxHackerRank>
         </Link>
         <Link href={hackerrank}>
           <BoxHackerRank key={1}>
             <BoxNum>5</BoxNum>
-            <BoxText>Verified Skills</BoxText>
+            <BoxText>{t('hr-verifiedskills')}</BoxText>
           </BoxHackerRank>
         </Link>
         <Link href={hackerrank}>
           <BoxHackerRank key={2}>
             <BoxNum>225</BoxNum>
-            <BoxText>Questions Completed</BoxText>
+            <BoxText>{t('hr-questions')}</BoxText>
           </BoxHackerRank>
         </Link>
       </Boxes>
-      <SmallTitle><Link href={hackerrank}>HackerRank Certificates</Link></SmallTitle>
+      <SmallTitle><Link href={hackerrank}>{t('hr-certs')}</Link></SmallTitle>
       <ImageBoxes>
         <Link href="https://www.hackerrank.com/certificates/671d5ccbdfc6">
           <BoxHackerRankImage key={0}>
-            <img src="images/js_basic.jpg" alt="javascript (basic)" width="100%" height="80%"/>
+            <img src="/images/js_basic.jpg" alt="javascript (basic)" width="100%" height="80%" loading="lazy"/>
             <ImageBoxText>JavaScript (Basic)</ImageBoxText>
           </BoxHackerRankImage>
         </Link>
         <Link href="https://www.hackerrank.com/certificates/6abda86bcec5">
           <BoxHackerRankImage key={1}>
-            <img src="images/py_basic.jpg" alt="python (basic)" width="100%" height="80%"/>
+            <img src="/images/py_basic.jpg" alt="python (basic)" width="100%" height="80%" loading="lazy"/>
             <ImageBoxText>Python (Basic)</ImageBoxText>
           </BoxHackerRankImage>
         </Link>
         <Link href="https://www.hackerrank.com/certificates/2353f0513d55">
           <BoxHackerRankImage key={2}>
-            <img src="images/cs_basic.jpg" alt="csharp (basic)" width="100%" height="80%"/>
+            <img src="/images/cs_basic.jpg" alt="csharp (basic)" width="100%" height="80%" loading="lazy"/>
             <ImageBoxText>C# (Basic)</ImageBoxText>
           </BoxHackerRankImage>
         </Link>
@@ -114,13 +119,13 @@ const Accomplishments = ({data}) => {
       <ImageBoxes>
         <Link href="https://www.hackerrank.com/certificates/2353f0513d55">
           <BoxHackerRankImage key={3}>
-            <img src="images/js_int.jpg" alt="javascript (intermediate)" width="100%" height="80%"/>
+            <img src="/images/js_int.jpg" alt="javascript (intermediate)" width="100%" height="80%" loading="lazy"/>
             <ImageBoxText>JavaScript (Intermediate)</ImageBoxText>
           </BoxHackerRankImage>
         </Link>
         <Link href="https://www.hackerrank.com/certificates/f161d7813611">
           <BoxHackerRankImage key={4}>
-            <img src="images/java_basic.jpg" alt="java (basic)" width="100%" height="80%"/>
+            <img src="/images/java_basic.jpg" alt="java (basic)" width="100%" height="80%" loading="lazy"/>
             <ImageBoxText>Java (Basic)</ImageBoxText>
           </BoxHackerRankImage>
         </Link>
@@ -129,38 +134,38 @@ const Accomplishments = ({data}) => {
       <Boxes>
         <Link href={leetCode}>
           <BoxLeetcode key={0}>
-            <BoxNum>230,043<sup>th</sup></BoxNum>
-            <BoxText>Rank</BoxText>
+            <BoxNum>230,043{router.locale === "en-US" ? <sup>th</sup> : null}</BoxNum>
+            <BoxText>{t('lc-rank')}</BoxText>
           </BoxLeetcode>
         </Link>
         <Link href={leetCode}>
           <BoxLeetcode key={1}>
-            <BoxNum>1,515<sup>th</sup></BoxNum>
-            <BoxText>Contest Rating</BoxText>
+            <BoxNum>1,515{router.locale === "en-US" ? <sup>th</sup> : null}</BoxNum>
+            <BoxText>{t('lc-contestrating')}</BoxText>
           </BoxLeetcode>
         </Link>
         <Link href={leetCode}>
           <BoxLeetcode key={2}>
             <BoxNum>101,651</BoxNum>
-            <BoxText>Contest Global Ranking</BoxText>
+            <BoxText>{t('lc-contestglobalranking')}</BoxText>
           </BoxLeetcode>
         </Link>
         <Link href={leetCode}>
           <BoxLeetcode key={3}>
             <BoxNum>6</BoxNum>
-            <BoxText>Contests Attended</BoxText>
+            <BoxText>{t('lc-contestsattended')}</BoxText>
           </BoxLeetcode>
         </Link>
         <Link href={leetCode}>
           <BoxLeetcode key={4}>
             <BoxNum>197</BoxNum>
-            <BoxText>Problems Solved</BoxText>
+            <BoxText>{t('lc-problemssolved')}</BoxText>
           </BoxLeetcode>
         </Link>
         <Link href={leetCode}>
           <BoxLeetcode key={5}>
             <BoxNum>38.39%</BoxNum>
-            <BoxText>In Top Contest RAnking</BoxText>
+            <BoxText>{t('lc-topranking')}</BoxText>
           </BoxLeetcode>
         </Link>
       </Boxes>

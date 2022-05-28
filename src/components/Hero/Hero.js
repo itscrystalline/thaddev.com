@@ -4,19 +4,21 @@ import Link from 'next/link';
 import {Section, SectionText, SectionTitle} from '../../styles/GlobalComponents';
 import {BoldHeaderText, LeftSection} from './HeroStyles';
 import {Button} from "../../styles/GlobalComponents/Button";
+import {useTranslation} from "next-i18next";
 
 const Hero = (props) => {
+  const {t} = useTranslation(['hero', 'common']);
   return (
     <Section row nopadding>
       <LeftSection>
         <SectionTitle main center>
-          Welcome To&nbsp; <br/>
+          {t('hero-1')}&nbsp; <br/>
           <BoldHeaderText>ThadDev</BoldHeaderText>!
         </SectionTitle>
         <SectionText>
-          A self-taught, full-stack developer. Has been learning to code since 9 years old.
+          {t('hero-2')}
         </SectionText>
-        <Link href="#aboutme"><Button>About Me</Button></Link>
+        <Link href="#aboutme"><Button>{t('common:title-aboutme')}</Button></Link>
         <p><br/></p>
       </LeftSection>
     </Section>

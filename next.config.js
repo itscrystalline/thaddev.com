@@ -1,3 +1,5 @@
+const {i18n} = require('./next-i18next.config');
+
 module.exports = {
   async headers() {
     return [
@@ -16,5 +18,6 @@ module.exports = {
     loader: 'akamai',
     path: ''
   },
-  trailingSlash: true
+  trailingSlash: true,
+  i18n
 }

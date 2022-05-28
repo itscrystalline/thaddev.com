@@ -5,7 +5,7 @@ function createData(name, apiLink, method) {
 export const projects = [
   {
     title: 'CombatUtilities',
-    description: "A Minecraft mod that adds utility features to make Minecraft combat easier. Built using the Fabric modding API with Java.",
+    description: "CombatUtilities",
     tags: ['Fabric', 'Minecraft', 'Java'],
     source: 'https://github.com/MyNameTsThad/CombatUtilities',
     live: '',
@@ -13,7 +13,7 @@ export const projects = [
   },
   {
     title: 'thaddev.com',
-    description: "This very website. It's a single page application built with React.js/Next.js and hosted on Raspberry Pi with the help of ngrok and Cloudflare.",
+    description: "thaddev.com",
     tags: ['Next.js', 'React.js', 'JavaScript'],
     source: 'https://github.com/MyNameTsThad/thaddev.com',
     live: 'https://thaddev.com',
@@ -21,7 +21,7 @@ export const projects = [
   },
   {
     title: 'Some Discord Bot',
-    description: "A multi-purpose discord bot that can be used for moderation, fun, and more, for my friend's discord server. Built with Java using the JDA library.",
+    description: "SomeDiscordBot",
     tags: ['JDA', 'Java'],
     source: 'https://github.com/MyNameTsThad/SomeDiscordBot',
     live: '',
@@ -29,7 +29,7 @@ export const projects = [
   },
   {
     title: 'Project APIs',
-    description: "Web server that also hosts an API for my personal projects. Built with Java and Spring Boot.",
+    description: "ProjectAPIs",
     tags: ['Spring Boot', 'Java'],
     source: 'https://github.com/MyNameTsThad/project-apis',
     live: '',
@@ -37,7 +37,7 @@ export const projects = [
   },
   {
     title: 'IoT Door Lock',
-    description: "A smart door lock that can be controlled both on-the-spot and remotely via the Blynk platform. Built using the NodeMCU ESP8266 with Arduino and the Blynk platform library.",
+    description: "IoTDoorLock",
     tags: ['Blynk', 'Arduino', 'C++', 'C'],
     source: 'https://github.com/MyNameTsThad/PCCCHON_Project_IoTDoorLock-V2',
     live: '',
@@ -45,7 +45,7 @@ export const projects = [
   },
   {
     title: 'Pydoku',
-    description: "A text-based version of the classic puzzle game Sudoku made in Vanilla Python.",
+    description: "Pydoku",
     tags: ['Python'],
     source: 'https://github.com/MyNameTsThad/pydoku',
     live: '',
@@ -53,7 +53,7 @@ export const projects = [
   },
   {
     title: 'Boosted Burgers App',
-    description: "An mock android app for the VERSO HACK 2022 hackathon. Built using Java.",
+    description: "BoostedBurgersApp",
     tags: ['Android', 'Java'],
     source: 'https://github.com/MyNameTsThad/VERSOHACK2022-BoostedBurgersApp',
     live: '',
@@ -61,7 +61,7 @@ export const projects = [
   },
   {
     title: 'Helpful Utils Bot',
-    description: "A LINE bot that can be used for various things. Built using Java and the LINE library.",
+    description: "HelpfulUtilsBot",
     tags: ['LINE', 'Java'],
     source: 'https://github.com/MyNameTsThad/HelpfulUtilsBot-LINE',
     live: '',
@@ -69,7 +69,7 @@ export const projects = [
   },
   {
     title: 'Geometry Mix',
-    description: "A Simple game where you combine similar shapes and avoid other shapes. Built using Unity and C#. Made for the ProcJam Game Jam on itch.io.",
+    description: "GeometryMix",
     tags: ['Unity', 'C#'],
     source: 'https://github.com/MyNameTsThad/GeometryMix',
     live: 'https://itch.io/jam/procjam/rate/1315310',
@@ -77,7 +77,7 @@ export const projects = [
   },
   {
     title: 'Hytils',
-    description: "A Minecraft mod that adds features to minigames on the Hypixel Network. Built using Java and Forge.",
+    description: "Hytils",
     tags: ['Forge', 'Minecraft', 'Java'],
     source: 'https://github.com/MyNameTsThad/Hytils-1.8.9',
     live: '',
@@ -85,7 +85,7 @@ export const projects = [
   },
   {
     title: 'Notes App',
-    description: "An android app for taking short, simple, text notes, simple as that. Built using Java.",
+    description: "NotesApp",
     tags: ['Android', 'Java'],
     source: 'https://github.com/MyNameTsThad/Hytils-1.8.9',
     live: '',
@@ -93,7 +93,7 @@ export const projects = [
   },
   {
     title: 'SkyblockItems++',
-    description: "A Minecraft mod that adds game mechanics and features from the Hypixel game mode 'Skyblock' as a Forge mod. Built using Java and Forge.",
+    description: "SkyblockItems++",
     tags: ['Forge', 'Minecraft', 'Java'],
     source: 'https://github.com/MyNameTsThad/SkyblockItemsPlusPlus-1.16.5',
     live: '',
@@ -101,7 +101,7 @@ export const projects = [
   },
   {
     title: 'Tree Game',
-    description: "A simple game where you chop down a set amount of trees with apples in the given time. Currently live on the Google Play Store. Build using Unity and C#.",
+    description: "TreeGame",
     tags: ['Unity', 'C#'],
     source: 'https://github.com/MyNameTsThad/Tree-Game',
     live: 'https://play.google.com/store/apps/details?id=com.ThadDev.TreeGame',
@@ -109,7 +109,7 @@ export const projects = [
   },
   {
     title: 'BattleParkour',
-    description: "My first Unity game. Reach the end of the level while facing enemies. Currently live on the Google Play Store.",
+    description: "BattleParkour",
     tags: ['Unity', 'C#'],
     source: 'https://github.com/MyNameTsThad/BattleParkour_Project',
     live: 'https://play.google.com/store/apps/details?id=com.ThadCoder.BattleParkour',
@@ -117,7 +117,7 @@ export const projects = [
   },
   {
     title: 'HealthMod',
-    description: "A simple mod for Minecraft version 1.8.9 that warns you whenever you're health is low. Built using Java and Forge.",
+    description: "HealthMod",
     tags: ['Forge', 'Minecraft', 'Java'],
     source: 'https://github.com/MyNameTsThad/HealthMod',
     live: '',
@@ -126,16 +126,16 @@ export const projects = [
 ];
 
 export const TimeLineData = [
-  {year: 2016, text: 'Started my programming journey',},
-  {year: 2019, text: 'Started making Unity Games',},
-  {year: 2020, text: 'Released my first Game "BattleParkour"'},
-  {year: 2020, text: 'Joined My first competition "Thailand Topcoder" by GetLinks.'},
-  {year: 2021, text: 'Created and Released my Second Game "Tree Game"'},
-  {year: 2021, text: 'Started doing HackerRank to improve my skills'},
-  {year: 2021, text: 'Participated in a itch.io Game Jam called "ProcJam" and released the game "Geometry Mix"'},
-  {year: 2021, text: 'Participated in a contest called "TOCPC"'},
-  {year: 2021, text: 'Started doing LeetCode'},
-  {year: 2022, text: 'Participated in VERSO HACK 2022'}
+  {year: 2016, text: 'timeline-2016',},
+  {year: 2019, text: 'timeline-2019',},
+  {year: 2020, text: 'timeline-2020-1'},
+  {year: 2020, text: 'timeline-2020-2'},
+  {year: 2021, text: 'timeline-2021-1'},
+  {year: 2021, text: 'timeline-2021-2'},
+  {year: 2021, text: 'timeline-2021-3'},
+  {year: 2021, text: 'timeline-2021-4'},
+  {year: 2021, text: 'timeline-2021-5'},
+  {year: 2022, text: 'timeline-2022'}
 ];
 
 export const Links = [
@@ -149,40 +149,34 @@ export const Links = [
 ];
 
 export const timerAPIs = [
-  createData('List all Timers', "/timer/getall", "GET"),
-  createData('Get a specified Timer {id: ID of the timer}', "/timer/get?id={id}", "GET"),
-  createData('Add a timer {json: lengthTime: Time in milliseconds the timer will last}', "/timer/new", "POST"),
-  createData('Modify a Timer {id: ID of the timer to change, json: lengthTime: Time in milliseconds the new timer will last}', "/timer/set?id={id}", "PATCH"),
-  createData('Delete a Timer {id: ID of the timer to delete}', "/timer/delete?id={id}", "DELETE"),
-  createData('Delete ALL Timers', "/timer/deleteall", "DELETE"),
+  createData('timer-listall', "/timer/getall", "GET"),
+  createData('timer-gettimer', "/timer/get?id={id}", "GET"),
+  createData('timer-addtimer', "/timer/new", "POST"),
+  createData('timer-modifytimer', "/timer/set?id={id}", "PATCH"),
+  createData('timer-deletetimer', "/timer/delete?id={id}", "DELETE"),
+  createData('timer-deletetimers', "/timer/deleteall", "DELETE"),
 ];
 
 export const timerInstanceAPIs = [
-  createData('List all Timer Instances', "/timer/instances/getall", "GET"),
-  createData('Get a specified Timer Instance {id: ID of the timer instance}', "/timer/instances/get?id={id}", "GET"),
-  createData('Get the current CONTROLLING Timer Instance', "/timer/instances/getcontrolling", "GET"),
-  createData('Create a new Timer Instance {timerId: The ID of the parent Timer, isComputerControl: If the Timer Instance is controlling}', "/timer/instances/new?timerId={id}&isComputerControl={true,false}", "POST"),
-  createData('Start a Timer Instance {id: ID of the timer instance to start}', "/timer/instances/start?id={id}", "PATCH"),
-  createData('Pauses a Timer Instance {id: ID of the timer instance to pause}', "/timer/instances/pause?id={id}", "PATCH"),
-  createData('Changes the controlling state of a Timer Instance {id: ID of the timer instance to pause, computerControl: the new controlling state}', "/timer/instances/computercontrol?id={id}&computerControl={true,false}", "PATCH"),
-  createData('Delete a Timer Instance {id: ID of the timer instance to delete}', "/timer/instances/delete?id={id}", "DELETE"),
-  createData('Delete ALL Timers {authPassword: The authentication password}', "/timer/instances/delete/all?authPassword={authPassword}", "DELETE"),
+  createData('timerinstance-listall', "/timer/instances/getall", "GET"),
+  createData('timerinstance-gettimerinstance', "/timer/instances/get?id={id}", "GET"),
+  createData('timerinstance-getcontrolling', "/timer/instances/getcontrolling", "GET"),
+  createData('timerinstance-newinstance', "/timer/instances/new?timerId={id}&isComputerControl={true,false}", "POST"),
+  createData('timerinstance-start', "/timer/instances/start?id={id}", "PATCH"),
+  createData('timerinstance-pause', "/timer/instances/pause?id={id}", "PATCH"),
+  createData('timerinstance-computercontrol', "/timer/instances/computercontrol?id={id}&computerControl={true,false}", "PATCH"),
+  createData('timerinstance-deleteone', "/timer/instances/delete?id={id}", "DELETE"),
+  createData('timerinstance-deleteall', "/timer/instances/delete/all?authPassword={authPassword}", "DELETE"),
 ];
 
 export const computerControl = [
-  createData('Pings the server for the current status', "/computercontrol/ping", "GET"),
-  createData('Get current Command stack', "/computercontrol/getstack", "GET"),
-  createData('Request the server to add a Command to the stack {json: execCommand: The command that is going to be added}', "/computercontrol/add", "POST"),
-  createData('Request the server to validate the Computer Control Password {password: the computer control password}', "/computercontrol/auth?password={password}", "POST"),
-  createData('Clears the Command stack', "/computercontrol/clearstack", "DELETE")
+  createData('computercontrol-ping', "/computercontrol/ping", "GET"),
+  createData('computercontrol-getstack', "/computercontrol/getstack", "GET"),
+  createData('computercontrol-addtostack', "/computercontrol/add", "POST"),
+  createData('computercontrol-validate', "/computercontrol/auth?password={password}", "POST"),
+  createData('computercontrol-clear', "/computercontrol/clearstack", "DELETE")
 ];
 
 export const otherApis = [
-  createData('Get Cloudflare worker Main URL', "/cf-ngrok/get1", "GET"),
-  createData('Get Cloudflare worker LINE URL', "/cf-ngrok/get2", "GET"),
-  createData('Get Cloudflare worker Site URL', "/cf-ngrok/get3", "GET"),
-  createData('Set Cloudflare worker Main URL', "[REDACTED]", "POST"),
-  createData('Set Cloudflare worker LINE URL', "[REDACTED]", "POST"),
-  createData('Set Cloudflare worker Site URL', "[REDACTED]", "POST"),
-  createData('LINE Bot Callback', "https://linebot.{domain}/callback", "POST"),
+  createData('other-linebot', "https://linebot.{domain}/callback", "POST"),
 ];

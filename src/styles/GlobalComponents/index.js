@@ -25,6 +25,8 @@ export const Section = styled.section`
 `
 
 export const SectionTitle = styled.h2`
+  font-family: ${props => props.theme.fonts.main}, ${props => props.theme.fonts.thai};
+  font-size-adjust: 0.534;
   font-weight: 800;
   font-size: ${(props) => props.main ? '65px' : '56px'};
   line-height: ${(props) => props.main ? '82px' : '76px'};
@@ -55,6 +57,8 @@ export const SectionTitle = styled.h2`
 `
 
 export const Title = styled.h3`
+  font-size-adjust: 0.534;
+  font-family: ${props => props.theme.fonts.main}, ${props => props.theme.fonts.thai};
   font-weight: 600;
   font-size: ${(props) => props.main ? '55px' : '36px'};
   line-height: ${(props) => props.main ? '62px' : '46px'};

@@ -4,8 +4,12 @@ import {CardInfo, GridContainer, HeaderThree, Hr, TitleContent, Vr,} from "../..
 import {SectionText} from "../../../styles/GlobalComponents";
 import Image from 'next/image'
 import Link from "next/link";
+import {useTranslation} from "next-i18next";
+import {useRouter} from "next/router";
 
 const FrontPagePosts = ({posts}) => {
+  const {t} = useTranslation(['blog', 'common']);
+  const router = useRouter();
   let firstPostId = posts.length === 0 ? -1 : posts[posts.length - 1].id;
   let firstPost = posts.length === 0 ? -1 : posts[posts.length - 1];
   if (posts.length === 0) {
@@ -13,12 +17,12 @@ const FrontPagePosts = ({posts}) => {
       <>
         <p><br/></p>
         <p><br/></p>
-        <center><SectionText>No posts yet, please come back later.</SectionText></center>
+        <center><SectionText>{t('no-posts')}</SectionText></center>
       </>);
   } else {
     return (
       <>
-        <Link href={`/blog/posts/${firstPostId}`}>
+        <Link href={`/blog/posts?id=${firstPostId}`} locale={router.locale}>
           <MainCard>
             <p><br/></p>
             <TitleContent>
@@ -39,7 +43,7 @@ const FrontPagePosts = ({posts}) => {
           {posts.slice(0).reverse().map(({id, attributes}) => {
             if (id !== firstPostId) {
               return (
-                <Link href={`/blog/posts/${id}`}>
+                <Link href={`/blog/posts?id=${id}`}>
                   <BlogCard>
                     <TitleContent>
                       {attributes.image.data != null ?
