@@ -32,11 +32,11 @@ const FrontPagePosts = ({posts}) => {
                      height={firstPost.attributes.image.data.attributes.height * 0.75}/>
               <p><br/></p>
               <HeaderThree title>
-                {router.locale === "en-US" ? post.post.data.attributes.title : post.post.data.attributes.title_th}
+                {router.locale === "en-US" ? firstPost.attributes.title : firstPost.attributes.title_th}
               </HeaderThree>
             </TitleContent>
             <Vr/>
-            <CardInfo>{router.locale === "en-US" ? post.post.data.attributes.description : post.post.data.attributes.description_th}</CardInfo>
+            <CardInfo>{router.locale === "en-US" ? firstPost.attributes.description : firstPost.attributes.description_th}</CardInfo>
           </MainCard>
         </Link>
         <GridContainer>
