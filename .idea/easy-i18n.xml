@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectSettingsService">
+    <option name="defaultNamespace" value="common" />
+    <option name="filePattern" value="*.json" />
+    <option name="folderStrategy" value="MODULARIZED_NAMESPACE" />
+    <option name="localesDirectory" value="$PROJECT_DIR$/public/locales" />
+  </component>
+</project>

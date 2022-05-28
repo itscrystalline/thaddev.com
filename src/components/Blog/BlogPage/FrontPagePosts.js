@@ -32,11 +32,11 @@ const FrontPagePosts = ({posts}) => {
                      height={firstPost.attributes.image.data.attributes.height * 0.75}/>
               <p><br/></p>
               <HeaderThree title>
-                {firstPost.attributes.title}
+                {router.locale === "en-US" ? post.post.data.attributes.title : post.post.data.attributes.title_th}
               </HeaderThree>
             </TitleContent>
             <Vr/>
-            <CardInfo>{firstPost.attributes.description}</CardInfo>
+            <CardInfo>{router.locale === "en-US" ? post.post.data.attributes.description : post.post.data.attributes.description_th}</CardInfo>
           </MainCard>
         </Link>
         <GridContainer>
@@ -53,11 +53,11 @@ const FrontPagePosts = ({posts}) => {
                                  height={attributes.image.data.attributes.height * 0.75}/><p><br/></p></>
                         : null}
                       <HeaderThree title>
-                        {attributes.title}
+                        {router.locale === "en-US" ? attributes.title : attributes.title_th}
                         <Hr/>
                       </HeaderThree>
                     </TitleContent>
-                    <CardInfo>{attributes.description}</CardInfo>
+                    <CardInfo>{router.locale === "en-US" ? attributes.description : attributes.description_th}</CardInfo>
                   </BlogCard>
                 </Link>
               );
