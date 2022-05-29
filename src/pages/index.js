@@ -30,7 +30,6 @@ const Home = (props) => {
   //console.log(router.locale);
   return (<>
     <NextSeo title="ThadDev's Site"/>
-    <ChangeLanguageButton/>
     <Layout>
       <Section grid>
         <Hero/>
@@ -43,6 +42,7 @@ const Home = (props) => {
       <Gallery/>
       <BlogSection/>
     </Layout>
+    <ChangeLanguageButton/>
   </>);
 }
 

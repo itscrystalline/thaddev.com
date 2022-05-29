@@ -6,13 +6,13 @@ import {AltLayout} from "../../layout/AltLayout";
 import ChangeLanguageButton from "../../styles/GlobalComponents/Button";
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 import {useTranslation} from "next-i18next";
+import React from "react";
 
 const Index = (props) => {
   const {t} = useTranslation('blog', 'common');
   return (
     <>
       <NextSeo title="ThadDev's Site - Blog"/>
-      <ChangeLanguageButton/>
       <AltLayout>
         <Section>
           <SectionTitle>{t('common:blog')}</SectionTitle>
@@ -24,6 +24,7 @@ const Index = (props) => {
           <p><br/></p>
         </Section>
       </AltLayout>
+      <ChangeLanguageButton/>
     </>
   );
 };

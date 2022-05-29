@@ -36,7 +36,6 @@ const PostPage = (props) => {
     return (
       <>
         <NextSeo title="ThadDev's Site - Blog"/>
-        <ChangeLanguageButton/>
         <AltLayout>
           <Section>
             <NavLink href={`/${router.locale === 'en-US' ? '' : 'th-TH/'}blog/`}><SectionSubText><BiLeftArrow/> Back to
@@ -55,6 +54,7 @@ const PostPage = (props) => {
             <center><SectionText>{t('loading')}</SectionText></center>
           </Section>
         </AltLayout>
+        <ChangeLanguageButton/>
       </>
     )
   } else {
@@ -62,7 +62,6 @@ const PostPage = (props) => {
       return (
         <>
           <NextSeo title="ThadDev's Site - Blog"/>
-          <ChangeLanguageButton/>
           <AltLayout>
             <Section>
               <NavLink href={`/${router.locale === 'en-US' ? '' : 'th-TH/'}blog/`}><SectionSubText><BiLeftArrow/> Back
@@ -81,6 +80,7 @@ const PostPage = (props) => {
               <center><SectionText>{t('404')}</SectionText></center>
             </Section>
           </AltLayout>
+          <ChangeLanguageButton/>
         </>
       )
     } else {
@@ -91,7 +91,6 @@ const PostPage = (props) => {
       return (
         <>
           <NextSeo title="ThadDev's Site - Blog"/>
-          <ChangeLanguageButton/>
           <AltLayout>
             <Section>
               <NavLink href={`/${router.locale === 'en-US' ? '' : 'th-TH/'}blog/`}><SectionSubText><BiLeftArrow/> Back
@@ -120,6 +119,7 @@ const PostPage = (props) => {
               <PostContent content={htmlContent}/>
             </Section>
           </AltLayout>
+          <ChangeLanguageButton/>
         </>
       );
     }

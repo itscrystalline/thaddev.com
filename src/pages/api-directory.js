@@ -72,7 +72,6 @@ const APIDirectory = () => {
   return (
     <>
       <NextSeo title="ThadDev's Site - API Directory"/>
-      <ChangeLanguageButton/>
       <AltLayout noTagLinks>
         <Section>
           <SectionTitle>{t('apidirectory')}</SectionTitle>
@@ -172,6 +171,7 @@ const APIDirectory = () => {
           </SectionText>
         </Section>
       </AltLayout>
+      <ChangeLanguageButton/>
     </>
   );
 }
