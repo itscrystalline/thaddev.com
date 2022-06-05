@@ -7,14 +7,16 @@ export default {
   },
   // Colors for layout
   colors: {
-    primary1: "#F2F5F7",
-    primary2: "#FFAA00",
-    background1: "#1F1F1F",
-    accent1: "hsl(34.9,98.6%,72.9%)",
-    button: "hsl(205.1,100%,36.1%)",
-    background2: "hsl(232.7,27.3%,23.7%)",
-    hackerrank: "#22934b",
-    leetcode: "#ad6800"
+    dark1: "#1F1F1F",
+    dark2: "#191919",
+    gold1: "#FFAA00",
+    gold2: "#FF8800",
+    red1: "#CC1842",
+    red2: "#EE4848",
+    green1: "#71d261",
+    green2: "#88d77a",
+    blue1: "#42c9d6",
+    blue2: "#87dccd",
   },
   // Breakpoints for responsive design
   breakpoints: {
@@ -24,14 +26,4 @@ export default {
     lgText: 'screen and (max-width: 1156px)',
     xl: 'screen and (max-width: 1280px)'
   },
-
-  vars: {
-    cubeSize: "40vh",
-    colorFront: "#404040",
-    colorBack: "#202020",
-    colorTop: "#353535",
-    colorRight: "#3d3d3d",
-    colorBottom: "#252525",
-    colorLeft: "#3d3d3d"
-  }
 }

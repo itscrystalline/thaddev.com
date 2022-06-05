@@ -18,7 +18,6 @@ import {styled} from '@mui/material/styles';
 import {HttpVerb} from "../components/HttpVerb/HttpVerb";
 import {computerControl, otherApis, timerAPIs, timerInstanceAPIs} from "../constants/constants";
 import {NextSeo} from "next-seo";
-import ChangeLanguageButton from "../styles/GlobalComponents/Button";
 import {useRouter} from "next/router";
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 import {useTranslation} from "next-i18next";
@@ -171,7 +170,7 @@ const APIDirectory = () => {
           </SectionText>
         </Section>
       </AltLayout>
-      <ChangeLanguageButton/>
+
     </>
   );
 }

@@ -1,9 +1,5 @@
 import {NextSeo} from "next-seo";
 import axios from "axios";
-import {Section, SectionDivider, SectionText, SectionTitle} from "../../styles/GlobalComponents";
-import FrontPagePosts from "../../components/Blog/BlogPage/FrontPagePosts";
-import {AltLayout} from "../../layout/AltLayout";
-import ChangeLanguageButton from "../../styles/GlobalComponents/Button";
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 import {useTranslation} from "next-i18next";
 import React from "react";
@@ -13,7 +9,7 @@ const Index = (props) => {
   return (
     <>
       <NextSeo title="ThadDev's Site - Blog"/>
-      <AltLayout>
+      {/*<AltLayout>
         <Section>
           <SectionTitle>{t('common:blog')}</SectionTitle>
           <SectionText>{t('welcome')}</SectionText>
@@ -23,8 +19,8 @@ const Index = (props) => {
           <FrontPagePosts posts={props.posts === undefined ? {} : props.posts.data}/>
           <p><br/></p>
         </Section>
-      </AltLayout>
-      <ChangeLanguageButton/>
+      </AltLayout>*/}
+
     </>
   );
 };

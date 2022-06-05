@@ -1,18 +1,8 @@
-import Accomplishments from '../components/Acomplishments/Accomplishments';
-import BgAnimation from '../components/BackgroundAnimation/BackgroundAnimation';
-import Hero from '../components/Hero/Hero';
-import Projects from '../components/Projects/Projects';
-import Technologies from '../components/Technologies/Technologies';
-import AboutMe from '../components/AboutMe/AboutMe';
 import {Layout} from '../layout/Layout';
-import {Section} from '../styles/GlobalComponents';
-import BlogSection from "../components/Blog/BlogSection";
-import Gallery from "../components/Gallery/Gallery";
 import {NextSeo} from "next-seo";
 import {ApolloClient, createHttpLink, gql, InMemoryCache} from "@apollo/client";
 import {setContext} from '@apollo/client/link/context';
 import {createTheme} from "@mui/material";
-import ChangeLanguageButton from "../styles/GlobalComponents/Button";
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 
 const theme = createTheme({
@@ -31,7 +21,7 @@ const Home = (props) => {
   return (<>
     <NextSeo title="ThadDev's Site"/>
     <Layout>
-      <Section grid>
+      {/*<Section grid>
         <Hero/>
         <BgAnimation/>
       </Section>
@@ -40,9 +30,8 @@ const Home = (props) => {
       <AboutMe/>
       <Accomplishments data={props.data}/>
       <Gallery/>
-      <BlogSection/>
+      <BlogSection/>*/}
     </Layout>
-    <ChangeLanguageButton/>
   </>);
 }
 

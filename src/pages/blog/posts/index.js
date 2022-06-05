@@ -1,18 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {NextSeo} from "next-seo";
-import {AltLayout} from "../../../layout/AltLayout";
-import {Section, SectionSubText, SectionText, SectionTitle} from "../../../styles/GlobalComponents";
 import axios from "axios";
-import Image from "next/image";
-import {AiFillCalendar} from "react-icons/ai";
-import {BiLeftArrow, BiRightArrow} from "react-icons/bi";
-import {NavLink} from "../../../components/Header/HeaderStyles";
 import {marked} from 'marked';
-import PostContent from "../../../components/Blog/BlogPage/PostContent";
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 import {useRouter} from "next/router";
 import {useTranslation} from "next-i18next";
-import ChangeLanguageButton from "../../../styles/GlobalComponents/Button";
 
 const PostPage = (props) => {
   const router = useRouter()
@@ -36,7 +28,7 @@ const PostPage = (props) => {
     return (
       <>
         <NextSeo title="ThadDev's Site - Blog"/>
-        <AltLayout>
+        {/*<AltLayout>
           <Section>
             <NavLink href={`/${router.locale === 'en-US' ? '' : 'th-TH/'}blog/`}><SectionSubText><BiLeftArrow/> Back to
               Blog</SectionSubText></NavLink>
@@ -53,8 +45,8 @@ const PostPage = (props) => {
             <p><br/></p>
             <center><SectionText>{t('loading')}</SectionText></center>
           </Section>
-        </AltLayout>
-        <ChangeLanguageButton/>
+        </AltLayout>*/}
+
       </>
     )
   } else {
@@ -62,7 +54,7 @@ const PostPage = (props) => {
       return (
         <>
           <NextSeo title="ThadDev's Site - Blog"/>
-          <AltLayout>
+          {/*<AltLayout>
             <Section>
               <NavLink href={`/${router.locale === 'en-US' ? '' : 'th-TH/'}blog/`}><SectionSubText><BiLeftArrow/> Back
                 to Blog</SectionSubText></NavLink>
@@ -79,8 +71,8 @@ const PostPage = (props) => {
               <p><br/></p>
               <center><SectionText>{t('404')}</SectionText></center>
             </Section>
-          </AltLayout>
-          <ChangeLanguageButton/>
+          </AltLayout>*/}
+
         </>
       )
     } else {
@@ -91,7 +83,7 @@ const PostPage = (props) => {
       return (
         <>
           <NextSeo title="ThadDev's Site - Blog"/>
-          <AltLayout>
+          {/*<AltLayout>
             <Section>
               <NavLink href={`/${router.locale === 'en-US' ? '' : 'th-TH/'}blog/`}><SectionSubText><BiLeftArrow/> Back
                 to Blog</SectionSubText></NavLink>
@@ -118,8 +110,8 @@ const PostPage = (props) => {
               <SectionText>{router.locale === "en-US" ? post.post.data.attributes.description : post.post.data.attributes.description_th}</SectionText>
               <PostContent content={htmlContent}/>
             </Section>
-          </AltLayout>
-          <ChangeLanguageButton/>
+          </AltLayout>*/}
+
         </>
       );
     }
