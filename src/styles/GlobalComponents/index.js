@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Section = styled.section`
   display: ${(props) => props.grid ? "grid" : "flex"};
   flex-direction: ${(props) => props.row ? "row" : "column"};
-  padding: ${(props) => props.nopadding ? "0" : "32px 48px 0"};
+  padding: 256px;
   margin: 0 auto;
   max-width: 1140px;
   box-sizing: content-box;
@@ -29,7 +29,7 @@ export const SectionTitle = styled.h2`
   font-size-adjust: 0.534;
   font-weight: 800;
   font-size: ${(props) => props.main ? '65px' : '56px'};
-  line-height: ${(props) => props.main ? '82px' : '76px'};
+  line-height: ${(props) => props.main ? '90px' : '84px'};
   width: auto;
   max-width: 90%;
   background: linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
@@ -239,3 +239,18 @@ export const LinkIconImg = styled.div`
     height: ${({large}) => large ? '32px' : '16px'};
   }
 `
+
+export const CollapsableBackground = styled.div`
+  border-radius: 25px;
+  background: #252525;
+  padding: 20px;
+  transition: 0.25s ease-in-out;
+
+  &:hover {
+    background: #272727;
+  }
+
+  &:active {
+    background: #2a2a2a;
+  }
+`;

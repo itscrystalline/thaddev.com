@@ -11,11 +11,6 @@ const GlobalStyles = createGlobalStyle`
     src: url("/fonts/JetBrainsMono-Regular.woff2");
   }
 
-  @font-face {
-    font-family: "supermarket";
-    src: url("/fonts/supermarket.ttf");
-  }
-
   * {
     box-sizing: border-box;
     margin: 0;
@@ -32,8 +27,7 @@ const GlobalStyles = createGlobalStyle`
     font-size-adjust: 0.534;
     font-family: ${props => props.theme.fonts.main}, ${props => props.theme.fonts.thai};
 
-    /* global 94%+ browsers support */
-    background: ${props => props.theme.colors.dark2};
+    background: #191919;
 
     color: ${props => props.theme.colors.gold1};
     cursor: default;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useRouter} from 'next/router'
 import styled from 'styled-components';
 
@@ -73,6 +73,49 @@ export const Button = styled.button`
       height: 25px;
       width: 100%;
     }
+  }
+`;
+
+export const AdaptiveButtonStyle = styled.button`
+  transition: color 0.5s cubic-bezier(.17, .67, .1, 1),
+  padding 0.25s cubic-bezier(.17, .67, .1, 1),
+  background-color 0.5s cubic-bezier(.17, .67, .1, 1),
+  filter 0.5s cubic-bezier(.17, .67, .1, 1),
+  border 0.5s cubic-bezier(.17, .67, .1, 1),
+  transform 0.25s cubic-bezier(.17, .67, .1, 1),
+  box-shadow 0.25s cubic-bezier(.17, .67, .1, 1),
+  font-weight 0.5s cubic-bezier(.17, .67, .1, 1),
+  width 0.25s cubic-bezier(.17, .67, .1, 1);
+  font-size: 20pt;
+  line-height: 0;
+  border-radius: 20px;
+  background: ${props => props.background};
+  padding: ${props => props.padding};
+  color: #FFFFFF;
+  box-shadow: 0px 7px 0px 0px ${props => props.shadowColor};
+
+  background-size: contain;
+  border: 3px ${props => props.shadowColor} solid;
+  text-align: center;
+  filter: saturate(0.9);
+
+  max-height: 61.6667px;
+  max-lines: 1;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: clip;
+
+  &:hover {
+    filter: saturate(1);
+    transform: translateY(-3px);
+    box-shadow: 0px 10px 0px 0px ${props => props.hoverShadowColor};
+  }
+
+  &:active {
+    transform: translateY(1px);
+    border: 3px ${props => props.activeBorderColor} solid;
+    box-shadow: 0px 5px 0px 0px ${props => props.activeShadowColor};
   }
 `;
 
@@ -198,6 +241,24 @@ const ChangeLanguageButton = () => {
     <HoverButton onClick={() => {
       router.push({pathname, query}, asPath, {locale: `${router.locale === "en-US" ? "th-TH" : "en-US"}`})
     }}>{router.locale === "en-US" ? "🇹🇭" : "🇺🇸"}</HoverButton>
+  );
+};
+
+export const AdaptiveButton = (props) => {
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleMouseOver = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseOut = () => {
+    setIsHovering(false);
+  };
+
+  return (
+    <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+      <AdaptiveButtonStyle {...props}>{isHovering ? props.hoveringText : props.regularText}</AdaptiveButtonStyle>
+    </div>
   );
 };
 

@@ -3,12 +3,14 @@ export default {
   fonts: {
     title: "Plus Jakarta Sans, sans-serif",
     main: "Plus Jakarta Sans, sans-serif",
-    thai: "supermarket, sans-serif"
+    thai: "Niramit, sans-serif"
   },
   // Colors for layout
   colors: {
     dark1: "#1F1F1F",
     dark2: "#191919",
+    light1: "#FAF8F6",
+    light2: "#F9F6F2",
     gold1: "#FFAA00",
     gold2: "#FF8800",
     red1: "#CC1842",

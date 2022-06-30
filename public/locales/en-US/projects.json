@@ -14,5 +14,7 @@
   "TreeGame": "A simple game where you chop down a set amount of trees with apples in the given time. Currently live on the Google Play Store. Built using Unity and C#.",
   "BattleParkour": "My first Unity game. Reach the end of the level while facing enemies. Currently live on the Google Play Store.",
   "HealthMod": "A simple mod for Minecraft version 1.8.9 that warns you whenever you're health is low. Built using Java and Forge.",
-  "stack": "Stack"
+  "stack": "Stack",
+  "code": "View Code on Github",
+  "live": "Live Application"
 }
