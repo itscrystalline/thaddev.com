@@ -5,6 +5,10 @@ import {marked} from 'marked';
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 import {useRouter} from "next/router";
 import {useTranslation} from "next-i18next";
+import {Section, SectionSubText, SectionText} from "../../../styles/GlobalComponents";
+import {NavLink} from "../../../components/Hero/HeroStyles";
+import {BiLeftArrow, BiRightArrow} from "react-icons/bi";
+import {Layout} from "../../../layout/Layout";
 
 const PostPage = (props) => {
   const router = useRouter()
@@ -28,7 +32,7 @@ const PostPage = (props) => {
     return (
       <>
         <NextSeo title="ThadDev's Site - Blog"/>
-        {/*<AltLayout>
+        <Layout>
           <Section>
             <NavLink href={`/${router.locale === 'en-US' ? '' : 'th-TH/'}blog/`}><SectionSubText><BiLeftArrow/> Back to
               Blog</SectionSubText></NavLink>
@@ -45,7 +49,7 @@ const PostPage = (props) => {
             <p><br/></p>
             <center><SectionText>{t('loading')}</SectionText></center>
           </Section>
-        </AltLayout>*/}
+        </Layout>
 
       </>
     )

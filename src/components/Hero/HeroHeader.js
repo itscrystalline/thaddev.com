@@ -28,7 +28,7 @@ const HeroHeader = () => {
           "display": "flex",
           "align-items": "center",
           "flex-direction": "column",
-          "padding-top": "150px",
+          "padding-top": "200px",
           "padding-bottom": "120px",
         }}>
           <Logo/><BoldHeaderText>ThadDev</BoldHeaderText>

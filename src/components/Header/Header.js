@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {SocialIcons} from "../Hero/HeroStyles";
+import {NavLink, SocialIcons} from "../Hero/HeroStyles";
 import {AiFillMail} from "react-icons/ai";
 import {Links} from "../../constants/constants";
 
@@ -8,18 +8,21 @@ const normal = {
   "width": "100%",
   "max-width": "1920px",
   "padding": "30px 30px",
-  "transition": "top 0.2s"
+  "transition": "top 0.3s",
+  "display": "flex",
+  "align-items": "center",
 }
 
 const sticky = {
   "position": "fixed",
+  "background-color": "#191919"
 }
 
 const Header = () => {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  const scrollDist = 102;
+  const scrollDist = 51;
 
   const controlNavbar = () => {
     if (typeof window !== 'undefined') {
@@ -48,28 +51,48 @@ const Header = () => {
   if (show) {
     return (
       <div style={{
-        ...normal, top: show ? '-60px' : '0px'
+        ...normal, top: show ? '-100px' : '0px'
       }}>
         <div style={{
-          "float": "right"
+          "width": "100%",
+          "margin": "0 auto"
         }}>
-          <SocialIcons href={Links[6].link}>
-            <AiFillMail size="4rem"/>
-          </SocialIcons>
+          <NavLink fontSize={20} href="#">Home</NavLink>
+          <NavLink fontSize={20} href="#aboutme">About Me</NavLink>
+          <NavLink fontSize={20} href="#tech">Technologies</NavLink>
+          <NavLink fontSize={20} href="#projects">Projects</NavLink>
+
+          <div style={{
+            "float": "right"
+          }}>
+            <SocialIcons href={Links[6].link}>
+              <AiFillMail size="4rem"/>
+            </SocialIcons>
+          </div>
         </div>
       </div>
     );
   } else {
     return (
       <div style={{
-        ...normal, ...sticky, top: show ? '-60px' : '0px'
+        ...normal, ...sticky, top: show ? '-100px' : '0px'
       }}>
         <div style={{
-          "float": "right"
+          "width": "100%",
+          "margin": "0 auto"
         }}>
-          <SocialIcons href={Links[6].link}>
-            <AiFillMail size="4rem"/>
-          </SocialIcons>
+          <NavLink fontSize={20} href="#">Home</NavLink>
+          <NavLink fontSize={20} href="#aboutme">About Me</NavLink>
+          <NavLink fontSize={20} href="#tech">Technologies</NavLink>
+          <NavLink fontSize={20} href="#projects">Projects</NavLink>
+
+          <div style={{
+            "float": "right"
+          }}>
+            <SocialIcons href={Links[6].link}>
+              <AiFillMail size="4rem"/>
+            </SocialIcons>
+          </div>
         </div>
       </div>
     );

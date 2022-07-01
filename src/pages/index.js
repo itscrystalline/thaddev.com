@@ -8,6 +8,7 @@ import AboutMe from "../components/AboutMe/AboutMe";
 import Technologies from "../components/Technologies/Technologies";
 import Projects from "../components/Projects/Projects";
 import Footer from "../components/Footer/Footer";
+import BlogSection from "../components/Blog/BlogSection";
 
 class Home extends React.Component {
   componentDidMount() {
@@ -43,6 +44,7 @@ class Home extends React.Component {
         <AboutMe/>
         <Technologies/>
         <Projects/>
+        <BlogSection/>
         <Footer/>
       </Layout>
     </>);

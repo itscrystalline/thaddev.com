@@ -1,6 +1,4 @@
-import {AltLayout} from "../layout/AltLayout";
 import {Section, SectionText, SectionTitle, Title} from "../styles/GlobalComponents";
-import {NavLink} from "../components/Header/HeaderStyles";
 import React from "react";
 import {
   createTheme,
@@ -21,6 +19,8 @@ import {NextSeo} from "next-seo";
 import {useRouter} from "next/router";
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 import {useTranslation} from "next-i18next";
+import {NavLink} from "../components/Hero/HeroStyles";
+import {Layout} from "../layout/Layout";
 
 const StyledTableCell = styled(TableCell)(({theme}) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -71,7 +71,7 @@ const APIDirectory = () => {
   return (
     <>
       <NextSeo title="ThadDev's Site - API Directory"/>
-      <AltLayout noTagLinks>
+      <Layout noTagLinks>
         <Section>
           <SectionTitle>{t('apidirectory')}</SectionTitle>
           <SectionText>
@@ -169,7 +169,7 @@ const APIDirectory = () => {
             </ThemeProvider>
           </SectionText>
         </Section>
-      </AltLayout>
+      </Layout>
 
     </>
   );
