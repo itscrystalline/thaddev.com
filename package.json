@@ -32,6 +32,6 @@
     "styled-normalize": "^8.0.7"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.4"
+    "autoprefixer": "^10.4.7"
   }
 }
