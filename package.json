@@ -17,7 +17,7 @@
     "framer-motion": "^6.3.16",
     "graphql": "^16.5.0",
     "marked": "^4.0.17",
-    "next": "^12.1.4",
+    "next": "^12.2.0",
     "next-i18next": "^11.0.0",
     "next-optimized-images": "^2.6.2",
     "next-seo": "^5.4.0",
