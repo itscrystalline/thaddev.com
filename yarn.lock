@@ -5170,9 +5170,9 @@ react-error-overlay@^6.0.9:
   version "6.0.11"
   resolved "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-6.0.11.tgz"
 
-react-i18next@^11.16.2, react-i18next@^11.16.9:
-  version "11.16.9"
-  resolved "https://registry.npmjs.org/react-i18next/-/react-i18next-11.16.9.tgz"
+react-i18next@^11.16.2, react-i18next@^11.17.4:
+  version "11.17.4"
+  resolved "https://registry.yarnpkg.com/react-i18next/-/react-i18next-11.17.4.tgz#fe72ac0ccacc73ae0a00fed503eb3dd3f73016c1"
   dependencies:
     "@babel/runtime" "^7.14.5"
     html-escaper "^2.0.2"
