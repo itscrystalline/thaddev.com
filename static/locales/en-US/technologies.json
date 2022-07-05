@@ -1,0 +1,15 @@
+{
+  "technologies-1": "I have experience of working with the following technologies:",
+  "frontend": "Front-End",
+  "backend": "Back-End",
+  "api": "API",
+  "ui": "UI/UX and Asset Design",
+  "gamedev": "Games & Game Development",
+  "misc": "Miscellaneous",
+  "frontend-p": "Experience with React.js, Markdown and JavaFX.",
+  "backend-p": "Experience with building Web servers using the Spring Boot framework using Java.",
+  "api-p": "Experience with building APIs using Java & the Spring Boot framework.",
+  "ui-p": "Experience with creating and designing user interfaces with tools like Figma and the JavaFX SceneBuilder. Has created multiple assets for My Games and textures for Minecraft mods, using tools like GIMP and Paint.net.",
+  "gamedev-p": "Experience with designing and creating games using the Unity Game Engine, with the use of C#. With two currently live on the Google Play Store, and one for a game jam on itch.io. Also has some experience with Minecraft Modding using the Forge API and Fabric API, and has worked both alone and as a community on Minecraft Mods.",
+  "misc-p": "Has experienced with creating discord bots using Java with the JDA library, and using JavaScript with the Discord.js library. Has also worked with Python for creating scripts for housekeeping tasks, and a bit of C and C++ for a school project on home automation with Arduino."
+}

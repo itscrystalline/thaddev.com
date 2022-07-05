@@ -1,0 +1,18 @@
+{
+  "gh-follower": "ผู้ติดตาม",
+  "gh-projects": "โปรเจกต์",
+  "gh-stars": "ดาว (รวม)",
+  "gh-commits": "Commits",
+  "gh-pullrequests": "Pull Requests",
+  "gh-repos": "โปรเจกต์ที่มีส่วนร่วม",
+  "hr-certs": "ใบรับรองของ HackerRank",
+  "hr-badges": "ป้ายรางวัล",
+  "hr-verifiedskills": "ทักษะที่ทดสอบแล้ว",
+  "hr-questions": "คำถามที่ตอบแล้ว",
+  "lc-rank": "อันดับ",
+  "lc-contestrating": "อันดับในการแข่งขัน",
+  "lc-contestglobalranking": "อันดับการแข่งขันโลก",
+  "lc-contestsattended": "การแข่งขันที่เข้าร่วม",
+  "lc-problemssolved": "คำถามที่ตอบแล้ว",
+  "lc-topranking": "ในอันดับการแข่งขันสูงสุด"
+}

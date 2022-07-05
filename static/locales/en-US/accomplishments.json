@@ -1,0 +1,17 @@
+{
+  "gh-follower": "Follower",
+  "gh-projects": "Projects",
+  "gh-stars": "Stars",
+  "gh-commits": "Commits",
+  "gh-pullrequests": "Pull Requests",
+  "gh-repos": "Repositories Contributed to",
+  "hr-badges": "Badges",
+  "hr-verifiedskills": "Verified Skills",
+  "hr-questions": "Questions Completed",
+  "lc-rank": "Rank",
+  "lc-contestrating": "Contest Rating",
+  "lc-contestglobalranking": "Contest Global Ranking",
+  "lc-contestsattended": "Contests Attended",
+  "lc-problemssolved": "Problems Solved",
+  "lc-topranking": "In Top Contest Ranking"
+}

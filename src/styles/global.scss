@@ -1,0 +1,45 @@
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url("/fonts/JetBrainsMono-Regular.woff2");
+}
+
+:global(*) {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:global(html) {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    //font-size-adjust: 0.534;
+}
+
+:global(body) {
+    font-size-adjust: 0.534;
+    font-family: Plus Jakarta Sans, sans-serif, Niramit, sans-serif;
+
+    background-color: #191919 !important;
+    color: #F2F5F7;
+    cursor: default;
+
+}
+
+:global(h1, h2, h3, h4, h5, h6, button) {
+    font-size-adjust: 0.534;
+    font-family: Plus Jakarta Sans, sans-serif, Niramit, sans-serif;
+}
+
+:global(a) {
+    text-decoration: none;
+    font-size-adjust: 0.534;
+    font-family: Plus Jakarta Sans, sans-serif, Niramit, sans-serif;
+}
+
+:global(li) {
+    list-style: none;
+}
+
+:global(code) {
+    font-family: "JetBrains Mono", monospace;
+}
