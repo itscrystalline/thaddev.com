@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-node';
 import preprocessor from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -9,8 +9,17 @@ const config = {
 		}
 	}),
 	kit: {
-		adapter: adapter()
-	}
+		adapter: adapter({
+			precompress: true
+	 	})
+	},
+	onwarn: (warning, handler) => {
+        const { code, frame } = warning;
+        if (code === "css-unused-selector")
+            return;
+
+        handler(warning);
+    },
 };
 
 export default config;

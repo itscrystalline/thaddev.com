@@ -1,45 +1,251 @@
 @font-face {
-    font-family: "JetBrains Mono";
-    src: url("/fonts/JetBrainsMono-Regular.woff2");
+	font-family: 'JetBrains Mono';
+	src: url('/fonts/JetBrainsMono-Regular.woff2');
+}
+
+.section {
+	display: flex;
+	.grid {
+		display: grid;
+	}
+	flex-direction: column;
+	.row {
+		flex-direction: row;
+	}
+	padding: 32px 48px 0;
+	.nopadding {
+		padding: 0;
+	}
+	margin: 0 auto;
+	max-width: 1140px;
+	box-sizing: content-box;
+	position: relative;
+	overflow: hidden;
+	grid-template-columns: 1fr 1fr;
+
+	@media screen and (max-width: 768px) {
+		padding: 24px 48px 0;
+		.nopadding {
+			padding: 0;
+		}
+
+		flex-direction: column;
+	}
+
+	@media screen and (max-width: 640px) {
+		padding: 16px 16px 0;
+		.nopadding {
+			padding: 0;
+		}
+
+		width: calc(100vw - 32px);
+		flex-direction: column;
+	}
+}
+
+.sectiontext {
+	font-size-adjust: 0.534;
+	font-family: Plus Jakarta Sans, sans-serif, Niramit, sans-serif;
+	max-width: 1140px;
+	font-size: 24px;
+	line-height: 40px;
+	font-weight: 300;
+	padding-bottom: 3.6rem;
+	color: rgba(255, 255, 255, 0.5);
+
+	@media screen and (max-width: 768px) {
+		max-width: 670px;
+		font-size: 20px;
+		line-height: 32px;
+		padding-bottom: 24px;
+	}
+
+	@media screen and (max-width: 640px) {
+		font-size: 16px;
+		line-height: 24px;
+		padding-bottom: 16px;
+	}
+}
+
+.sectiontitle {
+	font-family: Plus Jakarta Sans, sans-serif, Niramit, sans-serif;
+	font-size-adjust: 0.534;
+	font-weight: 800;
+	font-size: 56px;
+	line-height: 76px;
+	padding: 0;
+	.main {
+		font-size: 65px;
+		line-height: 82px;
+		padding: 58px 0 16px;
+	}
+	width: auto;
+	max-width: 90%;
+	background: linear-gradient(121.57deg, #ffffff 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	margin-bottom: 16px;
+
+	@media screen and (max-width: 768px) {
+		font-size: 48px;
+		line-height: 38px;
+		margin-bottom: 12px;
+		padding: 0;
+
+		.main {
+			font-size: 56px;
+			line-height: 46px;
+			padding: 40px 0 12px;
+		}
+	}
+
+	@media screen and (max-width: 640px) {
+		font-size: 32px;
+		line-height: 40px;
+		font-size: 32px;
+		line-height: 50px;
+		margin-bottom: 8px;
+		padding: 0;
+		max-width: 90%;
+
+		.main {
+			font-size: 28px;
+			line-height: 42px;
+			padding: 16px 0 8px;
+		}
+	}
+}
+
+.sectiondivider {
+	width: 512px;
+	height: 6px;
+	border-radius: 10px;
+	background-color: #fff;
+	align-self: center;
+	background: linear-gradient(270deg, #ff8800 0%, #ffaa00 100%);
+
+	.divider {
+		margin: 4rem 0;
+	}
+
+	@media screen and (max-width: 768px) {
+		width: 384px;
+		height: 4px;
+	}
+
+	@media screen and (max-width: 640px) {
+		width: 256px;
+		height: 2px;
+	}
+}
+
+.title {
+	font-size-adjust: 0.534;
+	font-family: Plus Jakarta Sans, sans-serif, Niramit, sans-serif;
+	font-weight: 600;
+	font-size: 36px;
+	line-height: 46px;
+	width: max-content;
+	max-width: 100%;
+	background: linear-gradient(121.57deg, #ffffff 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	margin-bottom: 16px;
+	padding: 0;
+
+	.main {
+		font-size: 55px;
+		line-height: 62px;
+		padding: 58px 0 16px;
+	}
+
+	@media screen and (max-width: 768px) {
+		font-size: 33px;
+		line-height: 13px;
+		margin-bottom: 12px;
+		padding: 0;
+
+		.main {
+			font-size: 41px;
+			line-height: 21px;
+			padding: 40px 0 12px;
+		}
+	}
+
+	@media screen and (max-width: 640px) {
+		font-size: 32px;
+		line-height: 40px;
+		font-size: 22px;
+		line-height: 30px;
+		margin-bottom: 8px;
+		padding: 0;
+		max-width: 100%;
+
+		.main {
+			font-size: 26px;
+			line-height: 22px;
+			padding: 16px 0 8px;
+		}
+	}
+}
+
+.sectionsubtext {
+	max-width: 800px;
+	font-weight: 300;
+	font-size: 18px;
+	line-height: 32px;
+	color: rgba(255, 255, 255, 0.75);
+
+	@media screen and (max-width: 768px) {
+		max-width: 672px;
+		font-size: 16px;
+		line-height: 25px;
+	}
+
+	@media screen and (max-width: 640px) {
+		font-size: 14px;
+		line-height: 22px;
+	}
 }
 
 :global(*) {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 :global(html) {
-    font-size: 62.5%;
-    scroll-behavior: smooth;
-    //font-size-adjust: 0.534;
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+	//font-size-adjust: 0.534;
 }
 
 :global(body) {
-    font-size-adjust: 0.534;
-    font-family: Plus Jakarta Sans, sans-serif, Niramit, sans-serif;
+	font-size-adjust: 0.534;
+	font-family: Plus Jakarta Sans, sans-serif, Niramit, sans-serif;
 
-    background-color: #191919 !important;
-    color: #F2F5F7;
-    cursor: default;
-
+	background-color: #191919 !important;
+	color: #f2f5f7;
+	cursor: default;
 }
 
 :global(h1, h2, h3, h4, h5, h6, button) {
-    font-size-adjust: 0.534;
-    font-family: Plus Jakarta Sans, sans-serif, Niramit, sans-serif;
+	font-size-adjust: 0.534;
+	font-family: Plus Jakarta Sans, sans-serif, Niramit, sans-serif;
 }
 
 :global(a) {
-    text-decoration: none;
-    font-size-adjust: 0.534;
-    font-family: Plus Jakarta Sans, sans-serif, Niramit, sans-serif;
+	text-decoration: none;
+	font-size-adjust: 0.534;
+	font-family: Plus Jakarta Sans, sans-serif, Niramit, sans-serif;
 }
 
 :global(li) {
-    list-style: none;
+	list-style: none;
 }
 
 :global(code) {
-    font-family: "JetBrains Mono", monospace;
+	font-family: 'JetBrains Mono', monospace;
 }
