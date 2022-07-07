@@ -8,7 +8,7 @@
 			A self-taught, full-stack developer. Has been learning to code since 9 years old.
 		</p>
 		<a href="#aboutme"><button class="button">About Me</button></a>
-		<p><br /></p>
+		<br />
 	</div>
 </div>
 

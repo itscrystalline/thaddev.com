@@ -9,8 +9,8 @@
 
 <div class="section" id="tech">
 	<div class="sectiondivider" />
-	<p><br /></p>
-	<p><br /></p>
+	<br />
+	<br />
 	<h2 class="sectiontitle">Technologies</h2>
 	<p class="sectiontext">I have experience of working with the following technologies:</p>
 	<ul>
