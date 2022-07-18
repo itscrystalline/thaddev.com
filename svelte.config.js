@@ -11,7 +11,7 @@ const config = {
 	kit: {
 		adapter: adapter({
 			precompress: true
-	 	})
+	 	}),
 	},
 	onwarn: (warning, handler) => {
         const { code, frame } = warning;

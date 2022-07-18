@@ -17,6 +17,14 @@ export const PageStyles = {
     leetcode: "#ad6800"
   },
 
+  breakpoints: {
+    sm: 'screen and (max-width: 640px)',
+    md: 'screen and (max-width: 768px)',
+    lg: 'screen and (max-width: 1024px)',
+    lgText: 'screen and (max-width: 1156px)',
+    xl: 'screen and (max-width: 1280px)'
+  },
+
   vars: {
     cubeSize: "40vh",
     colorFront: "#404040",

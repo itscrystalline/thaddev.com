@@ -2,11 +2,11 @@
 	"name": "thaddev.com-svelte",
 	"version": "0.3.0",
 	"scripts": {
-		"dev": "svelte-kit dev",
-		"build": "svelte-kit build",
-		"package": "svelte-kit package",
-		"preview": "svelte-kit preview",
-		"prepare": "svelte-kit sync",
+		"dev": "vite dev",
+		"build": "vite build",
+		"package": "vite package",
+		"preview": "vite preview",
+		"prepare": "vite sync",
 		"check": "svelte-check --tsconfig ./jsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./jsconfig.json --watch",
 		"test": "playwright test",
@@ -21,13 +21,22 @@
 		"eslint": "^8.16.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^4.0.0",
+		"graphql": "^16.5.0",
+		"graphql-request": "^4.3.0",
 		"prettier": "^2.6.2",
 		"prettier-plugin-svelte": "^2.7.0",
 		"sass": "^1.53.0",
-		"svelte": "^3.44.0",
+		"svelte": "^3.49.0",
 		"svelte-check": "^2.7.1",
 		"svelte-preprocess": "^4.10.7",
-		"typescript": "^4.7.2"
+		"typescript": "^4.7.2",
+		"vite": "^2.9.13"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"axios": "^0.27.2",
+		"env-cmd": "^10.1.0",
+		"svelte-collapsible": "^0.2.1",
+		"vite": "^1.0.0"
+	}
 }
