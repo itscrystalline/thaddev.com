@@ -11,17 +11,17 @@
     return await axios.get('https://thaddev.com/api-v1/codingstats/get');
   }
 
-  function commaize(num){
+  function commaize(num) {
     //comma every 3 digits
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
-  function getEnding(num){
-    if(String(num).slice(-1) === "1"){
+  function getEnding(num) {
+    if (String(num).slice(-1) === "1") {
       return "st";
-    } else if(String(num).slice(-1) === "2"){
+    } else if (String(num).slice(-1) === "2") {
       return "nd";
-    } else if(String(num).slice(-1) === "3"){
+    } else if (String(num).slice(-1) === "3") {
       return "rd";
     } else {
       return "th";
@@ -131,9 +131,7 @@
           <p class="boxtext image">C# (Basic)</p>
         </div>
       </a>
-    </div>
-    <div class="imageboxes">
-      <a href="https://www.hackerrank.com/certificates/2353f0513d55">
+      <a href="https://www.hackerrank.com/certificates/c34b530f2385">
         <div class="boxhackerrankimage">
           <img src="/images/js_int.jpg" alt="javascript (intermediate)" width="100%" height="80%" loading="lazy"/>
           <p class="boxtext image">JavaScript (Intermediate)</p>
@@ -294,13 +292,15 @@
     <div class="boxes">
       <a href={leetCode}>
         <div class="boxleetcode">
-          <h5 class="boxnum">{commaize(stat.data.leetcodeStats.rank)}<sup>{getEnding(stat.data.leetcodeStats.rank)}</sup></h5>
+          <h5 class="boxnum">{commaize(stat.data.leetcodeStats.rank)}
+            <sup>{getEnding(stat.data.leetcodeStats.rank)}</sup></h5>
           <p class="boxtext">Rank</p>
         </div>
       </a>
       <a href={leetCode}>
         <div class="boxleetcode">
-          <h5 class="boxnum">{commaize(stat.data.leetcodeStats.contestRating)}<sup>{getEnding(stat.data.leetcodeStats.contestRating)}</sup></h5>
+          <h5 class="boxnum">{commaize(stat.data.leetcodeStats.contestRating)}
+            <sup>{getEnding(stat.data.leetcodeStats.contestRating)}</sup></h5>
           <p class="boxtext">Contest Rating</p>
         </div>
       </a>

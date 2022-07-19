@@ -2,9 +2,17 @@
   import FaChevronDown from '../icons/FontAwesomeIcons/FaChevronDown.svelte';
   import {CollapsibleCard} from 'svelte-collapsible'
 
+  /**
+   * @type {number}
+   */
+  let width = 0;
+
   const duration = 0.4;
   const easing = 'ease-in-out';
+  console.log(width + " " + (width >= 768 ? 1 : (width / parseFloat(768))));
 </script>
+
+<svelte:window bind:innerWidth={width}/>
 
 <div class="section" id="gallery">
   <div class="sectiondivider"/>
@@ -18,7 +26,7 @@
         <h4 class="title">Thailand TopCoder Competition by GetLinks (2020)</h4>
         <div class="imageboxes">
           <div class="boximage">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Xnjib-OsM5k" loading="lazy"
+            <iframe width={560 * (width >= 768 ? 1 : (parseFloat(width) / 768))} height={315 * (width >= 768 ? 1 : (parseFloat(width) / 768))} src="https://www.youtube.com/embed/Xnjib-OsM5k" loading="lazy"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
@@ -70,7 +78,7 @@
         <h4 class="title">Games</h4>
         <div class="imageboxes">
           <div class="boximage">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/p9gJwQmi5VA" loading="lazy"
+            <iframe width={560 * (width >= 768 ? 1 : (parseFloat(width) / 768))} height={315 * (width >= 768 ? 1 : (parseFloat(width) / 768))} src="https://www.youtube.com/embed/p9gJwQmi5VA" loading="lazy"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
@@ -80,7 +88,7 @@
         <hr class="hr"/>
         <div class="imageboxes">
           <div class="boximage">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/PGnKGzeVHpc" loading="lazy"
+            <iframe width={560 * (width >= 768 ? 1 : (parseFloat(width) / 768))} height={315 * (width >= 768 ? 1 : (parseFloat(width) / 768))} src="https://www.youtube.com/embed/PGnKGzeVHpc" loading="lazy"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
@@ -101,9 +109,10 @@
     align-items: center;
     @media screen and (max-width: 640px) {
       &:nth-child(2n) {
-        grid-row: 2;
+        grid-row: 1;
       }
     }
+    margin-bottom: 12px;
   }
 
   .collapsablebackground {
@@ -131,7 +140,7 @@
     @media screen and (max-width: 768px) {
       gap: 16px;
       margin: 12px 0 20px;
-      grid-template-columns: repeat(1, 1fr);
+      display: contents;
     }
   }
 

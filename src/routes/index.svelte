@@ -7,6 +7,8 @@
   import AboutMe from '$lib/AboutMe.svelte';
   import Accomplishments from '$lib/Accomplishments.svelte';
   import Gallery from '$lib/Gallery.svelte';
+  import BlogButton from '$lib/Blog/BlogButton.svelte';
+  import Footer from '$lib/Footer.svelte';
 </script>
 
 <svelte:head>
@@ -46,6 +48,8 @@
   <AboutMe/>
   <Accomplishments/>
   <Gallery/>
+  <BlogButton/>
+  <Footer/>
 </div>
 
 <style lang="scss">
