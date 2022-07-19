@@ -9,7 +9,6 @@
 
   const duration = 0.4;
   const easing = 'ease-in-out';
-  console.log(width + " " + (width >= 768 ? 1 : (width / parseFloat(768))));
 </script>
 
 <svelte:window bind:innerWidth={width}/>

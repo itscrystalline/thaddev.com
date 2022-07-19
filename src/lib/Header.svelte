@@ -15,9 +15,14 @@
     {name: 'Facebook', link: 'https://www.facebook.com/thad.gaming.37'},
     {name: 'Email', link: 'mailto:real.thad.choyrum@gmail.com'}
   ];
+
+  let y = 0;
+  let scrollBounds = 150;
 </script>
 
-<div class="header-container">
+<svelte:window bind:scrollY="{y}"/>
+
+<div class={y < scrollBounds ? "header-container" : "header-container-sticky"} style={y < scrollBounds ? 'top: -50px;' : 'top: 0px;'}>
   <div class="div1">
     <a href="/" style="display: flex; alignItems: center; color: white;">
       <Logo/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="headertext">ThadDev</span>
@@ -58,12 +63,33 @@
 
 <style lang="scss">
   .header-container {
+    z-index: 9998;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 2rem;
-    padding: 1rem;
-    padding-top: 2rem;
+    padding: 2rem 1rem 1rem;
+    transition: top 0.3s;
+
+    @media screen and (max-width: 640px) {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(2, 60px);
+      grid-column-gap: 0.5rem;
+      grid-row-gap: 0.5rem;
+    }
+  }
+
+  .header-container-sticky {
+    z-index: 9998;
+    position: fixed;
+    background-color: #191919;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 2rem;
+    padding: 2rem 1rem 1rem;
+    transition: top 0.3s;
 
     @media screen and (max-width: 640px) {
       display: grid;
