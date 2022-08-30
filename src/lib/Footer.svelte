@@ -27,7 +27,7 @@
       </div>
       <div class="div-linkcolumn">
         <h4 class="h4-linktitle">Email</h4>
-        <a class="a-linkitem" href={Links[6].link}>real.thad.choyrum@gmail.com</a>
+        <a class="a-linkitem" href={Links[6].link}>thad@thaddev.com</a>
       </div>
     </ul>
   </section>

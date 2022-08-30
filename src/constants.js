@@ -184,7 +184,7 @@ export const Links = [
   {name: 'itch.io', link: 'https://mynametsthad.itch.io'},
   {name: 'Google Play', link: 'https://play.google.com/store/apps/developer?id=ThadDev'},
   {name: 'Facebook', link: 'https://www.facebook.com/thad.gaming.37'},
-  {name: 'Email', link: 'mailto:real.thad.choyrum@gmail.com'}
+  {name: 'Email', link: 'mailto:thad@thaddev.com'}
 ];
 
 export const timerAPIs = [
