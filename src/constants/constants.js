@@ -4,6 +4,34 @@ function createData(name, apiLink, method) {
 
 export const projects = [
   {
+    yt: '',
+    title: 'PCCCHON Locator',
+    description: "PCCCHONLocator",
+    tags: ['Next.js', 'React.js', 'JavaScript'],
+    source: '',
+    live: 'https://thaddev.com/pccchon-locator',
+    id: 10
+  },
+  {
+    yt: 'https://www.youtube.com/embed/-wjA-Ry6BPc',
+    title: 'IWant2TryHard\'s Shortbows',
+    description: "IW2THs-Shortbows",
+    tags: ['Fabric', 'Forge', 'Minecraft', 'Java'],
+    source: 'https://github.com/MyNameTsThad/IW2THs-Shortbows',
+    live: '',
+    id: 10
+  },
+  {
+    yt: '',
+    title: 'Cool Ideas Mod',
+    description: "CoolIdeasMod",
+    tags: ['Fabric', 'Forge', 'Minecraft', 'Java'],
+    source: 'https://github.com/MyNameTsThad/CoolIdeasMod',
+    live: '',
+    id: 10
+  },
+  {
+    yt: '',
     title: 'CombatUtilities',
     description: "CombatUtilities",
     tags: ['Fabric', 'Minecraft', 'Java'],
@@ -12,6 +40,7 @@ export const projects = [
     id: 9
   },
   {
+    yt: '',
     title: 'thaddev.com',
     description: "thaddev.com",
     tags: ['Next.js', 'React.js', 'JavaScript'],
@@ -20,6 +49,7 @@ export const projects = [
     id: 8
   },
   {
+    yt: '',
     title: 'Some Discord Bot',
     description: "SomeDiscordBot",
     tags: ['JDA', 'Java'],
@@ -28,6 +58,7 @@ export const projects = [
     id: 0
   },
   {
+    yt: '',
     title: 'Project APIs',
     description: "ProjectAPIs",
     tags: ['Spring Boot', 'Java'],
@@ -36,6 +67,7 @@ export const projects = [
     id: 1
   },
   {
+    yt: '',
     title: 'IoT Door Lock',
     description: "IoTDoorLock",
     tags: ['Blynk', 'Arduino', 'C++', 'C'],
@@ -44,6 +76,7 @@ export const projects = [
     id: 2
   },
   {
+    yt: '',
     title: 'Pydoku',
     description: "Pydoku",
     tags: ['Python'],
@@ -52,6 +85,7 @@ export const projects = [
     id: 3
   },
   {
+    yt: '',
     title: 'Boosted Burgers App',
     description: "BoostedBurgersApp",
     tags: ['Android', 'Java'],
@@ -60,6 +94,7 @@ export const projects = [
     id: 4
   },
   {
+    yt: '',
     title: 'Helpful Utils Bot',
     description: "HelpfulUtilsBot",
     tags: ['LINE', 'Java'],
@@ -68,6 +103,7 @@ export const projects = [
     id: 5
   },
   {
+    yt: '',
     title: 'Geometry Mix',
     description: "GeometryMix",
     tags: ['Unity', 'C#'],
@@ -76,6 +112,7 @@ export const projects = [
     id: 6
   },
   {
+    yt: '',
     title: 'Hytils',
     description: "Hytils",
     tags: ['Forge', 'Minecraft', 'Java'],
@@ -84,6 +121,7 @@ export const projects = [
     id: 7
   },
   {
+    yt: '',
     title: 'Notes App',
     description: "NotesApp",
     tags: ['Android', 'Java'],
@@ -92,6 +130,7 @@ export const projects = [
     id: 8
   },
   {
+    yt: '',
     title: 'SkyblockItems++',
     description: "SkyblockItems++",
     tags: ['Forge', 'Minecraft', 'Java'],
@@ -100,6 +139,7 @@ export const projects = [
     id: 8
   },
   {
+    yt: 'https://www.youtube.com/embed/PGnKGzeVHpc',
     title: 'Tree Game',
     description: "TreeGame",
     tags: ['Unity', 'C#'],
@@ -108,6 +148,7 @@ export const projects = [
     id: 9
   },
   {
+    yt: 'https://www.youtube.com/embed/p9gJwQmi5VA',
     title: 'BattleParkour',
     description: "BattleParkour",
     tags: ['Unity', 'C#'],
@@ -116,6 +157,7 @@ export const projects = [
     id: 9
   },
   {
+    yt: '',
     title: 'HealthMod',
     description: "HealthMod",
     tags: ['Forge', 'Minecraft', 'Java'],

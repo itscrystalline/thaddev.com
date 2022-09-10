@@ -91,7 +91,7 @@ export async function getServerSideProps({locale}) {
   return {
     props: {
       data: data,
-      ...(await serverSideTranslations(locale, ['common', 'aboutme', 'accomplishments', 'blog', 'footer', 'gallery', 'header', 'hero', 'projects', 'technologies'])),
+      ...(await serverSideTranslations(locale, ['common', 'aboutme', 'accomplishments', 'blog', 'footer', 'gallery', 'header', 'hero', 'projects', 'technologies', 'pccchon-locator'])),
     }
   };
 }

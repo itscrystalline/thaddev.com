@@ -58,10 +58,37 @@ const Grid = () => {
   const {t} = useTranslation(['projects', 'common']);
   return (
     <GridContainer>
-      {projects.map(({title, description, tags, source, live, id}) => (
+      {projects.map(({yt, title, description, tags, source, live, id}) => (
         <ProjectCard key={id}>
           <p><br/></p>
           <TitleContent>
+            {yt === "" ? null :
+              <>
+                <div
+                  className="video"
+                  style={{
+                    position: "relative",
+                    paddingBottom: "56.25%" /* 16:9 */,
+                    paddingTop: 25,
+                    height: 0
+                  }}
+                >
+                  <iframe
+                    loading="lazy"
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%"
+                    }}
+                    src={yt}
+                    frameBorder="0"
+                  />
+                </div>
+                <p><br/></p>
+              </>
+            }
             <HeaderThree title>
               {title}
               <Hr/>

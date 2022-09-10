@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {createTheme, TableCell, tableCellClasses, TableRow} from "@mui/material";
 
 export const Section = styled.section`
   display: ${(props) => props.grid ? "grid" : "flex"};
@@ -239,3 +240,48 @@ export const LinkIconImg = styled.div`
     height: ${({large}) => large ? '32px' : '16px'};
   }
 `
+
+export const StyledTableCell = styled(TableCell)(({theme}) => ({
+  [`&.${tableCellClasses.head}`]: {
+    backgroundColor: theme.palette.common.black,
+    color: theme.palette.common.white,
+  },
+  [`&.${tableCellClasses.body}`]: {
+    fontSize: 17,
+  },
+}));
+
+export const StyledTableRow = styled(TableRow)(({theme}) => ({
+  '&:nth-of-type(odd)': {
+    backgroundColor: theme.palette.action.hover,
+  },
+  // hide last border
+  '&:last-child td, &:last-child th': {
+    border: 0,
+  },
+}));
+
+export const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+  typography: {
+    fontFamily: ['Niarmit', 'Plus Jakarta Sans'],
+    fontSize: "20rem",
+  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: `
+        @font-face {
+          font-family: 'Plus Jakarta Sans';
+          font-style: normal;
+          font-size: 1.5rem;
+          font-display: swap;
+          font-weight: 600;
+          unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF;
+        }
+      `,
+    },
+  },
+});
+

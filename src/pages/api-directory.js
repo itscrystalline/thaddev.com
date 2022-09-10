@@ -1,20 +1,16 @@
 import {AltLayout} from "../layout/AltLayout";
-import {Section, SectionText, SectionTitle, Title} from "../styles/GlobalComponents";
+import {
+  darkTheme,
+  Section,
+  SectionText,
+  SectionTitle,
+  StyledTableCell,
+  StyledTableRow,
+  Title
+} from "../styles/GlobalComponents";
 import {NavLink} from "../components/Header/HeaderStyles";
 import React from "react";
-import {
-  createTheme,
-  Link,
-  Paper,
-  Table,
-  TableBody,
-  TableCell,
-  tableCellClasses,
-  TableContainer,
-  TableRow,
-  ThemeProvider
-} from "@mui/material";
-import {styled} from '@mui/material/styles';
+import {Link, Paper, Table, TableBody, TableContainer, ThemeProvider} from "@mui/material";
 import {HttpVerb} from "../components/HttpVerb/HttpVerb";
 import {computerControl, otherApis, timerAPIs, timerInstanceAPIs} from "../constants/constants";
 import {NextSeo} from "next-seo";
@@ -22,49 +18,6 @@ import ChangeLanguageButton from "../styles/GlobalComponents/Button";
 import {useRouter} from "next/router";
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 import {useTranslation} from "next-i18next";
-
-const StyledTableCell = styled(TableCell)(({theme}) => ({
-  [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
-  },
-  [`&.${tableCellClasses.body}`]: {
-    fontSize: 17,
-  },
-}));
-
-const StyledTableRow = styled(TableRow)(({theme}) => ({
-  '&:nth-of-type(odd)': {
-    backgroundColor: theme.palette.action.hover,
-  },
-  // hide last border
-  '&:last-child td, &:last-child th': {
-    border: 0,
-  },
-}));
-
-const darkTheme = createTheme({
-  palette: {
-    mode: 'dark',
-  },
-  typography: {
-    fontFamily: ['Plus Jakarta Sans', 'supermarket'],
-    fontSize: "17rem",
-  },
-  components: {
-    MuiCssBaseline: {
-      styleOverrides: `
-        @font-face {
-          font-family: 'Plus Jakarta Sans';
-          font-style: normal;
-          font-display: swap;
-          font-weight: 600;
-          unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF;
-        }
-      `,
-    },
-  },
-});
 
 const APIDirectory = () => {
   const router = useRouter();
