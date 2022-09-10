@@ -19,5 +19,6 @@ module.exports = {
     path: ''
   },
   trailingSlash: true,
-  i18n
+  i18n,
+  output: 'standalone'
 }
