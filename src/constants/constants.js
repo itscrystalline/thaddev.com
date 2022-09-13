@@ -9,7 +9,7 @@ export const projects = [
     description: "PCCCHONLocator",
     tags: ['Next.js', 'React.js', 'JavaScript'],
     source: '',
-    live: 'https://thaddev.com/pccchon-locator',
+    live: '/pccchon-locator',
     id: 10
   },
   {

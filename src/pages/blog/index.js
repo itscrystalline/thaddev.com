@@ -30,7 +30,7 @@ const Index = (props) => {
 };
 
 export async function getServerSideProps({locale}) {
-  const postsRes = await axios.get('https://thaddev.com/blog/cms-strapi/api/posts?populate=image');
+  const postsRes = await axios.get('https://cms.thaddev.com/api/posts?populate=image?locale=' + locale.split('-')[0]);
   return {
     props: {
       posts: postsRes.data,

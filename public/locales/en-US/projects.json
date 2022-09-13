@@ -3,7 +3,7 @@
   "IW2THs-Shortbows": "A Minecraft mod that adds Shortbows. Shoot your foes with high speed, - And in style! Built using the Forge and Fabric modding APIs with Java.",
   "CoolIdeasMod": "A Minecraft mod that adds... whatever I want to add. The featuresets of this mod will be branched into other mods. Built using the Forge and Fabric modding APIs with Java.",
   "CombatUtilities": "A Minecraft mod that adds utility features to make Minecraft combat easier. Built using the Fabric modding API with Java.",
-  "thaddev.com": "This very website. It's built with React.js/Next.js and hosted on Raspberry Pi with the help of ngrok and Cloudflare.",
+  "thaddev.com": "This very website. It's built with React.js/Next.js and hosted on Raspberry Pi with the help of Docker and Cloudflare.",
   "SomeDiscordBot": "A multi-purpose discord bot that can be used for moderation, fun, and more, for my friend's discord server. Built with Java using the JDA library.",
   "ProjectAPIs": "Web server that also hosts an API for my personal projects. Built with Java and Spring Boot.",
   "IoTDoorLock": "A smart door lock that can be controlled both on-the-spot and remotely via the Blynk platform. Built using the NodeMCU ESP8266 with Arduino and the Blynk platform library.",

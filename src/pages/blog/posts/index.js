@@ -25,7 +25,7 @@ const PostPage = (props) => {
 
   useEffect(() => {
     async function getPostData() {
-      const postData = await getPost(id);
+      const postData = await getPost(router.locale.split('-')[0], id);
       setPost(postData);
     }
 
@@ -41,11 +41,11 @@ const PostPage = (props) => {
             <NavLink href={`/${router.locale === 'en-US' ? '' : 'th-TH/'}blog/`}><SectionSubText><BiLeftArrow/> Back to
               Blog</SectionSubText></NavLink>
             <div style={{"margin-left": "0", "margin-right": "auto"}}>
-              <NavLink href={`/${router.locale === 'en-US' ? '' : 'th-TH/'}blog/posts?id=${id - 1}`}
+              <NavLink href={`/${router.locale === 'en-US' ? '' : 'th-TH/'}blog/posts?id=${parseInt(id) - 1}`}
                        locale={router.locale}><SectionSubText><BiLeftArrow/> Previous post</SectionSubText></NavLink>
             </div>
             <div style={{"margin-left": "auto", "margin-right": "0"}}>
-              <NavLink href={`/${router.locale === 'en-US' ? '' : 'th-TH/'}blog/posts?id=${id + 1}`}
+              <NavLink href={`/${router.locale === 'en-US' ? '' : 'th-TH/'}blog/posts?id=${parseInt(id) + 1}`}
                        locale={router.locale}><SectionSubText>Next
                 post <BiRightArrow/></SectionSubText></NavLink>
             </div>
@@ -67,11 +67,11 @@ const PostPage = (props) => {
               <NavLink href={`/${router.locale === 'en-US' ? '' : 'th-TH/'}blog/`}><SectionSubText><BiLeftArrow/> Back
                 to Blog</SectionSubText></NavLink>
               <div style={{"margin-left": "0", "margin-right": "auto"}}>
-                <NavLink href={`/${router.locale === 'en-US' ? '' : 'th-TH/'}blog/posts?id=${id - 1}`}
+                <NavLink href={`/${router.locale === 'en-US' ? '' : 'th-TH/'}blog/posts?id=${parseInt(id) - 1}`}
                          locale={router.locale}><SectionSubText><BiLeftArrow/> Previous post</SectionSubText></NavLink>
               </div>
               <div style={{"margin-left": "auto", "margin-right": "0"}}>
-                <NavLink href={`/${router.locale === 'en-US' ? '' : 'th-TH/'}blog/posts?id=${id + 1}`}
+                <NavLink href={`/${router.locale === 'en-US' ? '' : 'th-TH/'}blog/posts?id=${parseInt(id) + 1}`}
                          locale={router.locale}><SectionSubText>Next
                   post <BiRightArrow/></SectionSubText></NavLink>
               </div>
@@ -84,10 +84,11 @@ const PostPage = (props) => {
         </>
       )
     } else {
+      console.log(post)
       const published = new Date(post.post.data.attributes.publishedAt).toLocaleString(router.locale);
       const updated = new Date(post.post.data.attributes.updatedAt).toLocaleString(router.locale);
 
-      const htmlContent = marked.parse(post.post.data.attributes.content === null ? "" : (router.locale === "en-US" ? post.post.data.attributes.content : post.post.data.attributes.content_th));
+      const htmlContent = marked.parse(post.post.data.attributes.content === null ? "" : post.post.data.attributes.content);
       return (
         <>
           <NextSeo title="ThadDev's Site - Blog"/>
@@ -105,17 +106,19 @@ const PostPage = (props) => {
                   post <BiRightArrow/></SectionSubText></NavLink>
               </div>
               <p><br/></p>
-              <Image src={"https://thaddev.com/blog/cms-strapi" + post.post.data.attributes.image.data.attributes.url}
-                     alt={post.post.data.attributes.image.data.attributes.alternativeText}
-                     width={post.post.data.attributes.image.data.attributes.width * 0.9}
-                     height={post.post.data.attributes.image.data.attributes.height * 0.9}/>
+              {post.post.data.attributes.image !== null && post.post.data.attributes.image !== undefined &&
+              post.post.data.attributes.image.data !== null && post.post.data.attributes.image.data !== undefined ?
+                <Image src={"https://cms.thaddev.com" + post.post.data.attributes.image.data.attributes.url}
+                       alt={post.post.data.attributes.image.data.attributes.alternativeText}
+                       width={post.post.data.attributes.image.data.attributes.width * 0.75}
+                       height={post.post.data.attributes.image.data.attributes.height * 0.75}/> : <></>}
               <p><br/></p>
               <SectionSubText>
                 <AiFillCalendar
                   size="2rem"/> {t('postedat')} {published} {published !== updated ? <>({t('updatedat')} {updated})</> : null}
               </SectionSubText>
-              <SectionTitle>{router.locale === "en-US" ? post.post.data.attributes.title : post.post.data.attributes.title_th}</SectionTitle>
-              <SectionText>{router.locale === "en-US" ? post.post.data.attributes.description : post.post.data.attributes.description_th}</SectionText>
+              <SectionTitle>{post.post.data.attributes.title}</SectionTitle>
+              <SectionText>{post.post.data.attributes.description}</SectionText>
               <PostContent content={htmlContent}/>
             </Section>
           </AltLayout>
@@ -134,20 +137,30 @@ export async function getServerSideProps({locale}) {
   };
 }
 
-async function getPost(id) {
+async function getPost(locale, id) {
   try {
-    const post = await axios.get(`https://thaddev.com/blog/cms-strapi/api/posts/${id}?populate=image`);
+    const post = await axios.get(`https://cms.thaddev.com/api/posts/${id}?populate=*`);
     if (post.status.toString().startsWith('4') || post.status.toString().startsWith('5')) {
       return {
         post: null,
         id: -1
       };
     }
-    return {
-      post: post.data,
-      id: id,
-    };
+    if (locale !== post.data.data.attributes.locale) {
+      console.log(post.data.data.attributes.localizations)
+      const localizedPost = post.data.data.attributes.localizations.data.find((post) => post.attributes.locale === locale);
+      return {
+        post: {data: localizedPost},
+        id: id,
+      };
+    } else {
+      return {
+        post: post.data,
+        id: id,
+      };
+    }
   } catch (err) {
+    console.log(err)
     return {
       post: null,
       id: -1

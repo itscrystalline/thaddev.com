@@ -26,17 +26,18 @@ const FrontPagePosts = ({posts}) => {
           <MainCard>
             <p><br/></p>
             <TitleContent>
-              <Image src={"https://thaddev.com/blog/cms-strapi" + firstPost.attributes.image.data.attributes.url}
-                     alt={firstPost.attributes.image.data.attributes.alternativeText}
-                     width={firstPost.attributes.image.data.attributes.width * 0.75}
-                     height={firstPost.attributes.image.data.attributes.height * 0.75}/>
+              {firstPost.attributes.image !== null && firstPost.attributes.image !== undefined ?
+                <Image src={"https://cms.thaddev.com" + firstPost.attributes.image.data.attributes.url}
+                       alt={firstPost.attributes.image.data.attributes.alternativeText}
+                       width={firstPost.attributes.image.data.attributes.width * 0.75}
+                       height={firstPost.attributes.image.data.attributes.height * 0.75}/> : <></>}
               <p><br/></p>
               <HeaderThree title>
-                {router.locale === "en-US" ? firstPost.attributes.title : firstPost.attributes.title_th}
+                {firstPost.attributes.title}
               </HeaderThree>
             </TitleContent>
             <Vr/>
-            <CardInfo>{router.locale === "en-US" ? firstPost.attributes.description : firstPost.attributes.description_th}</CardInfo>
+            <CardInfo>{firstPost.attributes.description}</CardInfo>
           </MainCard>
         </Link>
         <GridContainer>
@@ -47,17 +48,17 @@ const FrontPagePosts = ({posts}) => {
                   <BlogCard>
                     <TitleContent>
                       {attributes.image.data != null ?
-                        <><Image src={"https://thaddev.com/blog/cms-strapi" + attributes.image.data.attributes.url}
+                        <><Image src={"https://cms.thaddev.com" + attributes.image.data.attributes.url}
                                  alt={attributes.image.data.attributes.alternativeText}
                                  width={attributes.image.data.attributes.width * 0.75}
                                  height={attributes.image.data.attributes.height * 0.75}/><p><br/></p></>
                         : null}
                       <HeaderThree title>
-                        {router.locale === "en-US" ? attributes.title : attributes.title_th}
+                        {attributes.title}
                         <Hr/>
                       </HeaderThree>
                     </TitleContent>
-                    <CardInfo>{router.locale === "en-US" ? attributes.description : attributes.description_th}</CardInfo>
+                    <CardInfo>{attributes.description}</CardInfo>
                   </BlogCard>
                 </Link>
               );

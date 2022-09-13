@@ -3,7 +3,7 @@
   "IW2THs-Shortbows": "Mod Minecraft ที่เพิ่มธนูสั้น, ยิงศัตรูด้วยความเร็วสูง - และมีสไตล์! สร้างขึ้นโดยใช้ Forge และ Fabric ด้วย Java",
   "CoolIdeasMod": "เป็น Mod Minecraft ที่เพิ่มอะไรก็ได้ที่ผมต้องการเพิ่ม ชุดคุณสมบัติของม็อดนี้จะถูกแยกออกเป็นม็อดอื่นๆ สร้างขึ้นโดยใช้ Forge และ Fabric ด้วย Java",
   "CombatUtilities": "เป็น Mod Minecraft ที่เพิ่มฟีเจอร์ยูทิลิตี้เพื่อให้การต่อสู้ PVP ง่ายขึ้น สร้างขึ้นโดยใช้ Fabric API กับภาษา Java",
-  "thaddev.com": "เว็บไซต์นี้ สร้างด้วยเฟรมเวิร์ค React.js/Next.js ขนะนี้ทำการโฮสต์อยู่บน Raspberry Pi ที่ Self-host ด้วยบริการ ngrok และบริการ Cloudflare",
+  "thaddev.com": "เว็บไซต์นี้ สร้างด้วยเฟรมเวิร์ค React.js/Next.js ขนะนี้ทำการโฮสต์อยู่บน Raspberry Pi ที่ Self-host ด้วย Docker และบริการ Cloudflare",
   "SomeDiscordBot": "บอท Discord อเนกประสงค์ที่ใช้สำหรับการดูแล ความสนุกสนาน และอื่นๆ สำหรับเซิร์ฟเวอร์ discord ของเพื่อนฉัน สร้างด้วย Java โดยใช้ไลบรารี JDA",
   "ProjectAPIs": "เป็นเว็บเซิร์ฟเวอร์ที่โฮสต์ API สำหรับโครงการส่วนตัวสร้างด้วย Java ใช้เฟรมเวิร์ค Spring Boot",
   "IoTDoorLock": "กลอนประตูอัจฉริยะที่สามารถควบคุมได้ทั้งระยะใกล้และระยะไกลผ่านแพลตฟอร์ม Blynk สร้างขึ้นโดยใช้ไมโครคอนโทรลเลอร์ NodeMCU ESP8266 กับ Arduino และไลบรารีของแพลตฟอร์ม Blynk",
