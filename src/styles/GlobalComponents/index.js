@@ -243,8 +243,8 @@ export const LinkIconImg = styled.div`
 
 export const StyledTableCell = styled(TableCell)(({theme}) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
+    backgroundColor: "#000000",
+    color: "#ffffff",
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 17,
@@ -253,7 +253,7 @@ export const StyledTableCell = styled(TableCell)(({theme}) => ({
 
 export const StyledTableRow = styled(TableRow)(({theme}) => ({
   '&:nth-of-type(odd)': {
-    backgroundColor: theme.palette.action.hover,
+    backgroundColor: "#202020",
   },
   // hide last border
   '&:last-child td, &:last-child th': {
