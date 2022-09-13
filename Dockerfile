@@ -19,4 +19,4 @@ RUN echo "GITHUB_ACCESS_TOKEN=$GITHUB_ACCESS_TOKEN" >> .env
 # start app
 RUN npm run build
 EXPOSE 3000
-CMD npm run start
+ENTRYPOINT ["npm", "run", "start"]
