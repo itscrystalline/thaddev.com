@@ -267,7 +267,7 @@ export const darkTheme = createTheme({
   },
   typography: {
     fontFamily: ['Niarmit', 'Plus Jakarta Sans'],
-    fontSize: "20rem",
+    fontSize: "25",
   },
   components: {
     MuiCssBaseline: {

@@ -26,6 +26,13 @@
   "computercontrol-addtostack": " Request the server to add a Command to the stack {json: execCommand: The command that is going to be added}",
   "computercontrol-validate": "Request the server to validate the Computer Control Password {password: the computer control password}",
   "computercontrol-clear": "Clears the Command stack",
+  "maps": "Maps and POI API",
+  "maps-getall": "Get all POI's",
+  "maps-getone": "Get a specified POI {id: ID of the POI}",
+  "maps-add": "Add a POI {json: name: Name of the POI, x: X position of the POI, y: Y position of the POI, type: Type of POI (See https://github.com/MyNameTsThad/project-apis/blob/master/src/main/java/com/thaddev/projectapis/mapsystem/POI.java#L119 for details)}",
+  "maps-move": "Move a POI {id: ID of the POI to move, json: x: New X position of the POI, y: New Y position of the POI}",
+  "maps-rename": "Rename a POI {id: ID of the POI to rename, json: name: New name of the POI}",
+  "maps-delete": "Delete a POI {authPassword: The authentication password, id: ID of the POI to delete}",
   "other": "Other API Endpoints",
   "other-linebot": "LINE Bot Callback"
 }

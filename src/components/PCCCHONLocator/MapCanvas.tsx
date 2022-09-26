@@ -1,15 +1,44 @@
 import * as React from "react";
-import {useCallback, useEffect, useLayoutEffect, useRef, useState} from "react";
+import {ForwardedRef, useCallback, useImperativeHandle, useLayoutEffect, useRef, useState} from "react";
+import {Simulate} from "react-dom/test-utils";
+import axios from "axios";
 
 type CanvasProps = {
     canvasWidth: number;
     canvasHeight: number;
+    dots: Point[];
+    ref: ForwardedRef<any>;
+    pois: POIData[];
 };
+
+type POIData = {
+    id: number;
+    name: string;
+    level: number;
+    type: string;
+    x: number;
+    y: number;
+}
+
+enum PointType {
+    WATER_DISPENER = "#4ba2cd",
+    TRASH_CAN = "#2c2f2f",
+    RESTROOM_MEN = "#535b44",
+    RESTROOM_WOMEN = "#e78bb6",
+}
 
 type Point = {
     x: number;
     y: number;
 };
+
+const mapDimensions = [[13.295347629227313, 101.16223001293424], [13.289546252661156, 101.16088169244172],
+    [13.289013253478164, 101.16321321626707], [13.294826029463868, 101.16473221332163]];
+
+//TL: 13.295347629227313, 101.16223001293424
+// BL: 13.289546252661156, 101.16088169244172
+// TR: 13.294826029463868, 101.16473221332163
+// BR: 13.289013253478164, 101.16321321626707
 
 const ORIGIN = Object.freeze({x: 0, y: 0});
 
@@ -27,194 +56,135 @@ function scalePoint(p1: Point, scale: number) {
 
 const ZOOM_SENSITIVITY = 500; // bigger for lower zoom per scroll
 
-export default function MapCanvas(props: CanvasProps) {
+function MapCanvas(props: CanvasProps, ref: ForwardedRef<any>) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const [context, setContext] = useState<CanvasRenderingContext2D | null>(null);
-    const [scale, setScale] = useState<number>(1);
-    const [offset, setOffset] = useState<Point>(ORIGIN);
     const [mousePos, setMousePos] = useState<Point>(ORIGIN);
-    const [viewportTopLeft, setViewportTopLeft] = useState<Point>(ORIGIN);
     const isResetRef = useRef<boolean>(false);
-    const lastMousePosRef = useRef<Point>(ORIGIN);
-    const lastOffsetRef = useRef<Point>(ORIGIN);
+    let [clickPos, setClickPos] = useState<Point>(null);
+    let [targetPos, setTargetPos] = useState<Point>(null);
 
-    // update last offset
-    useEffect(() => {
-        lastOffsetRef.current = offset;
-    }, [offset]);
+    useImperativeHandle(ref, () => ({
+        refreshMap() {
+            reloadMap()
+        },
+        async findAndDrawPath(toFind: string) {
+            if (context && clickPos !== null) {
+                console.log("finding path...")
+                const path = await axios.get('https://api.thaddev.com/api-v1/locator/shortest?targetType=' + toFind + '&posX=' + clickPos.x + '&posY=' + clickPos.y)
+                const data = path.data
+                targetPos = {x: data.x, y: data.y}
+                setTargetPos(targetPos)
+            }
+        },
+    }));
 
     // reset
     const reset = useCallback(
         (context: CanvasRenderingContext2D) => {
             if (context && !isResetRef.current) {
+                console.log("reset!")
                 // adjust for device pixel density
-                context.canvas.width = props.canvasWidth * window.devicePixelRatio;
-                context.canvas.height = props.canvasHeight * window.devicePixelRatio;
+                context.canvas.width = props.canvasWidth;
+                context.canvas.height = props.canvasHeight;
                 context.canvas.style.width = `100%`;
                 context.canvas.style.height = `100%`;
-                context.scale(window.devicePixelRatio, window.devicePixelRatio);
-                setScale(1);
-
                 // reset state and refs
                 setContext(context);
-                setOffset(ORIGIN);
                 setMousePos(ORIGIN);
-                setViewportTopLeft(ORIGIN);
-                lastOffsetRef.current = ORIGIN;
-                lastMousePosRef.current = ORIGIN;
 
                 // this thing is so multiple resets in a row don't clear canvas
                 isResetRef.current = true;
+
+                reloadMap()
             }
         },
         [props.canvasWidth, props.canvasHeight]
     );
 
-    // functions for panning
-    const mouseMove = useCallback(
-        (event: MouseEvent) => {
+    const handleClick = useCallback(
+        (event: React.MouseEvent<HTMLCanvasElement, MouseEvent>) => {
             if (context) {
-                const lastMousePos = lastMousePosRef.current;
-                const currentMousePos = {x: event.pageX, y: event.pageY}; // use document so can pan off element
-                lastMousePosRef.current = currentMousePos;
-
-                const mouseDiff = diffPoints(currentMousePos, lastMousePos);
-                setOffset((prevOffset) => addPoints(prevOffset, mouseDiff));
+                console.log("device pixel ratio: " + window.devicePixelRatio)
+                const x = (event.clientX - context.canvas.getBoundingClientRect().left);
+                const y = (event.clientY - context.canvas.getBoundingClientRect().top);
+                console.log("clicked at:" + x, ", " + y)
+                clickPos = {x: x, y: y};
+                setClickPos(clickPos)
+                reloadMap()
             }
         },
-        [context]
-    );
-
-    const mouseUp = useCallback(() => {
-        document.removeEventListener("mousemove", mouseMove);
-        document.removeEventListener("mouseup", mouseUp);
-    }, [mouseMove]);
-
-    const startPan = useCallback(
-        (event: React.MouseEvent<HTMLCanvasElement, MouseEvent>) => {
-            document.addEventListener("mousemove", mouseMove);
-            document.addEventListener("mouseup", mouseUp);
-            lastMousePosRef.current = {x: event.pageX, y: event.pageY};
-        },
-        [mouseMove, mouseUp]
+        [
+            context
+        ]
     );
 
     // setup canvas and set context
     useLayoutEffect(() => {
         if (canvasRef.current) {
+            console.log("set up!")
             // get new drawing context
-            const renderCtx = canvasRef.current.getContext("2d");
+            reloadMap()
 
+            const renderCtx = canvasRef.current.getContext("2d");
             if (renderCtx) {
                 reset(renderCtx);
             }
         }
     }, [reset, props.canvasHeight, props.canvasWidth]);
 
-    // pan when offset or scale changes
-    useLayoutEffect(() => {
-        if (context && lastOffsetRef.current) {
-            const offsetDiff = scalePoint(
-                diffPoints(offset, lastOffsetRef.current),
-                scale
-            );
-            context.translate(offsetDiff.x, offsetDiff.y);
-            setViewportTopLeft((prevVal) => diffPoints(prevVal, offsetDiff));
-            isResetRef.current = false;
-        }
-    }, [context, offset, scale]);
-
     // draw
     useLayoutEffect(() => {
-        if (context) {
-            // clear canvas but maintain transform
-            const storedTransform = context.getTransform();
-            context.canvas.width = context.canvas.width;
-            context.setTransform(storedTransform);
-
-            const map = new Image()
-            map.src = '../images/pccchon.png';
-
-            context.imageSmoothingEnabled = false;
-            context.drawImage(map, 0, 0, context.canvas.width, context.canvas.height);
-        }
+        reloadMap()
     }, [
         props.canvasWidth,
         props.canvasHeight,
-        context,
-        scale,
-        offset,
-        viewportTopLeft
+        context
     ]);
 
-    // add event listener on canvas for mouse position
-    useEffect(() => {
-        const canvasElem = canvasRef.current;
-        if (canvasElem === null) {
-            return;
-        }
-
-        function handleUpdateMouse(event: MouseEvent) {
-            event.preventDefault();
-            if (canvasRef.current) {
-                const viewportMousePos = {x: event.clientX, y: event.clientY};
-                const topLeftCanvasPos = {
-                    x: canvasRef.current.offsetLeft,
-                    y: canvasRef.current.offsetTop
-                };
-                setMousePos(diffPoints(viewportMousePos, topLeftCanvasPos));
-            }
-        }
-
-        canvasElem.addEventListener("mousemove", handleUpdateMouse);
-        canvasElem.addEventListener("wheel", handleUpdateMouse);
-        return () => {
-            canvasElem.removeEventListener("mousemove", handleUpdateMouse);
-            canvasElem.removeEventListener("wheel", handleUpdateMouse);
-        };
-    }, []);
-
-    // add event listener on canvas for zoom
-    useEffect(() => {
-        const canvasElem = canvasRef.current;
-        if (canvasElem === null) {
-            return;
-        }
-
-        // this is tricky. Update the viewport's "origin" such that
-        // the mouse doesn't move during scale - the 'zoom point' of the mouse
-        // before and after zoom is relatively the same position on the viewport
-        function handleWheel(event: WheelEvent) {
+    const reloadMap = useCallback(
+        () => {
             if (context) {
-                event.preventDefault();
-                const zoom = 1 - event.deltaY / ZOOM_SENSITIVITY;
-                const viewportTopLeftDelta = {
-                    x: (mousePos.x / scale) * (1 - 1 / zoom),
-                    y: (mousePos.y / scale) * (1 - 1 / zoom)
-                };
-                const newViewportTopLeft = addPoints(
-                    viewportTopLeft,
-                    viewportTopLeftDelta
-                );
+                console.log("reload!")
 
-                context.translate(viewportTopLeft.x, viewportTopLeft.y);
-                context.scale(zoom, zoom);
-                context.translate(-newViewportTopLeft.x, -newViewportTopLeft.y);
+                const map = new Image()
+                map.src = '/images/pccchon.png';
+                map.onload = function () {
+                    context.drawImage(map, 0, 0, context.canvas.width, context.canvas.height);
+                    //dots
+                    for (let i = 0; i < props.pois.length; i++) {
+                        context.fillStyle = getColorFromType(props.pois[i].type);
+                        context.fillRect((props.pois[i].x) - 5, (props.pois[i].y) - 5, 10, 10)
+                    }
 
-                setViewportTopLeft(newViewportTopLeft);
-                setScale(scale * zoom);
-                isResetRef.current = false;
+                    //pos
+                    if (clickPos !== null) {
+                        console.log("draw pos at " + clickPos.x + ", " + clickPos.y)
+                        context.fillStyle = "#005eff";
+                        context.fillRect((clickPos.x) - 5, (clickPos.y) - 5, 10, 10)
+                    }
+
+                    // path
+                    if (targetPos !== null) {
+                        context.beginPath()
+                        context.moveTo(clickPos.x, clickPos.y)
+                        context.lineTo(targetPos.x, targetPos.y)
+                        context.fillStyle = "#005eff";
+                        context.lineWidth = 10;
+                        context.stroke()
+                    }
+                }
             }
-        }
-
-        canvasElem.addEventListener("wheel", handleWheel);
-        return () => canvasElem.removeEventListener("wheel", handleWheel);
-    }, [context, mousePos.x, mousePos.y, viewportTopLeft, scale]);
+        }, [
+            props.canvasWidth,
+            props.canvasHeight,
+            context
+        ]);
 
     return (
         <div>
             <canvas
-                onMouseDown={startPan}
+                onClick={handleClick}
                 ref={canvasRef}
                 style={{
                     border: "5px solid #2e2e2e",
@@ -224,3 +194,18 @@ export default function MapCanvas(props: CanvasProps) {
         </div>
     );
 }
+
+function getColorFromType(type: string): string {
+    switch (type) {
+        case PointType[PointType.RESTROOM_MEN]:
+            return PointType.RESTROOM_MEN;
+        case PointType[PointType.RESTROOM_WOMEN]:
+            return PointType.RESTROOM_WOMEN;
+        case PointType[PointType.TRASH_CAN]:
+            return PointType.TRASH_CAN;
+        default:
+            return PointType.WATER_DISPENER;
+    }
+}
+
+export default React.forwardRef(MapCanvas)

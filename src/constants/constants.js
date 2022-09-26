@@ -187,7 +187,7 @@ export const Links = [
   {name: 'itch.io', link: 'https://mynametsthad.itch.io'},
   {name: 'Google Play', link: 'https://play.google.com/store/apps/developer?id=ThadDev'},
   {name: 'Facebook', link: 'https://www.facebook.com/thad.gaming.37'},
-  {name: 'Email', link: 'mailto:real.thad.choyrum@gmail.com'}
+  {name: 'Email', link: 'mailto:thad@thaddev.com'}
 ];
 
 export const timerAPIs = [
@@ -217,6 +217,16 @@ export const computerControl = [
   createData('computercontrol-addtostack', "/computercontrol/add", "POST"),
   createData('computercontrol-validate', "/computercontrol/auth?password={password}", "POST"),
   createData('computercontrol-clear', "/computercontrol/clearstack", "DELETE")
+];
+
+export const mapsSystem = [
+  createData('maps-getall', "/api-v1/locator/getpois", "GET"),
+  createData('maps-rename', "/api-v1/locator/shortest?targetType={targetType}&posX={posX}&posY={posY}", "GET"),
+  createData('maps-getone', "/api-v1/locator/getpoi?id={id}", "GET"),
+  createData('maps-add', "/api-v1/locator/addpoi", "POST"),
+  createData('maps-move', "/api-v1/locator/movepoi?id={id}", "PATCH"),
+  createData('maps-rename', "/api-v1/locator/renamepoi?id={id}", "PATCH"),
+  createData('maps-delete', "/api-v1/locator/deletepoi?authPassword={authPassword}&id={id}", "DELETE")
 ];
 
 export const otherApis = [

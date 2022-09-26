@@ -1,4 +1,13 @@
 {
   "pccchon-l-title": "PCCCHON Locator",
-  "pccchon-l-desc": "Welcome to the PCCCHON Locator web interface. (WIP)"
+  "pccchon-l-desc": "Welcome to the PCCCHON Locator web interface. (WIP)",
+  "restroom-m": "Restroom (Men)",
+  "restroom-w": "Restroom (Women)",
+  "water-dispenser": "Water Dispenser",
+  "trash-can": "Trash Can",
+  "men": "Men",
+  "women": "Women",
+  "find": "Find!",
+  "target": "Where do you want to go?",
+  "sex": "Select sex..."
 }

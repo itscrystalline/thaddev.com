@@ -26,6 +26,13 @@
   "computercontrol-addtostack": "ขอให้เซิร์ฟเวอร์เพิ่มคำสั่งใน Command stack {json: execCommand: คำสั่งที่จะเพิ่ม}",
   "computercontrol-validate": "ขอให้เซิร์ฟเวอร์ตรวจสอบรหัสผ่าน {password: รหัสผ่าน}",
   "computercontrol-clear": "ล้างคำสั่งที่อยู่ใน Command stack ทั้งหมด",
+  "maps": "API แผนที่และจุดสนใจ",
+  "maps-getall": "รับจุดสนใจทั้งหมด",
+  "maps-getone": "รับ POI ที่ระบุ {id: ID ของ POI}",
+  "maps-add": "เพิ่ม POI {json: name: ชื่อของ POI, x: X ตำแหน่งของ POI, y: ตำแหน่ง Y ของ POI, type: ประเภทของ POI (ดู https://github.com/MyNameTsThad/project-apis/blob/master/src/main/java/com/thaddev/projectapis/mapsystem/POI.java#L119 สำหรับรายละเอียด)}",
+  "maps-move": "ย้าย POI {id: ID ของ POI ที่จะย้าย json: x: ตำแหน่ง X ใหม่ของ POI y: ตำแหน่ง Y ใหม่ของ POI}",
+  "maps-rename": "เปลี่ยนชื่อ POI {id: ID ของ POI ที่จะเปลี่ยนชื่อ json: name: ชื่อใหม่ของ POI}",
+  "maps-delete": "ลบ POI {authPassword: รหัสผ่าน id: ID ของ POI ที่จะลบ}",
   "other": "API อื่นๆ",
   "other-linebot": "คำสั่งคอลแบ็คของบอท Line"
 }

@@ -1,4 +1,13 @@
 {
   "pccchon-l-title": "PCCCHON Locator",
-  "pccchon-l-desc": "Welcome to the PCCCHON Locator web interface. (WIP)"
+  "pccchon-l-desc": "Welcome to the PCCCHON Locator web interface. (WIP)",
+  "restroom-m": "ห้องน้ำชาย",
+  "restroom-w": "ห้องน้ำหญิง",
+  "water-dispenser": "ตู้กดน้ำ",
+  "trash-can": "ถังขยะ",
+  "men": "ชาย",
+  "women": "หญิง",
+  "find": "ค้นหา!",
+  "target": "อยากจะหา...",
+  "sex": "เลือกเพศของคุณ..."
 }
