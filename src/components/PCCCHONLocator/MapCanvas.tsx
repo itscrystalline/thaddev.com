@@ -1,14 +1,14 @@
 import * as React from "react";
 import {ForwardedRef, useCallback, useImperativeHandle, useLayoutEffect, useRef, useState} from "react";
-import {Simulate} from "react-dom/test-utils";
-import axios from "axios";
 
 type CanvasProps = {
     canvasWidth: number;
     canvasHeight: number;
-    dots: Point[];
     ref: ForwardedRef<any>;
     pois: POIData[];
+    targetPos: Point;
+    resetTarget: () => void;
+    handleClick: (clickpos) => void;
 };
 
 type POIData = {
@@ -21,7 +21,7 @@ type POIData = {
 }
 
 enum PointType {
-    WATER_DISPENER = "#4ba2cd",
+    WATER_DISPENSER = "#4ba2cd",
     TRASH_CAN = "#2c2f2f",
     RESTROOM_MEN = "#535b44",
     RESTROOM_WOMEN = "#e78bb6",
@@ -32,29 +32,7 @@ type Point = {
     y: number;
 };
 
-const mapDimensions = [[13.295347629227313, 101.16223001293424], [13.289546252661156, 101.16088169244172],
-    [13.289013253478164, 101.16321321626707], [13.294826029463868, 101.16473221332163]];
-
-//TL: 13.295347629227313, 101.16223001293424
-// BL: 13.289546252661156, 101.16088169244172
-// TR: 13.294826029463868, 101.16473221332163
-// BR: 13.289013253478164, 101.16321321626707
-
 const ORIGIN = Object.freeze({x: 0, y: 0});
-
-function diffPoints(p1: Point, p2: Point) {
-    return {x: p1.x - p2.x, y: p1.y - p2.y};
-}
-
-function addPoints(p1: Point, p2: Point) {
-    return {x: p1.x + p2.x, y: p1.y + p2.y};
-}
-
-function scalePoint(p1: Point, scale: number) {
-    return {x: p1.x / scale, y: p1.y / scale};
-}
-
-const ZOOM_SENSITIVITY = 500; // bigger for lower zoom per scroll
 
 function MapCanvas(props: CanvasProps, ref: ForwardedRef<any>) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -65,18 +43,12 @@ function MapCanvas(props: CanvasProps, ref: ForwardedRef<any>) {
     let [targetPos, setTargetPos] = useState<Point>(null);
 
     useImperativeHandle(ref, () => ({
-        refreshMap() {
-            reloadMap()
-        },
-        async findAndDrawPath(toFind: string) {
-            if (context && clickPos !== null) {
-                console.log("finding path...")
-                const path = await axios.get('https://api.thaddev.com/api-v1/locator/shortest?targetType=' + toFind + '&posX=' + clickPos.x + '&posY=' + clickPos.y)
-                const data = path.data
-                targetPos = {x: data.x, y: data.y}
-                setTargetPos(targetPos)
-            }
-        },
+        refreshMap(targetPosRef: Point) {
+            targetPos = targetPosRef;
+            setTargetPos(targetPos);
+            console.log("refreshing map with targetPosRef ", JSON.stringify(targetPosRef));
+            reloadMapWithPos(targetPos)
+        }
     }));
 
     // reset
@@ -111,6 +83,10 @@ function MapCanvas(props: CanvasProps, ref: ForwardedRef<any>) {
                 console.log("clicked at:" + x, ", " + y)
                 clickPos = {x: x, y: y};
                 setClickPos(clickPos)
+                props.handleClick(clickPos)
+
+                props.resetTarget()
+
                 reloadMap()
             }
         },
@@ -145,8 +121,7 @@ function MapCanvas(props: CanvasProps, ref: ForwardedRef<any>) {
     const reloadMap = useCallback(
         () => {
             if (context) {
-                console.log("reload!")
-
+                console.log("reloading map!")
                 const map = new Image()
                 map.src = '/images/pccchon.png';
                 map.onload = function () {
@@ -159,19 +134,58 @@ function MapCanvas(props: CanvasProps, ref: ForwardedRef<any>) {
 
                     //pos
                     if (clickPos !== null) {
-                        console.log("draw pos at " + clickPos.x + ", " + clickPos.y)
                         context.fillStyle = "#005eff";
                         context.fillRect((clickPos.x) - 5, (clickPos.y) - 5, 10, 10)
+
+                        // path
+                        console.log(targetPos)
+                        if (targetPos) {
+                            console.log("draw path from " + clickPos.x + ", " + clickPos.y + " to " + targetPos.x + ", " + targetPos.y)
+                            context.beginPath()
+                            context.moveTo(clickPos.x, clickPos.y)
+                            context.lineTo(targetPos.x, targetPos.y)
+                            context.fillStyle = "#005eff";
+                            context.lineWidth = 10;
+                            context.stroke()
+                        }
+                    }
+                }
+            }
+        }, [
+            props.canvasWidth,
+            props.canvasHeight,
+            context
+        ]);
+
+    const reloadMapWithPos = useCallback(
+        (pos: Point) => {
+            if (context) {
+                console.log("reloading map!")
+                const map = new Image()
+                map.src = '/images/pccchon.png';
+                map.onload = function () {
+                    context.drawImage(map, 0, 0, context.canvas.width, context.canvas.height);
+                    //dots
+                    for (let i = 0; i < props.pois.length; i++) {
+                        context.fillStyle = getColorFromType(props.pois[i].type);
+                        context.fillRect((props.pois[i].x) - 5, (props.pois[i].y) - 5, 10, 10)
                     }
 
-                    // path
-                    if (targetPos !== null) {
+                    //pos
+                    if (clickPos !== null) {
+                        context.fillStyle = "#005eff";
+                        context.fillRect((clickPos.x) - 5, (clickPos.y) - 5, 10, 10)
+
+                        // path
+                        console.log(pos)
+                        console.log("draw path from " + clickPos.x + ", " + clickPos.y + " to " + pos.x + ", " + pos.y)
                         context.beginPath()
                         context.moveTo(clickPos.x, clickPos.y)
-                        context.lineTo(targetPos.x, targetPos.y)
+                        context.lineTo(pos.x, pos.y)
                         context.fillStyle = "#005eff";
                         context.lineWidth = 10;
                         context.stroke()
+
                     }
                 }
             }
@@ -197,14 +211,14 @@ function MapCanvas(props: CanvasProps, ref: ForwardedRef<any>) {
 
 function getColorFromType(type: string): string {
     switch (type) {
-        case PointType[PointType.RESTROOM_MEN]:
+        case "RESTROOM_MEN":
             return PointType.RESTROOM_MEN;
-        case PointType[PointType.RESTROOM_WOMEN]:
+        case "RESTROOM_WOMEN":
             return PointType.RESTROOM_WOMEN;
-        case PointType[PointType.TRASH_CAN]:
+        case "TRASH_CAN":
             return PointType.TRASH_CAN;
         default:
-            return PointType.WATER_DISPENER;
+            return PointType.WATER_DISPENSER;
     }
 }
 

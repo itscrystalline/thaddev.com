@@ -1,5 +1,4 @@
 import React, {useRef, useState} from "react";
-import {useRouter} from "next/router";
 import {useTranslation} from "next-i18next";
 import {NextSeo} from "next-seo";
 import {AltLayout} from "../layout/AltLayout";
@@ -11,11 +10,17 @@ import ChangeLanguageButton, {LongButton} from "../styles/GlobalComponents/Butto
 import axios from "axios";
 
 const PCCCHONLocator = (props) => {
-  const router = useRouter();
   const {t} = useTranslation(['pccchon-locator', 'common']);
-  const [dots, setDots] = useState([]);
   const [sex, setSex] = useState("");
   const [toFind, setToFind] = useState("");
+  let [targetPos, setTargetPos] = useState(null);
+  let [clickPos, setClickPos] = useState(null);
+
+  const handleClick = (clickpos) => {
+    clickPos = clickpos
+    setClickPos(clickpos)
+  };
+
   const handleSexChange = (event) => {
     setSex(event.target.value);
   };
@@ -23,6 +28,10 @@ const PCCCHONLocator = (props) => {
     setToFind(event.target.value);
   };
   const mapRef = useRef(null);
+
+  const resetTarget = () => {
+    setTargetPos(null);
+  }
 
   return (
     <>
@@ -33,7 +42,8 @@ const PCCCHONLocator = (props) => {
           <SectionText>
             {t('pccchon-l-desc')}
           </SectionText>
-          <MapCanvas canvasHeight={480} canvasWidth={1280} dots={dots} ref={mapRef} pois={props.pois}/>
+          <MapCanvas canvasHeight={480} canvasWidth={1280} ref={mapRef} pois={props.pois} targetPos={targetPos}
+                     resetTarget={resetTarget} handleClick={handleClick}/>
           <p><br/> <br/></p>
           <ThemeProvider theme={darkTheme}>
             <FormControl sx={{m: 1, minWidth: 120}} size="small">
@@ -71,8 +81,13 @@ const PCCCHONLocator = (props) => {
                 </Select>
               </div>
             </FormControl>
-            <LongButton onClick={async function () {
-              await mapRef.current.findAndDrawPath(toFind)
+            <LongButton onClick={async () => {
+              if (clickPos !== null) {
+                console.log("finding path...")
+                const path = await axios.get('https://api.thaddev.com/api-v1/locator/shortest?targetType=' + toFind + '&posX=' + clickPos.x + '&posY=' + clickPos.y)
+                const data = path.data
+                mapRef.current.refreshMap({x: data.x, y: data.y})
+              }
             }}>{t('find')}</LongButton>
             <p><br/></p>
           </ThemeProvider>
@@ -81,10 +96,6 @@ const PCCCHONLocator = (props) => {
       <ChangeLanguageButton/>
     </>
   )
-}
-
-function getRandomArbitrary(min, max) {
-  return Math.random() * (max - min) + min;
 }
 
 export async function getServerSideProps({locale}) {
