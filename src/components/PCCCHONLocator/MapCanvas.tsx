@@ -182,7 +182,7 @@ function MapCanvas(props: CanvasProps, ref: ForwardedRef<any>) {
                         context.beginPath()
                         context.moveTo(clickPos.x, clickPos.y)
                         context.lineTo(pos.x, pos.y)
-                        context.fillStyle = "#005eff";
+                        context.strokeStyle = "#005eff";
                         context.lineWidth = 10;
                         context.stroke()
 
