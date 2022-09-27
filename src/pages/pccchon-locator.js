@@ -62,7 +62,7 @@ const PCCCHONLocator = (props) => {
                   onChange={handleToFindChange}
                 >
                   <MenuItem disabled value={t('target')}>{t('target')}</MenuItem>
-                  <MenuItem value="WATER_DISPENER">{t('water-dispenser')}</MenuItem>
+                  <MenuItem value="WATER_DISPENSER">{t('water-dispenser')}</MenuItem>
                   <MenuItem value="TRASH_CAN">{t('trash-can')}</MenuItem>
                   {sex === t('men') ?
                     <MenuItem value="RESTROOM_MEN">{t('restroom-m')}</MenuItem> :
