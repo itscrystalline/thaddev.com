@@ -78,8 +78,8 @@ function MapCanvas(props: CanvasProps, ref: ForwardedRef<any>) {
         (event: React.MouseEvent<HTMLCanvasElement, MouseEvent>) => {
             if (context) {
                 console.log("device pixel ratio: " + window.devicePixelRatio)
-                const x = (event.clientX - context.canvas.getBoundingClientRect().left);
-                const y = (event.clientY - context.canvas.getBoundingClientRect().top);
+                const x = (event.clientX - context.canvas.getBoundingClientRect().left) * window.devicePixelRatio;
+                const y = (event.clientY - context.canvas.getBoundingClientRect().top) * window.devicePixelRatio;
                 console.log("clicked at:" + x, ", " + y)
                 clickPos = {x: x, y: y};
                 setClickPos(clickPos)
@@ -136,6 +136,7 @@ function MapCanvas(props: CanvasProps, ref: ForwardedRef<any>) {
                     if (clickPos !== null) {
                         context.fillStyle = "#005eff";
                         context.fillRect((clickPos.x) - 5, (clickPos.y) - 5, 10, 10)
+                        console.log("Drawing clickPos: " + clickPos.x + ", " + clickPos.y)
 
                         // path
                         console.log(targetPos)
@@ -144,7 +145,16 @@ function MapCanvas(props: CanvasProps, ref: ForwardedRef<any>) {
                             context.beginPath()
                             context.moveTo(clickPos.x, clickPos.y)
                             context.lineTo(targetPos.x, targetPos.y)
-                            context.fillStyle = "#005eff";
+
+                            const colorData = context.getImageData(targetPos.x, targetPos.y, 1, 1).data;
+                            const color = "#" + ("000000" + rgbToHex(colorData[0], colorData[1], colorData[2])).slice(-6);
+                            console.log("color: " + color)
+
+                            const gradient = context.createLinearGradient(clickPos.x, clickPos.y, targetPos.x, targetPos.y);
+
+                            gradient.addColorStop(0, "#005eff");
+                            gradient.addColorStop(1, color);
+                            context.strokeStyle = gradient;
                             context.lineWidth = 10;
                             context.stroke()
                         }
@@ -220,6 +230,12 @@ function getColorFromType(type: string): string {
         default:
             return PointType.WATER_DISPENSER;
     }
+}
+
+function rgbToHex(r, g, b) {
+    if (r > 255 || g > 255 || b > 255)
+        throw "Invalid color component";
+    return ((r << 16) | (g << 8) | b).toString(16);
 }
 
 export default React.forwardRef(MapCanvas)
