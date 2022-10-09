@@ -47,7 +47,7 @@ const FrontPagePosts = ({posts}) => {
                 <Link href={`/blog/posts?id=${id}`}>
                   <BlogCard>
                     <TitleContent>
-                      {attributes.image.data != null ?
+                      {attributes.image != null && attributes.image.data != null ?
                         <><Image src={"https://cms.thaddev.com" + attributes.image.data.attributes.url}
                                  alt={attributes.image.data.attributes.alternativeText}
                                  width={attributes.image.data.attributes.width * 0.75}
