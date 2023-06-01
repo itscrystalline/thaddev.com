@@ -2,6 +2,8 @@
 ---
 My website and portfolio, Built with [Next.js](https://nextjs.org/) and [React.js](https://reactjs.prg/)
 
+## please visit [thaddev.com-2.0](https://github.com/MyNameTsThad/thaddev.com-2.0) instead
+
 ## Dependencies used
   * @apollo/client
   * @emotion/react
